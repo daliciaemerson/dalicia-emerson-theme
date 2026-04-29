@@ -13,17 +13,8 @@ get_header();
 <main id="main" class="de-relocation-hub" role="main">
 
 	<!-- ── Hero ──────────────────────────────────────────────────────────── -->
-	<?php
-	$hero_bg_style = '';
-	if ( has_post_thumbnail() ) {
-		$img_url = get_the_post_thumbnail_url( get_the_ID(), 'de-hero' );
-		if ( $img_url ) {
-			$hero_bg_style = ' style="background-image:url(' . esc_url( $img_url ) . ');"';
-		}
-	}
-	?>
 	<section class="de-hero de-hero--relocation" aria-labelledby="relocation-hero-heading">
-		<div class="de-hero__bg"<?php echo $hero_bg_style; ?>></div>
+		<div class="de-hero__bg" style="background-image:url('https://daliciaemerson.wpenginepowered.com/wp-content/uploads/2026/04/fayetteville-2-1568752221.jpg');"></div>
 		<div class="de-hero__overlay"></div>
 		<div class="de-container">
 			<h1 id="relocation-hero-heading" class="de-hero__headline">
