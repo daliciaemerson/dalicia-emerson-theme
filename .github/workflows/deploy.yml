@@ -22,8 +22,19 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -t rsa git.wpengine.com >> ~/.ssh/known_hosts
 
-      - name: Add WP Engine git remote
-        run: git remote add wpengine git@git.wpengine.com:production/daliciaemerson.git
+      - name: Wrap files in theme path
+        run: |
+          mkdir -p /tmp/wpe-deploy/wp-content/themes/kadence-child
+          rsync -a --exclude='.git' --exclude='.github' \
+            ./ /tmp/wpe-deploy/wp-content/themes/kadence-child/
 
       - name: Push to WP Engine
-        run: git push wpengine main --force
+        run: |
+          cd /tmp/wpe-deploy
+          git init
+          git config user.email "deploy@github-actions"
+          git config user.name "GitHub Actions"
+          git add .
+          git commit -m "deploy ${{ github.sha }}"
+          git remote add wpengine git@git.wpengine.com:production/daliciaemerson.git
+          git push wpengine HEAD:main --force
