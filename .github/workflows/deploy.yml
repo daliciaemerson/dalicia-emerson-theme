@@ -1,0 +1,23 @@
+name: Deploy to WP Engine
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to WP Engine
+        uses: wpengine/github-actions-wpe-site-deploy@v4
+        with:
+          WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
+          WPE_ENV: daliciaemerson
+          SRC_PATH: .
+          REMOTE_PATH: wp-content/themes/kadence-child
+          BRANCH: main
