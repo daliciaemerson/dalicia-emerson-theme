@@ -357,20 +357,27 @@ add_action( 'save_post_page', function ( int $post_id ) {
 } );
 
 
-// ─── Clear stale object cache for page template assignments ──────────────────
-// WP Engine's Redis cache holds old _wp_page_template values after SQL-direct
-// postmeta updates. Clearing postmeta cache on wp hook forces a DB re-read
-// before WordPress selects the template file.
+// ─── Force correct template by page slug ─────────────────────────────────────
 
-add_action( 'wp', function () {
-	if ( ! is_page() ) {
-		return;
+add_filter( 'template_include', function ( $template ) {
+	if ( is_page() ) {
+		$slug = get_post_field( 'post_name', get_the_ID() );
+		$city_slugs = [
+			'bentonville-ar-real-estate',
+			'rogers-ar-real-estate',
+			'fayetteville-ar-real-estate',
+			'springdale-ar-real-estate',
+			'bella-vista-ar-real-estate',
+			'lowell-ar-real-estate',
+			'siloam-springs-ar-real-estate',
+			'eureka-springs-ar-real-estate',
+		];
+		if ( in_array( $slug, $city_slugs ) ) {
+			$t = get_stylesheet_directory() . '/page-templates/city-page.php';
+			if ( file_exists( $t ) ) return $t;
+		}
 	}
-	$post_id = get_queried_object_id();
-	if ( $post_id ) {
-		wp_cache_delete( $post_id, 'post_meta' );
-		clean_post_cache( $post_id );
-	}
+	return $template;
 } );
 
 
