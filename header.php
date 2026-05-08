@@ -535,16 +535,6 @@
         'Contact'          => '/contact/',
       ];
 
-      $cities = [
-        'Bentonville'    => '/bentonville-ar-homes-for-sale/',
-        'Rogers'         => '/rogers-ar-homes-for-sale/',
-        'Fayetteville'   => '/fayetteville-ar-homes-for-sale/',
-        'Springdale'     => '/springdale-ar-homes-for-sale/',
-        'Bella Vista'    => '/bella-vista-ar-homes-for-sale/',
-        'Lowell'         => '/lowell-ar-homes-for-sale/',
-        'Siloam Springs' => '/siloam-springs-ar-homes-for-sale/',
-        'Eureka Springs' => '/eureka-springs-ar-homes-for-sale/',
-      ];
       ?>
 
       <ul class="de-nav__list" role="list">
@@ -565,22 +555,15 @@
             Cities
             <span class="de-nav__chevron" aria-hidden="true">▾</span>
           </button>
-          <ul
-            class="de-dropdown"
-            id="cities-dropdown"
-            role="menu"
-            aria-labelledby="cities-dropdown-trigger"
-          >
-            <?php foreach ( $cities as $city_name => $city_slug ) : ?>
-            <li class="de-dropdown__item" role="none">
-              <a
-                href="<?php echo esc_url( home_url( $city_slug ) ); ?>"
-                class="de-dropdown__link"
-                role="menuitem"
-              ><?php echo esc_html( $city_name ); ?></a>
-            </li>
-            <?php endforeach; ?>
-          </ul>
+          <?php
+          wp_nav_menu( [
+            'theme_location' => 'cities',
+            'items_wrap'     => '<ul class="de-dropdown" id="cities-dropdown" role="menu" aria-labelledby="cities-dropdown-trigger">%3$s</ul>',
+            'container'      => false,
+            'walker'         => new DE_Dropdown_Walker(),
+            'fallback_cb'    => false,
+          ] );
+          ?>
         </li>
         <?php endif; ?>
 
@@ -661,16 +644,15 @@
           Cities
           <span class="de-mobile-nav__chevron" aria-hidden="true">▾</span>
         </button>
-        <ul class="de-mobile-nav__submenu" id="mobile-cities-list">
-          <?php foreach ( $cities as $city_name => $city_slug ) : ?>
-          <li>
-            <a
-              href="<?php echo esc_url( home_url( $city_slug ) ); ?>"
-              class="de-mobile-nav__sublink"
-            ><?php echo esc_html( $city_name ); ?></a>
-          </li>
-          <?php endforeach; ?>
-        </ul>
+        <?php
+        wp_nav_menu( [
+          'theme_location' => 'cities',
+          'items_wrap'     => '<ul class="de-mobile-nav__submenu" id="mobile-cities-list">%3$s</ul>',
+          'container'      => false,
+          'walker'         => new DE_Mobile_Cities_Walker(),
+          'fallback_cb'    => false,
+        ] );
+        ?>
       </li>
     <?php endif; ?>
 

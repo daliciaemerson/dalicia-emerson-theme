@@ -357,6 +357,36 @@ add_action( 'save_post_page', function ( int $post_id ) {
 } );
 
 
+// ─── Nav walker: desktop cities dropdown ─────────────────────────────────────
+
+class DE_Dropdown_Walker extends Walker_Nav_Menu {
+	public function start_el( &$output, $data_object, $depth = 0, $args = null, $current_object_id = 0 ) {
+		$output .= '<li class="de-dropdown__item" role="none">';
+		$output .= '<a href="' . esc_url( $data_object->url ) . '" class="de-dropdown__link" role="menuitem">';
+		$output .= esc_html( $data_object->title );
+		$output .= '</a>';
+	}
+	public function end_el( &$output, $data_object, $depth = 0, $args = null ) {
+		$output .= '</li>';
+	}
+}
+
+
+// ─── Nav walker: mobile cities submenu ───────────────────────────────────────
+
+class DE_Mobile_Cities_Walker extends Walker_Nav_Menu {
+	public function start_el( &$output, $data_object, $depth = 0, $args = null, $current_object_id = 0 ) {
+		$output .= '<li>';
+		$output .= '<a href="' . esc_url( $data_object->url ) . '" class="de-mobile-nav__sublink">';
+		$output .= esc_html( $data_object->title );
+		$output .= '</a>';
+	}
+	public function end_el( &$output, $data_object, $depth = 0, $args = null ) {
+		$output .= '</li>';
+	}
+}
+
+
 // ─── Force correct template by page slug ─────────────────────────────────────
 
 add_filter( 'template_include', function ( $template ) {
