@@ -524,60 +524,14 @@
       aria-label="Primary navigation"
     >
       <?php
-      $nav_current = trailingslashit( $_SERVER['REQUEST_URI'] ?? '' );
-
-      $nav_items = [
-        'Home'             => '/',
-        'Search Homes'     => '/properties/',
-        'Relocation Guide' => '/moving-to-northwest-arkansas/',
-        'Luxury Homes'     => '/luxury-homes-northwest-arkansas/',
-        'About'            => '/about/',
-        'Contact'          => '/contact/',
-      ];
-
+      wp_nav_menu( [
+        'theme_location' => 'primary',
+        'items_wrap'     => '<ul class="de-nav__list" role="list">%3$s</ul>',
+        'container'      => false,
+        'walker'         => new DE_Primary_Nav_Walker(),
+        'fallback_cb'    => false,
+      ] );
       ?>
-
-      <ul class="de-nav__list" role="list">
-
-        <?php foreach ( $nav_items as $label => $path ) :
-          $is_active = ( $nav_current === $path || ( $path !== '/' && strpos( $nav_current, $path ) === 0 ) );
-          // Insert Cities dropdown after "Search Homes"
-          if ( $label === 'Relocation Guide' ) :
-        ?>
-        <li class="de-nav__item de-nav__item--dropdown" id="cities-nav-item">
-          <button
-            class="de-nav__link de-nav__dropdown-trigger"
-            aria-haspopup="true"
-            aria-expanded="false"
-            aria-controls="cities-dropdown"
-            id="cities-dropdown-trigger"
-          >
-            Cities
-            <span class="de-nav__chevron" aria-hidden="true">▾</span>
-          </button>
-          <?php
-          wp_nav_menu( [
-            'theme_location' => 'cities',
-            'items_wrap'     => '<ul class="de-dropdown" id="cities-dropdown" role="menu" aria-labelledby="cities-dropdown-trigger">%3$s</ul>',
-            'container'      => false,
-            'walker'         => new DE_Dropdown_Walker(),
-            'fallback_cb'    => false,
-          ] );
-          ?>
-        </li>
-        <?php endif; ?>
-
-        <li class="de-nav__item">
-          <a
-            href="<?php echo esc_url( home_url( $path ) ); ?>"
-            class="de-nav__link<?php echo $is_active ? ' de-nav__link--active' : ''; ?>"
-            <?php echo $is_active ? 'aria-current="page"' : ''; ?>
-          ><?php echo esc_html( $label ); ?></a>
-        </li>
-
-        <?php endforeach; ?>
-
-      </ul>
     </nav><!-- /.de-nav -->
 
     <!-- ── CTA + Hamburger ──────────────────────────────────────────── -->
@@ -629,52 +583,21 @@
   aria-label="Mobile navigation"
   aria-hidden="true"
 >
-  <ul class="de-mobile-nav__list" role="list">
-
-    <?php foreach ( $nav_items as $label => $path ) :
-      if ( $label === 'Relocation Guide' ) :
-    ?>
-      <!-- Cities accordion -->
-      <li class="de-mobile-nav__item--accordion">
-        <button
-          class="de-mobile-nav__link de-mobile-nav__accordion-trigger"
-          aria-expanded="false"
-          aria-controls="mobile-cities-list"
-        >
-          Cities
-          <span class="de-mobile-nav__chevron" aria-hidden="true">▾</span>
-        </button>
-        <?php
-        wp_nav_menu( [
-          'theme_location' => 'cities',
-          'items_wrap'     => '<ul class="de-mobile-nav__submenu" id="mobile-cities-list">%3$s</ul>',
-          'container'      => false,
-          'walker'         => new DE_Mobile_Cities_Walker(),
-          'fallback_cb'    => false,
-        ] );
-        ?>
-      </li>
-    <?php endif; ?>
-
-      <li>
-        <a
-          href="<?php echo esc_url( home_url( $path ) ); ?>"
-          class="de-mobile-nav__link"
-          <?php
-          $is_active = ( $nav_current === $path || ( $path !== '/' && strpos( $nav_current, $path ) === 0 ) );
-          echo $is_active ? 'aria-current="page"' : '';
-          ?>
-        ><?php echo esc_html( $label ); ?></a>
-      </li>
-
-    <?php endforeach; ?>
-
+  <?php
+  wp_nav_menu( [
+    'theme_location' => 'primary',
+    'items_wrap'     => '<ul class="de-mobile-nav__list" role="list">%3$s</ul>',
+    'container'      => false,
+    'walker'         => new DE_Mobile_Primary_Walker(),
+    'fallback_cb'    => false,
+  ] );
+  ?>
+  <ul class="de-mobile-nav__list">
     <li class="de-mobile-nav__cta-item">
       <a href="tel:<?php echo esc_attr( DE_PHONE ); ?>" class="de-mobile-nav__call-btn">
         Call <?php echo esc_html( DE_PHONE_DISPLAY ); ?>
       </a>
     </li>
-
   </ul>
 </nav>
 

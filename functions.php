@@ -70,6 +70,11 @@ add_action( 'after_setup_theme', function () {
 	add_image_size( 'de-listing-card',  640, 480,  true );
 	add_image_size( 'de-neighborhood',  800, 533,  true );
 	add_image_size( 'de-headshot',      400, 500,  true );
+
+	register_nav_menus( [
+		'primary' => 'Primary Navigation',
+		'cities'  => 'Cities Dropdown',
+	] );
 } );
 
 
@@ -380,6 +385,70 @@ class DE_Mobile_Cities_Walker extends Walker_Nav_Menu {
 		$output .= '<a href="' . esc_url( $data_object->url ) . '" class="de-mobile-nav__sublink">';
 		$output .= esc_html( $data_object->title );
 		$output .= '</a>';
+	}
+	public function end_el( &$output, $data_object, $depth = 0, $args = null ) {
+		$output .= '</li>';
+	}
+}
+
+
+// ─── Nav walker: desktop primary nav ─────────────────────────────────────────
+
+class DE_Primary_Nav_Walker extends Walker_Nav_Menu {
+	public function start_el( &$output, $data_object, $depth = 0, $args = null, $current_object_id = 0 ) {
+		$is_active = in_array( 'current-menu-item', $data_object->classes ?? [] );
+
+		if ( strtolower( trim( $data_object->title ) ) === 'cities' ) {
+			$output .= '<li class="de-nav__item de-nav__item--dropdown" id="cities-nav-item">';
+			$output .= '<button class="de-nav__link de-nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="cities-dropdown" id="cities-dropdown-trigger">';
+			$output .= 'Cities <span class="de-nav__chevron" aria-hidden="true">▾</span>';
+			$output .= '</button>';
+			$output .= wp_nav_menu( [
+				'theme_location' => 'cities',
+				'items_wrap'     => '<ul class="de-dropdown" id="cities-dropdown" role="menu" aria-labelledby="cities-dropdown-trigger">%3$s</ul>',
+				'container'      => false,
+				'walker'         => new DE_Dropdown_Walker(),
+				'fallback_cb'    => false,
+				'echo'           => false,
+			] );
+		} else {
+			$output .= '<li class="de-nav__item">';
+			$output .= '<a href="' . esc_url( $data_object->url ) . '" class="de-nav__link' . ( $is_active ? ' de-nav__link--active' : '' ) . '"' . ( $is_active ? ' aria-current="page"' : '' ) . '>';
+			$output .= esc_html( $data_object->title );
+			$output .= '</a>';
+		}
+	}
+	public function end_el( &$output, $data_object, $depth = 0, $args = null ) {
+		$output .= '</li>';
+	}
+}
+
+
+// ─── Nav walker: mobile primary nav ──────────────────────────────────────────
+
+class DE_Mobile_Primary_Walker extends Walker_Nav_Menu {
+	public function start_el( &$output, $data_object, $depth = 0, $args = null, $current_object_id = 0 ) {
+		$is_active = in_array( 'current-menu-item', $data_object->classes ?? [] );
+
+		if ( strtolower( trim( $data_object->title ) ) === 'cities' ) {
+			$output .= '<li class="de-mobile-nav__item--accordion">';
+			$output .= '<button class="de-mobile-nav__link de-mobile-nav__accordion-trigger" aria-expanded="false" aria-controls="mobile-cities-list">';
+			$output .= 'Cities <span class="de-mobile-nav__chevron" aria-hidden="true">▾</span>';
+			$output .= '</button>';
+			$output .= wp_nav_menu( [
+				'theme_location' => 'cities',
+				'items_wrap'     => '<ul class="de-mobile-nav__submenu" id="mobile-cities-list">%3$s</ul>',
+				'container'      => false,
+				'walker'         => new DE_Mobile_Cities_Walker(),
+				'fallback_cb'    => false,
+				'echo'           => false,
+			] );
+		} else {
+			$output .= '<li>';
+			$output .= '<a href="' . esc_url( $data_object->url ) . '" class="de-mobile-nav__link"' . ( $is_active ? ' aria-current="page"' : '' ) . '>';
+			$output .= esc_html( $data_object->title );
+			$output .= '</a>';
+		}
 	}
 	public function end_el( &$output, $data_object, $depth = 0, $args = null ) {
 		$output .= '</li>';
