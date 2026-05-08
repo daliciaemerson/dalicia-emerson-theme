@@ -361,8 +361,7 @@ add_action( 'save_post_page', function ( int $post_id ) {
 
 add_filter( 'template_include', function ( $template ) {
 	if ( is_page() ) {
-		error_log('TEMPLATE DEBUG: slug=' . get_post_field('post_name', get_the_ID()) . ' template=' . $template);
-		$slug = get_post_field( 'post_name', get_the_ID() );
+$slug = get_post_field( 'post_name', get_the_ID() );
 		$city_slugs = [
 			'bentonville-ar-real-estate',
 			'rogers-ar-real-estate',
