@@ -357,6 +357,23 @@ add_action( 'save_post_page', function ( int $post_id ) {
 } );
 
 
+// ─── Clear stale object cache for page template assignments ──────────────────
+// WP Engine's Redis cache holds old _wp_page_template values after SQL-direct
+// postmeta updates. Clearing postmeta cache on wp hook forces a DB re-read
+// before WordPress selects the template file.
+
+add_action( 'wp', function () {
+	if ( ! is_page() ) {
+		return;
+	}
+	$post_id = get_queried_object_id();
+	if ( $post_id ) {
+		wp_cache_delete( $post_id, 'post_meta' );
+		clean_post_cache( $post_id );
+	}
+} );
+
+
 // ─── Security hardening ───────────────────────────────────────────────────────
 
 remove_action( 'wp_head', 'wp_generator' );
