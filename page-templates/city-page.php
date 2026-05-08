@@ -28,7 +28,7 @@ $page_content  = get_the_content();
 	<!-- ── Hero ──────────────────────────────────────────────────────────── -->
 	<?php
 	$hero_bg = has_post_thumbnail()
-		? ' style="background-image:url(\'' . esc_url( get_the_post_thumbnail_url( get_the_ID(), 'de-hero' ) ) . '\');"'
+		? ' style="background-image:url(\'' . esc_url( get_the_post_thumbnail_url( get_the_ID(), 'full' ) ) . '\');"'
 		: '';
 	?>
 	<section class="de-hero de-hero--city" aria-labelledby="city-hero-heading"<?php echo $hero_bg; ?>>
