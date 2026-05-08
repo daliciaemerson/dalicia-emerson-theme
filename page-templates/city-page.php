@@ -26,10 +26,12 @@ $page_content  = get_the_content();
 <main id="main" class="de-city-page" role="main" data-city="<?php echo esc_attr( $city ); ?>">
 
 	<!-- ── Hero ──────────────────────────────────────────────────────────── -->
-	<section class="de-hero de-hero--city" aria-labelledby="city-hero-heading">
-		<?php if ( has_post_thumbnail() ) : ?>
-			<?php the_post_thumbnail( 'de-hero', [ 'class' => 'de-hero__bg-image', 'alt' => esc_attr( $city . ', Arkansas neighborhood' ) ] ); ?>
-		<?php endif; ?>
+	<?php
+	$hero_bg = has_post_thumbnail()
+		? ' style="background-image:url(\'' . esc_url( get_the_post_thumbnail_url( get_the_ID(), 'de-hero' ) ) . '\');"'
+		: '';
+	?>
+	<section class="de-hero de-hero--city" aria-labelledby="city-hero-heading"<?php echo $hero_bg; ?>>
 		<div class="de-hero__overlay"></div>
 		<div class="de-container">
 			<h1 id="city-hero-heading" class="de-hero__title">
