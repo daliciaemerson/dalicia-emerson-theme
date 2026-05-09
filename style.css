@@ -1848,6 +1848,70 @@ body.home .entry-content,
 
 
 /* ══════════════════════════════════════════════════════════════════════════
+   HERO VARIANT: HOME PAGE
+   ══════════════════════════════════════════════════════════════════════════ */
+.de-hero--home {
+  min-height: 100svh;
+}
+
+.de-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+@media (max-width: 480px) {
+  .de-hero__actions { flex-direction: column; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   HERO VARIANT: CITY PAGE
+   ══════════════════════════════════════════════════════════════════════════ */
+.de-hero--city {
+  min-height: 50vh;
+  justify-content: flex-end;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-bottom: 48px;
+}
+
+.de-hero--city .de-hero__overlay {
+  background: rgba(26, 43, 74, 0.52);
+}
+
+.de-hero--city .de-container {
+  position: relative;
+  z-index: 2;
+  padding-top: var(--de-header-h);
+}
+
+.de-hero--city .de-hero__title {
+  font-family: var(--de-font-serif);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.8);
+}
+
+.de-hero--city .de-hero__subtitle {
+  font-family: var(--de-font-sans);
+  font-size: 1rem;
+  color: #d4a865;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+  .de-hero--city { min-height: 40vh; }
+  .de-hero--city .de-container { padding-top: calc(var(--de-header-h) + 24px); }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
    HERO VARIANT: RELOCATION (interior page, no background image)
    ══════════════════════════════════════════════════════════════════════════ */
 .de-hero--relocation {
