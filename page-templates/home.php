@@ -68,41 +68,49 @@ get_header();
 			<div class="de-cities__grid">
 
 				<a href="/bentonville-ar-real-estate/" class="de-city-card">
+					<div class="de-city-card__bg"></div>
 					<span class="de-city-card__name">Bentonville</span>
 					<span class="de-city-card__sub">Walmart HQ &bull; Crystal Bridges</span>
 				</a>
 
 				<a href="/rogers-ar-real-estate/" class="de-city-card">
+					<div class="de-city-card__bg"></div>
 					<span class="de-city-card__name">Rogers</span>
 					<span class="de-city-card__sub">Pinnacle Hills &bull; Lake Leatherwood</span>
 				</a>
 
 				<a href="/fayetteville-ar-real-estate/" class="de-city-card">
+					<div class="de-city-card__bg"></div>
 					<span class="de-city-card__name">Fayetteville</span>
 					<span class="de-city-card__sub">U of A &bull; Dickson Street</span>
 				</a>
 
 				<a href="/springdale-ar-real-estate/" class="de-city-card">
+					<div class="de-city-card__bg"></div>
 					<span class="de-city-card__name">Springdale</span>
 					<span class="de-city-card__sub">Tyson Foods HQ &bull; Arvest Ballpark</span>
 				</a>
 
 				<a href="/bella-vista-ar-real-estate/" class="de-city-card">
+					<div class="de-city-card__bg"></div>
 					<span class="de-city-card__name">Bella Vista</span>
 					<span class="de-city-card__sub">Lakes &bull; Golf &bull; Trails</span>
 				</a>
 
 				<a href="/lowell-ar-real-estate/" class="de-city-card">
+					<div class="de-city-card__bg"></div>
 					<span class="de-city-card__name">Lowell</span>
 					<span class="de-city-card__sub">J.B. Hunt HQ &bull; Growing Fast</span>
 				</a>
 
 				<a href="/siloam-springs-ar-real-estate/" class="de-city-card">
+					<div class="de-city-card__bg"></div>
 					<span class="de-city-card__name">Siloam Springs</span>
 					<span class="de-city-card__sub">Illinois River &bull; John Brown Univ.</span>
 				</a>
 
 				<a href="/eureka-springs-ar-real-estate/" class="de-city-card">
+					<div class="de-city-card__bg"></div>
 					<span class="de-city-card__name">Eureka Springs</span>
 					<span class="de-city-card__sub">Historic District &bull; Arts Scene</span>
 				</a>
@@ -129,7 +137,7 @@ get_header();
 				</blockquote>
 			</div>
 
-			<div class="de-social-proof__agent">
+			<div class="de-social-proof__bio">
 				<img src="https://daliciaemerson.wpenginepowered.com/wp-content/uploads/2026/04/BB6FBCB7-6C67-42D9-A3EE-C7151EB55A70_1_201_a.jpeg"
 				     alt="Dalicia Emerson, Northwest Arkansas REALTOR®"
 				     class="de-agent-card__photo"
@@ -149,5 +157,6 @@ get_header();
 	</section>
 
 </main>
+
 
 <?php get_footer(); ?>
