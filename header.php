@@ -22,7 +22,7 @@
       --de-white:      #ffffff;
       --de-gold:       #c9a84c;
       --de-gold-light: #e8c97a;
-      --de-header-h:   76px;
+      --de-header-h:   90px;
       --de-font-sans:  'Inter', 'Helvetica Neue', Arial, sans-serif;
       --de-font-serif: 'Playfair Display', Georgia, serif;
       --de-ease:       cubic-bezier(0.4, 0, 0.2, 1);
@@ -473,7 +473,7 @@
 ════════════════════════════════════════════════════════════════════════════ -->
 <header
   id="site-header"
-  class="de-header<?php echo is_front_page() ? ' de-header--transparent' : ''; ?>"
+  class="de-header"
   role="banner"
 >
   <div class="de-header__inner">

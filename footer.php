@@ -40,7 +40,7 @@
           <?php endif; ?>
         </a>
 
-        <p class="de-footer__bio">NWA Luxury REALTOR&reg; with Coldwell Banker. Specializing in relocation and luxury homes throughout Northwest Arkansas.</p>
+        <p class="de-footer__bio">NWA Luxury REALTOR&reg; | Coldwell Banker Harris McHaney &amp; Faucette</p>
 
         <p class="de-footer__license">
           AR License #<?php echo esc_html( DE_LICENSE ); ?>
