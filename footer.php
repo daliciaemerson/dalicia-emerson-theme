@@ -108,6 +108,8 @@
     background: #0a0a0a;
     color: rgba(255,255,255,0.80);
     font-family: var(--de-font-sans, 'Inter', sans-serif);
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .de-footer__main { padding: 56px 0 40px; }
