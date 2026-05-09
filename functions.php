@@ -486,11 +486,11 @@ remove_action( 'kadence_header', 'kadence_display_header' );
 add_filter( 'kadence_show_header', '__return_false' );
 
 
-// ─── Properties/IDX page: hide title and remove gap above IDX widget ─────────
+// ─── Pages: hide title and remove gray gap (properties + about) ──────────────
 //
-// Uses REQUEST_URI string match instead of is_page() — is_page() requires the
-// exact slug and fails if Showcase IDX created the page with a different slug.
-// REQUEST_URI fires on every request regardless of WordPress page/slug setup.
+// Properties uses REQUEST_URI matching — is_page() requires the exact slug and
+// fails if Showcase IDX created the page with a non-standard slug.
+// About uses is_page() which is reliable for standard WordPress pages.
 
 $de_is_idx_page = static function () {
 	return isset( $_SERVER['REQUEST_URI'] )
@@ -498,26 +498,23 @@ $de_is_idx_page = static function () {
 };
 
 // Kadence-native title suppression — prevents title rendering entirely.
-// CSS alone is unreliable because it depends on the stylesheet loading after
-// Kadence outputs the title HTML; this filter stops output at the source.
 add_filter( 'kadence_show_title', function ( $show ) use ( $de_is_idx_page ) {
-	if ( $de_is_idx_page() ) {
+	if ( $de_is_idx_page() || is_page( 'about' ) ) {
 		return false;
 	}
 	return $show;
 } );
 
-// CSS fallback — targets every container Kadence and Gutenberg insert above
-// the IDX widget content: entry-content, entry-content-wrap (Kadence inner),
-// wp-block-post-content (Gutenberg), site-main, content-area.
+// CSS fallback for both pages.
 add_action( 'wp_head', function () use ( $de_is_idx_page ) {
-	if ( ! $de_is_idx_page() ) {
+	if ( ! $de_is_idx_page() && ! is_page( 'about' ) ) {
 		return;
 	}
-	echo '<style id="de-idx-page-fix">
-.entry-title, h1.entry-title, .page-title, .wp-block-post-title { display: none !important; }
-.entry-content, .entry-content-wrap, .wp-block-post-content,
-.site-main, .content-area, .kadence-inner-column-inner {
+	echo '<style id="de-page-fix">
+.entry-title { display: none !important; }
+.entry-content,
+.site-main,
+.content-area {
     padding-top: 0 !important;
     margin-top: 0 !important;
 }
