@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      1.2.3
+Version:      1.2.4
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -835,6 +835,34 @@ body.home .entry-content,
 }
 
 .de-listings__footer { text-align: center; margin-top: 48px; }
+
+/* Showcase IDX /properties/ page — remove gray gap above search widget */
+#showcaseidx-wrapper,
+.showcaseidx-wrapper,
+.showcaseidx-app,
+[id^="showcaseidx"] {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Strip Kadence entry-content / site-main top padding on IDX pages */
+.page-template-default .entry-content > #showcaseidx-wrapper,
+.page-template-default .entry-content > .showcaseidx-wrapper,
+.page-template-default .entry-content > .showcaseidx-app,
+.page-template-default .entry-content > [id^="showcaseidx"] {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Kadence wraps page content in .entry-content with padding — remove it
+   when it directly contains an IDX widget */
+.entry-content:has(> #showcaseidx-wrapper),
+.entry-content:has(> .showcaseidx-wrapper),
+.entry-content:has(> .showcaseidx-app),
+.entry-content:has(> [id^="showcaseidx"]) {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
 
 /* Showcase IDX hotsheets brand overrides */
 .de-listings .showcaseidx-listing-card {
