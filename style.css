@@ -2310,3 +2310,16 @@ body.home .entry-content,
   .de-page-hero--compact { padding: 60px 0 36px; }
   .de-form__row { grid-template-columns: 1fr; }
 }
+
+/* ── Footer Kadence override ──────────────────────────────────────────────── */
+footer.de-footer,
+.site-footer.de-footer,
+#colophon.de-footer {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box !important;
+}

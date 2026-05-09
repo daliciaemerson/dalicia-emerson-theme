@@ -104,24 +104,36 @@
 
 <style>
   /* ── Footer ─────────────────────────────────────────────────────────── */
-  .de-footer {
+
+  /* Break out of any Kadence parent container */
+  .de-footer,
+  footer.de-footer {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
     background: #0a0a0a;
     color: rgba(255,255,255,0.80);
     font-family: var(--de-font-sans, 'Inter', sans-serif);
-    width: 100%;
-    box-sizing: border-box;
   }
 
   .de-footer__main { padding: 56px 0 40px; }
 
+  /* All centering happens here, not on .de-footer */
   .de-footer__inner {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 40px;
     display: grid;
     grid-template-columns: 0.75fr 1fr 1fr 1fr;
     gap: 40px;
     align-items: start;
+    box-sizing: border-box;
   }
 
   /* Column 1: Identity */
@@ -222,9 +234,12 @@
   .de-footer__bottom {
     border-top: 1px solid rgba(255,255,255,0.08);
     padding: 18px 0;
+    width: 100%;
+    box-sizing: border-box;
   }
   .de-footer__bottom-inner {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 40px;
     display: flex;
@@ -232,6 +247,7 @@
     justify-content: space-between;
     gap: 24px;
     flex-wrap: wrap;
+    box-sizing: border-box;
   }
   .de-footer__copyright {
     font-size: 0.76rem;
