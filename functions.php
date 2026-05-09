@@ -486,6 +486,19 @@ remove_action( 'kadence_header', 'kadence_display_header' );
 add_filter( 'kadence_show_header', '__return_false' );
 
 
+// ─── Properties page: hide title and remove gap above IDX widget ─────────────
+
+add_action( 'wp_head', function () {
+	if ( is_page( 'properties' ) ) {
+		echo '<style>
+.entry-title { display: none !important; }
+.entry-content { padding-top: 0 !important; margin-top: 0 !important; }
+.site-main { padding-top: 0 !important; margin-top: 0 !important; }
+</style>';
+	}
+} );
+
+
 // ─── Security hardening ───────────────────────────────────────────────────────
 
 remove_action( 'wp_head', 'wp_generator' );
