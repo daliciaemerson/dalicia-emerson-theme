@@ -142,13 +142,13 @@ get_header();
 				     alt="Dalicia Emerson, Northwest Arkansas REALTOR®"
 				     class="de-agent-card__photo"
 				     width="240" height="300" loading="lazy">
-				<h3 class="de-agent-card__name"><?php echo esc_html( DE_AGENT_NAME ); ?></h3>
-				<p class="de-agent-card__brokerage"><?php echo esc_html( DE_BROKERAGE ); ?></p>
-				<p class="de-agent-card__note">Global Luxury Certified &bull; License SA00088247</p>
-				<a href="tel:<?php echo esc_attr( DE_PHONE ); ?>" class="de-btn de-btn--primary de-btn--full">
+				<h3 class="de-agent-card__name" style="color:#ffffff;"><?php echo esc_html( DE_AGENT_NAME ); ?></h3>
+				<p class="de-agent-card__brokerage" style="color:rgba(255,255,255,0.75);"><?php echo esc_html( DE_BROKERAGE ); ?></p>
+				<p class="de-agent-card__note" style="color:var(--de-gold);">Global Luxury Certified &bull; License SA00088247</p>
+				<a href="tel:<?php echo esc_attr( DE_PHONE ); ?>" class="de-btn de-btn--primary de-btn--full" style="color:#ffffff;">
 					<?php echo esc_html( DE_PHONE_DISPLAY ); ?>
 				</a>
-				<a href="/contact-dalicia-emerson/" class="de-btn de-btn--outline de-btn--full" style="margin-top:10px;">
+				<a href="/contact-dalicia-emerson/" style="display:block; margin-top:12px; text-align:center; color:var(--de-gold); font-weight:600; font-size:0.88rem; letter-spacing:0.06em; text-transform:uppercase; text-decoration:none;">
 					Send a Message
 				</a>
 			</div>
