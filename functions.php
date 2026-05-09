@@ -480,6 +480,12 @@ $slug = get_post_field( 'post_name', get_the_ID() );
 } );
 
 
+// ─── Remove Kadence built-in header (header.php overrides it entirely) ────────
+
+remove_action( 'kadence_header', 'kadence_display_header' );
+add_filter( 'kadence_show_header', '__return_false' );
+
+
 // ─── Security hardening ───────────────────────────────────────────────────────
 
 remove_action( 'wp_head', 'wp_generator' );
