@@ -1944,3 +1944,327 @@ body.home .entry-content,
 @media (max-width: 480px) {
   .de-stat-callouts { grid-template-columns: 1fr; }
 }
+
+
+/* ══════════════════════════════════════════════════════════════════════
+   TEXT VISIBILITY FIX — ALL TEMPLATES
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* ── Section titles (home.php) ──────────────────────────────────────── */
+.de-section-title {
+  font-family: var(--de-font-serif);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--de-navy);
+  line-height: 1.2;
+  margin-bottom: 32px;
+}
+.de-social-proof .de-section-title,
+.de-cta-section .de-section-title {
+  color: var(--de-white);
+}
+
+/* ── Testimonials on navy background ────────────────────────────────── */
+.de-testimonial { margin-bottom: 32px; }
+.de-testimonial__quote {
+  font-family: var(--de-font-serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+.de-testimonial__cite {
+  font-family: var(--de-font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--de-gold);
+  letter-spacing: 0.06em;
+}
+
+/* ── Agent card: fix white text on white body background ─────────────── */
+.de-agent-card__body .de-agent-card__name { color: var(--de-navy); }
+.de-agent-card__brokerage {
+  font-family: var(--de-font-sans);
+  font-size: 0.82rem;
+  color: var(--de-text-muted);
+  margin-bottom: 14px;
+}
+.de-agent-card__note {
+  font-family: var(--de-font-sans);
+  font-size: 0.78rem;
+  color: var(--de-gray-mid);
+  margin-bottom: 14px;
+}
+
+/* ── Hero base: title + subtitle (luxury, corporate heroes) ─────────── */
+.de-hero__title {
+  font-family: var(--de-font-serif);
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  font-weight: 700;
+  color: var(--de-white);
+  line-height: 1.12;
+  margin-bottom: 16px;
+}
+.de-hero__title span { display: block; color: var(--de-gold-light); }
+.de-hero__subtitle {
+  font-family: var(--de-font-sans);
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.65;
+  margin-bottom: 32px;
+}
+
+/* ── Hero variants: luxury + corporate ──────────────────────────────── */
+.de-hero--luxury,
+.de-hero--corporate {
+  min-height: 60vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 56px;
+  background-color: var(--de-navy-deep);
+  overflow: hidden;
+}
+.de-hero--luxury .de-container,
+.de-hero--corporate .de-container {
+  position: relative;
+  z-index: 2;
+  padding-top: var(--de-header-h);
+}
+.de-hero__bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+.de-hero__overlay--dark {
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 30, 53, 0.65);
+  z-index: 1;
+}
+
+/* ── Missing button variants ────────────────────────────────────────── */
+.de-btn--gold {
+  background: var(--de-gold);
+  color: var(--de-white);
+  border: 2px solid var(--de-gold);
+}
+.de-btn--gold:hover { background: var(--de-gold-light); border-color: var(--de-gold-light); color: var(--de-white); }
+.de-btn--outline-white {
+  background: transparent;
+  color: var(--de-white);
+  border: 2px solid rgba(255, 255, 255, 0.72);
+}
+.de-btn--outline-white:hover { background: rgba(255,255,255,0.12); border-color: var(--de-white); color: var(--de-white); }
+.de-btn--large { padding: 16px 40px; font-size: 1rem; }
+
+/* ── Luxury: credentials bar ────────────────────────────────────────── */
+.de-credentials-bar { background: var(--de-gold); padding: 18px 40px; }
+.de-credentials-bar__inner {
+  max-width: var(--de-max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+.de-credential {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--de-font-sans);
+  font-size: 0.80rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--de-white);
+  white-space: nowrap;
+}
+.de-credential__icon { font-size: 1rem; }
+
+/* ── Luxury: sections and grids ─────────────────────────────────────── */
+.de-section { padding: 64px 0; }
+.de-section h2 {
+  font-family: var(--de-font-serif);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: var(--de-navy);
+  margin-bottom: 16px;
+}
+.de-section p {
+  font-family: var(--de-font-sans);
+  font-size: 0.95rem;
+  color: var(--de-text-muted);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.de-section--alt { background: var(--de-gray-light); }
+.de-section--luxury-dark { background: var(--de-navy); }
+.de-section--luxury-dark h2 { color: var(--de-white); }
+.de-section__intro {
+  font-family: var(--de-font-sans);
+  font-size: 1rem;
+  color: var(--de-text-muted);
+  line-height: 1.65;
+  max-width: 640px;
+  margin-bottom: 36px;
+}
+.de-section--luxury-dark .de-section__intro,
+.de-text-light { color: rgba(255, 255, 255, 0.80); }
+.de-feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.de-feature-grid__text p { color: var(--de-text-muted); line-height: 1.7; margin-bottom: 14px; }
+.de-feature-list { list-style: none; padding: 0; margin: 0; }
+.de-feature-list li {
+  padding: 8px 0 8px 20px;
+  position: relative;
+  font-family: var(--de-font-sans);
+  font-size: 0.92rem;
+  color: var(--de-text-muted);
+  border-bottom: 1px solid var(--de-gray-border);
+}
+.de-feature-list li::before { content: '✓'; position: absolute; left: 0; color: var(--de-gold); font-weight: 700; }
+.de-city-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+}
+.de-city-card__desc { font-size: 0.88rem; color: var(--de-text-muted); line-height: 1.6; margin-bottom: 10px; }
+.de-city-card__link { font-size: 0.82rem; font-weight: 700; color: var(--de-gold); }
+.de-city-card__link:hover { color: var(--de-gold-light); }
+
+/* ── Walmart: employer / timeline / relocation grids ────────────────── */
+.de-walmart-page__layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 48px;
+  padding: 64px 40px;
+  max-width: var(--de-max-width);
+  margin: 0 auto;
+}
+.de-employer-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 24px; }
+.de-employer-card {
+  background: var(--de-gray-light);
+  border-radius: var(--de-radius-lg);
+  padding: 24px;
+  border-top: 3px solid var(--de-gold);
+}
+.de-employer-card h3 { font-family: var(--de-font-serif); font-size: 1.1rem; font-weight: 700; color: var(--de-navy); margin-bottom: 10px; }
+.de-employer-card p { font-size: 0.88rem; color: var(--de-text-muted); line-height: 1.6; margin: 0; }
+.de-timeline { list-style: none; padding: 0; margin: 24px 0 0; }
+.de-timeline__step { display: flex; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--de-gray-border); }
+.de-timeline__step:last-child { border-bottom: none; }
+.de-timeline__marker {
+  flex-shrink: 0;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--de-gold);
+  color: var(--de-white);
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.de-timeline__step h3 { font-family: var(--de-font-serif); font-size: 1rem; font-weight: 700; color: var(--de-navy); margin-bottom: 6px; }
+.de-timeline__step p { font-size: 0.88rem; color: var(--de-text-muted); line-height: 1.6; margin: 0; }
+.de-relocation-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 24px; }
+.de-relocation-option { background: var(--de-white); border: 1px solid var(--de-gray-border); border-radius: var(--de-radius-lg); padding: 20px 24px; }
+.de-relocation-option h3 { font-family: var(--de-font-serif); font-size: 1.05rem; font-weight: 700; color: var(--de-navy); margin-bottom: 10px; }
+.de-relocation-option p { font-size: 0.85rem; color: var(--de-text-muted); margin-bottom: 6px; line-height: 1.5; }
+.de-trust-item__number { font-family: var(--de-font-serif); font-size: 1.5rem; font-weight: 700; color: var(--de-gold-light); display: block; }
+.de-trust-item__label { font-size: 0.78rem; color: rgba(255,255,255,0.75); display: block; }
+
+/* ── City page: stats bar ───────────────────────────────────────────── */
+.de-stats-bar { background: var(--de-navy); padding: 24px 0; }
+.de-stats-bar__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; }
+.de-stat { display: flex; flex-direction: column; align-items: center; padding: 12px 32px; position: relative; }
+.de-stat + .de-stat::before { content: ''; position: absolute; left: 0; top: 20%; bottom: 20%; width: 1px; background: rgba(255,255,255,0.18); }
+.de-stat__value { font-family: var(--de-font-serif); font-size: 1.8rem; font-weight: 700; color: var(--de-gold-light); line-height: 1; margin-bottom: 4px; }
+.de-stat__label { font-family: var(--de-font-sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: rgba(255,255,255,0.62); }
+
+/* ── City page: layout + content ────────────────────────────────────── */
+.de-city-page__layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 48px;
+  padding: 56px 40px;
+  max-width: var(--de-max-width);
+  margin: 0 auto;
+}
+.de-city-page__content h2 { font-family: var(--de-font-serif); font-size: 1.5rem; font-weight: 700; color: var(--de-navy); margin-bottom: 12px; }
+.de-city-page__content p { font-family: var(--de-font-sans); font-size: 0.95rem; color: var(--de-text-muted); line-height: 1.7; margin-bottom: 14px; }
+.de-sidebar-form { background: var(--de-white); border: 1px solid var(--de-gray-border); border-radius: var(--de-radius-lg); padding: 24px; margin-top: 24px; }
+.de-sidebar-form h3 { font-family: var(--de-font-serif); font-size: 1.1rem; font-weight: 700; color: var(--de-navy); margin-bottom: 16px; }
+
+/* ── Contact page: page hero ────────────────────────────────────────── */
+.de-page-hero--compact { background: var(--de-navy); padding: 80px 0 56px; }
+.de-page-hero--compact h1 { font-family: var(--de-font-serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--de-white); margin-bottom: 16px; }
+.de-page-hero__subtitle { font-family: var(--de-font-sans); font-size: 1.05rem; color: rgba(255,255,255,0.80); line-height: 1.65; }
+
+/* ── Contact page: layout + cards ───────────────────────────────────── */
+.de-contact-page__layout {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 56px;
+  padding: 64px 40px;
+  max-width: var(--de-max-width);
+  margin: 0 auto;
+}
+.de-contact-page__form-col h2 { font-family: var(--de-font-serif); font-size: 1.6rem; font-weight: 700; color: var(--de-navy); margin-bottom: 24px; }
+.de-form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.de-form__disclaimer { font-family: var(--de-font-sans); font-size: 0.78rem; color: var(--de-gray-mid); margin-top: 12px; line-height: 1.5; }
+.de-agent-bio-card { border: 1px solid var(--de-gray-border); border-radius: var(--de-radius-lg); overflow: hidden; margin-bottom: 24px; }
+.de-agent-bio-card__photo { width: 100%; height: 280px; object-fit: cover; object-position: top; display: block; }
+.de-agent-bio-card__body { padding: 24px; }
+.de-agent-bio-card__name { font-family: var(--de-font-serif); font-size: 1.3rem; font-weight: 700; color: var(--de-navy); margin-bottom: 4px; }
+.de-agent-bio-card__title { font-family: var(--de-font-sans); font-size: 0.80rem; font-weight: 600; color: var(--de-gold); margin-bottom: 4px; }
+.de-agent-bio-card__brokerage { font-family: var(--de-font-sans); font-size: 0.82rem; color: var(--de-text-muted); margin-bottom: 16px; }
+.de-agent-bio-card__contact { list-style: none; padding: 0; margin: 0 0 12px; }
+.de-agent-bio-card__contact-link { font-family: var(--de-font-sans); font-size: 0.95rem; font-weight: 600; color: var(--de-navy); display: block; padding: 4px 0; transition: color var(--de-transition); }
+.de-agent-bio-card__contact-link:hover { color: var(--de-gold); }
+.de-agent-bio-card__license { font-size: 0.74rem; color: var(--de-gray-mid); }
+.de-contact-expectations, .de-service-area { background: var(--de-gray-light); border-radius: var(--de-radius-lg); padding: 20px 24px; margin-bottom: 16px; }
+.de-contact-expectations h3, .de-service-area h3 { font-family: var(--de-font-serif); font-size: 1rem; font-weight: 700; color: var(--de-navy); margin-bottom: 12px; }
+.de-contact-expectations ul { list-style: none; padding: 0; margin: 0; }
+.de-contact-expectations li { font-family: var(--de-font-sans); font-size: 0.85rem; color: var(--de-text-muted); padding: 6px 0; border-bottom: 1px solid var(--de-gray-border); line-height: 1.5; }
+.de-contact-expectations li:last-child { border-bottom: none; }
+.de-service-area p { font-family: var(--de-font-sans); font-size: 0.85rem; color: var(--de-text-muted); line-height: 1.6; margin: 0; }
+
+/* ── CTA section contact links ──────────────────────────────────────── */
+.de-cta-section .de-contact-list a,
+.de-cta-section .de-contact-list__link { color: var(--de-gold-light); font-weight: 700; font-size: 1rem; transition: color var(--de-transition); }
+.de-cta-section .de-contact-list a:hover,
+.de-cta-section .de-contact-list__link:hover { color: var(--de-white); }
+
+/* ── Responsive ─────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .de-walmart-page__layout,
+  .de-city-page__layout,
+  .de-contact-page__layout { grid-template-columns: 1fr; }
+  .de-feature-grid { grid-template-columns: 1fr; gap: 32px; }
+  .de-credentials-bar { padding: 16px 24px; }
+  .de-credentials-bar__inner { gap: 16px; }
+}
+@media (max-width: 768px) {
+  .de-employer-grid,
+  .de-relocation-grid,
+  .de-city-cards { grid-template-columns: 1fr; }
+  .de-walmart-page__layout,
+  .de-city-page__layout,
+  .de-contact-page__layout { padding: 40px 24px; }
+  .de-page-hero--compact { padding: 60px 0 36px; }
+  .de-form__row { grid-template-columns: 1fr; }
+}
