@@ -40,13 +40,7 @@
           <?php endif; ?>
         </a>
 
-        <p class="de-footer__bio">
-          Dalicia Emerson is a Coldwell Banker Global&nbsp;Luxury&reg;&ndash;certified
-          REALTOR&reg; serving buyers, sellers, and relocating families throughout
-          Northwest Arkansas. Whether you&rsquo;re moving for Walmart, searching for
-          a luxury estate, or discovering NWA for the first time &mdash; she knows
-          this market at ground level.
-        </p>
+        <p class="de-footer__bio">NWA Luxury REALTOR&reg; | Coldwell Banker</p>
 
         <p class="de-footer__license">
           AR License #<?php echo esc_html( DE_LICENSE ); ?>
@@ -280,7 +274,7 @@
   }
 
   /* Main 3-column area */
-  .de-footer__main { padding: 72px 0 56px; }
+  .de-footer__main { padding: 48px 0 36px; }
 
   .de-footer__inner {
     max-width: 1200px;
@@ -288,7 +282,7 @@
     padding: 0 40px;
     display: grid;
     grid-template-columns: 1.4fr 1fr 1fr;
-    gap: 56px;
+    gap: 40px;
   }
 
   /* Column headings */
@@ -352,9 +346,8 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+    columns: 2;
+    column-gap: 16px;
   }
   .de-footer__link {
     font-size: 0.875rem;
@@ -419,7 +412,7 @@
   /* Bottom bar */
   .de-footer__bottom {
     border-top: 1px solid rgba(255,255,255,0.08);
-    padding: 28px 0;
+    padding: 20px 0;
   }
   .de-footer__bottom-inner {
     max-width: 1200px;
