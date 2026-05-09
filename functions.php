@@ -499,7 +499,7 @@ $de_is_idx_page = static function () {
 
 // Kadence-native title suppression — prevents title rendering entirely.
 add_filter( 'kadence_show_title', function ( $show ) use ( $de_is_idx_page ) {
-	if ( $de_is_idx_page() || is_page( 'about' ) ) {
+	if ( $de_is_idx_page() || is_page( 'about-dalicia-emerson' ) ) {
 		return false;
 	}
 	return $show;
@@ -507,7 +507,7 @@ add_filter( 'kadence_show_title', function ( $show ) use ( $de_is_idx_page ) {
 
 // CSS fallback for both pages.
 add_action( 'wp_head', function () use ( $de_is_idx_page ) {
-	if ( ! $de_is_idx_page() && ! is_page( 'about' ) ) {
+	if ( ! $de_is_idx_page() && ! is_page( 'about-dalicia-emerson' ) ) {
 		return;
 	}
 	echo '<style id="de-page-fix">
