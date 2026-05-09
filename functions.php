@@ -512,6 +512,7 @@ add_action( 'wp_head', function () use ( $de_is_idx_page ) {
 	}
 	echo '<style id="de-page-fix">
 .entry-title { display: none !important; }
+.entry-header { display: none !important; }
 .entry-content,
 .site-main,
 .content-area {
