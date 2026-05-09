@@ -1,169 +1,88 @@
-# Dalicia Emerson — WordPress Build Notes
+# Dalicia Emerson — Theme Development Notes
 
-## Project Overview
-- **Site:** daliciaemerson.wpengine.com (temp URL until DNS flip)
-- **Final domain:** daliciaemerson.com (currently pointing to Moxi/CB)
-- **Repo:** github.com/daliciaemerson/dalicia-emerson-theme
-- **Platform:** WordPress 6.9.4 + Kadence parent theme + custom child theme
-- **Host:** WP Engine Essential plan ($30/mo)
-- **Purpose:** Replace MoxiWorks/Coldwell Banker platform with owned WordPress site
+**Repo:** daliciaemerson/dalicia-emerson-theme | **Branch:** main
+**Stack:** WordPress Kadence child theme | **Host:** WP Engine
+**Live URL:** daliciaemerson.wpengine.com
+**Real domain:** daliciaemerson.com (not yet pointed to WP Engine)
 
 ---
 
-## Agent Info
-| Field | Value |
-|---|---|
-| Name | Dalicia Emerson |
-| Brokerage | Coldwell Banker Harris McHaney & Faucette |
-| License | SA00088247 AR |
-| Phone | (479) 422-3060 |
-| Email | daliciaemerson@coldwellbankerhmf.com |
-| Headshot URL | https://daliciaemerson.wpenginepowered.com/wp-content/uploads/2026/04/BB6FBCB7-6C67-42D9-A3EE-C7151EB55A70_1_201_a.jpeg |
+## ARCHITECTURE
+- `style.css` — single source of truth for all CSS
+- Additional CSS in WordPress Customizer is EMPTY — do not add CSS there
+- `header.php` — fully custom, overrides Kadence via remove_action/add_filter in functions.php
+- `footer.php` — 4-column layout, no inline styles (all CSS in style.css)
+- `page-templates/` — 7 templates: home, city-page, relocation-hub, luxury-homes, walmart-relocation, contact, plus home.php
 
 ---
 
-## Architecture Decisions
-
-### Why a Kadence child theme?
-Kadence parent theme cannot be modified directly — updates wipe all changes. The child theme inherits all Kadence functionality while allowing custom templates and CSS.
-
-### Why Additional CSS instead of style.css?
-WordPress Theme File Editor has a character limit that cuts off our 1800+ line style.css. **Appearance → Customize → Additional CSS** loads reliably and overrides Kadence styles correctly. The `style.css` file contains only the required theme header comment — the `Template: kadence` line is what makes it a child theme. **Do not add CSS to style.css.**
-
-### Why GitHub Actions wraps files before deploy?
-WP Engine's git remote deploys to the WordPress root by default. The workflow copies theme files into `wp-content/themes/kadence-child/` inside a temp directory before pushing, so files land in the correct location.
-
-### Brand
-- **Colors:** Navy `#1a2b4a`, Gold `#b8924a`
-- **Fonts:** Playfair Display (serif), Inter (sans)
-- **CSS prefix:** All classes prefixed with `de-`
+## HEADER
+- Always white background (transparent removed)
+- Height: 90px
+- Nav font: 0.92rem
+- Walkers: DE_Primary_Nav_Walker, DE_Mobile_Primary_Walker, DE_Dropdown_Walker, DE_Mobile_Cities_Walker
+- Cities dropdown from WP nav menu — Cities Dropdown menu location
 
 ---
 
-## File Structure
+## FOOTER (4 columns)
+- Col 1: Identity — name, bio, license
+- Col 2: Quick Links in 2-col grid
+- Col 3: NWA Cities in 2-col grid with correct slugs
+- Col 4: Contact — name, brokerage, phone, email, gold CTA
+- Bottom bar: copyright left, badges right
+- Responsive: 2-col at ≤1100px, 1-col at ≤640px
 
+---
+
+## HOMEPAGE (home.php)
+- Hero: full-bleed image, gold CTA + white outline CTA
+- Trust bar: 4 credentials
+- IDX search shortcode
+- City grid: 8 cards with .de-city-card__bg div
+- Social proof: 2 testimonials + agent column with explicit inline colors
+
+---
+
+## CITY PAGES (city-page.php)
+- Hero: featured image via inline background-image on section tag
+- Stats bar: population, median price, state
+- Custom fields: _de_city_name, _de_city_population, _de_city_median_price
+- 2-col layout: content + sidebar with agent card + form
+- Template assigned via template_include filter in functions.php
+
+---
+
+## KEY CSS RULES
+- Never use background shorthand on .de-hero--city (resets background-image)
+- .de-btn--full uses display:flex not inline-flex
+- Footer grid on .de-footer__inner not .de-footer__main
+
+---
+
+## WHAT STILL NEEDS DOING
+1. Clear WP Engine cache after every push
+2. Upload photos for remaining 7 city pages
+3. Point daliciaemerson.com DNS to WP Engine
+4. Configure RankMath meta titles on all pages
+5. Submit sitemap to Google Search Console
+6. Showcase IDX MLS approval follow-up
+7. Fix remaining page templates (luxury, walmart, contact, about)
+8. Add real testimonials from Dalicia
+9. Blog setup — first 3 posts
+10. Social media automation (Phase 2)
+
+---
+
+## CONSTANTS (functions.php)
 ```
-kadence-child/
-├── style.css                  ← theme header ONLY — do not add CSS here
-├── functions.php              ← agent constants, schema, menus, enqueue, security
-├── page-templates/
-│   ├── home.php               ← Homepage template
-│   ├── relocation-hub.php
-│   ├── city-page.php          ← reused by all 8 city pages
-│   ├── luxury-homes.php
-│   ├── walmart-relocation.php
-│   └── contact.php
-├── content/
-│   └── relocation-hub.php     ← 1700-word article content
-├── template-parts/
-│   └── lead-form.php
-├── city-data.sql              ← run in phpMyAdmin to populate city meta
-└── .github/workflows/
-    └── deploy.yml             ← auto-deploy to WP Engine on push to main
+DE_AGENT_NAME, DE_BROKERAGE, DE_PHONE, DE_PHONE_DISPLAY,
+DE_EMAIL, DE_LICENSE, DE_REGION
 ```
 
 ---
 
-## WordPress Setup
-
-### Plugins
-| Plugin | Status |
-|---|---|
-| RankMath SEO | Installed |
-| Showcase IDX | Installed + connected, MLS paperwork pending |
-| WPForms Lite | Installed |
-| Kadence Blocks | Installed |
-| Genesis Blocks | Deleted |
-| Akismet | Deleted |
-| Hello Dolly | Deleted |
-
----
-
-## Pages (15 total)
-
-| # | Page Title | Template | Status |
-|---|---|---|---|
-| 1 | Home | Homepage | ✅ Set as static homepage |
-| 2 | Moving to Northwest Arkansas | Relocation Hub | ✅ |
-| 3 | Bentonville AR Real Estate | City Page | ✅ Loading correctly |
-| 4 | Rogers AR Real Estate | City Page | ✅ Loading correctly |
-| 5 | Fayetteville AR Real Estate | City Page | ✅ Loading correctly |
-| 6 | Springdale AR Real Estate | City Page | ✅ Loading correctly |
-| 7 | Bella Vista AR Real Estate | City Page | ✅ Loading correctly |
-| 8 | Lowell AR Real Estate | City Page | ✅ Loading correctly |
-| 9 | Siloam Springs AR Real Estate | City Page | ✅ Loading correctly |
-| 10 | Eureka Springs AR Real Estate | City Page | ✅ Loading correctly |
-| 11 | Luxury Homes Northwest Arkansas | Luxury Homes | ✅ |
-| 12 | Walmart Supplier Relocation NWA | Walmart Relocation | ✅ |
-| 13 | Contact Dalicia Emerson | Contact | ✅ |
-| 14 | About Dalicia Emerson | Default | ✅ |
-| 15 | Privacy Policy | Auto-generated | ✅ |
-
----
-
-## What's Done vs Still Needed
-
-### ✅ Completed
-- GitHub Actions auto-deploy (push to main → WP Engine)
-- Hero images: relocation-hub, home, city-page (featured image)
-- home.php Homepage template built and deployed
-- Homepage assigned in WP Admin + set as static front page
-- city-data.sql run — all 8 cities have name, population, median price
-- All 15 pages created and published
-- Showcase IDX connected
-- RankMath, WPForms, Kadence Blocks installed
-- Additional CSS: `.de-hero--home`, `.de-hero__actions`
-- **Permalink structure fixed** — was set to Plain (?p=123), changed to Post name; this was root cause of all city pages showing homepage content
-- **All 8 city pages loading correctly** — city name, population, median price, agent card with headshot, contact form, footer all working
-- **City hero text visibility fixed** — CSS in Customize → Additional CSS targeting `.de-hero--city` z-index and `.de-hero__title` / `.de-hero__subtitle` colors
-- debug error_log line removed from functions.php
-
-### Phase 1 — Finish Build
-- [ ] Upload city photos as featured images on each city page
-- [ ] Add unique written content to all 8 city pages
-- [ ] Configure nav menu Cities dropdown
-- [ ] Wire up WPForms contact form
-- [ ] Upload Dalicia's logo to header
-
-### Phase 2 — Domain & SEO
-- [ ] Point daliciaemerson.com DNS to WP Engine
-- [ ] Configure RankMath meta titles/descriptions on all 15 pages
-- [ ] Submit sitemap to Google Search Console
-- [ ] Set up Google Analytics GA4
-
-### Phase 3 — Content & Automation
-- [ ] Write unique content for all 8 city pages
-- [ ] Write Walmart relocation page content
-- [ ] Write luxury homes page content
-- [ ] Write about page content
-- [ ] Build blog with first 3 posts
-- [ ] Social automation with Meta Graph API
-
-### Phase 4 — IDX
-- [ ] Complete NWAR MLS approval
-- [ ] Replace demo listings with real listings
-- [ ] Configure Showcase IDX hotsheets
-- [ ] Add IDX search to homepage
-
----
-
-## Domain Flip Plan
-**Current:** daliciaemerson.com → Moxi/CB
-**Target:** daliciaemerson.com → WP Engine
-
-Steps:
-1. Log into GoDaddy
-2. Change CNAME to `daliciaemerson.wpengine.com` — OR — change A record to `136.111.23.65`
-3. Add domain in WP Engine dashboard
-4. SSL auto-provisions (allow up to 24hrs)
-5. Old Moxi site goes offline
-6. Set up 301 redirects for all old Moxi URLs
-
----
-
-## Deploy Workflow Notes
-- **Trigger:** push to `main` branch
-- **Secret:** `WPE_SSHG_KEY_PRIVATE` in GitHub repo secrets
-- **WP Engine remote:** `git@git.wpengine.com:production/daliciaemerson.git`
-- **Deploy path:** `wp-content/themes/kadence-child/`
-- **Known issue:** `actions/checkout@v4` Node.js 20 deprecation warning — harmless until Sept 2026
+## DEPLOYMENT
+- GitHub Actions auto-deploys on every push to main
+- Clear WP Engine cache after each deploy
+- Version bump style.css when making CSS changes (1.2.0 current)
