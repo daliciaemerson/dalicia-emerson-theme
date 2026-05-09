@@ -40,7 +40,7 @@
           <?php endif; ?>
         </a>
 
-        <p class="de-footer__bio">NWA Luxury REALTOR&reg; | Coldwell Banker</p>
+        <p class="de-footer__bio">NWA Luxury REALTOR&reg; with Coldwell Banker. Specializing in relocation and luxury homes throughout Northwest Arkansas.</p>
 
         <p class="de-footer__license">
           AR License #<?php echo esc_html( DE_LICENSE ); ?>
@@ -87,14 +87,14 @@
         <ul class="de-footer__links de-footer__links--cities" role="list">
           <?php
           $footer_cities = [
-            'Bentonville'    => '/bentonville-ar-homes-for-sale/',
-            'Rogers'         => '/rogers-ar-homes-for-sale/',
-            'Fayetteville'   => '/fayetteville-ar-homes-for-sale/',
-            'Springdale'     => '/springdale-ar-homes-for-sale/',
-            'Bella Vista'    => '/bella-vista-ar-homes-for-sale/',
-            'Lowell'         => '/lowell-ar-homes-for-sale/',
-            'Siloam Springs' => '/siloam-springs-ar-homes-for-sale/',
-            'Eureka Springs' => '/eureka-springs-ar-homes-for-sale/',
+            'Bentonville'    => '/bentonville-ar-real-estate/',
+            'Rogers'         => '/rogers-ar-real-estate/',
+            'Fayetteville'   => '/fayetteville-ar-real-estate/',
+            'Springdale'     => '/springdale-ar-real-estate/',
+            'Bella Vista'    => '/bella-vista-ar-real-estate/',
+            'Lowell'         => '/lowell-ar-real-estate/',
+            'Siloam Springs' => '/siloam-springs-ar-real-estate/',
+            'Eureka Springs' => '/eureka-springs-ar-real-estate/',
           ];
           foreach ( $footer_cities as $city => $slug ) :
           ?>
