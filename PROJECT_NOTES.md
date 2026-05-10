@@ -7,6 +7,24 @@
 
 ---
 
+## Session 3 — May 10, 2026
+
+### COMPLETED THIS SESSION
+- About page content added via WP-CLI (post ID 20, slug: about-dalicia-emerson)
+- Block editor content: H1, 5 paragraphs, credentials list, phone CTA
+- Content lives in WordPress database — no theme file changes needed
+- Default Kadence template confirmed correct for About page (no custom template)
+- Title suppression via `is_page('about-dalicia-emerson')` already in place from Session 2
+
+### NEXT SESSION PRIORITIES
+1. Upload hero images for all 8 city pages
+2. Audit all 8 city pages (screenshots)
+3. Fix broken image on Luxury Homes page (CB Global Luxury section)
+4. Follow up on broker IDX signature
+5. Write city page SEO content for all 8 cities
+
+---
+
 ## Session 2 — May 9, 2026
 
 ### COMPLETED THIS SESSION
@@ -140,7 +158,7 @@
 ## WHAT STILL NEEDS DOING
 1. Clear WP Engine cache after every push
 2. Upload hero images for all 8 city pages
-3. Write About page content in WordPress block editor
+3. ~~Write About page content in WordPress block editor~~ ✅ Done May 10
 4. Fix broken image on Luxury Homes page (CB Global Luxury section)
 5. Follow up on broker IDX signature (Monday)
 6. Write city page SEO content for all 8 cities
