@@ -51,14 +51,12 @@
       <!-- Column 4: Contact ──────────────────────────────────────────── -->
       <div class="de-footer__col de-footer__col--contact">
         <h3 class="de-footer__col-heading">Contact</h3>
+
+        <!-- Personal ─────────────────────────────────────────────────── -->
         <address class="de-footer__address" itemscope itemtype="https://schema.org/Person">
           <meta itemprop="name" content="<?php echo esc_attr( DE_AGENT_NAME ); ?>">
           <p class="de-footer__contact-name" itemprop="name"><?php echo esc_html( DE_AGENT_NAME ); ?></p>
-          <p class="de-footer__contact-brokerage" itemprop="worksFor"><?php echo esc_html( DE_BROKERAGE ); ?></p>
-          <p class="de-footer__contact-office-address" itemprop="address">
-            3589 N College Ave<br>
-            Fayetteville, AR 72703
-          </p>
+          <p class="de-footer__contact-title">REALTOR&reg; &middot; Coldwell Banker Global Luxury&reg;</p>
           <p class="de-footer__contact-row">
             <a href="tel:<?php echo esc_attr( DE_PHONE ); ?>"
                class="de-footer__contact-link de-footer__contact-link--phone"
@@ -78,6 +76,26 @@
         <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="de-footer__cta">
           Schedule a Consultation
         </a>
+
+        <!-- Office ───────────────────────────────────────────────────── -->
+        <div class="de-footer__office-section" itemscope itemtype="https://schema.org/RealEstateAgent">
+          <p class="de-footer__office-label">Office</p>
+          <address class="de-footer__address">
+            <p class="de-footer__contact-brokerage" itemprop="name"><?php echo esc_html( DE_BROKERAGE ); ?></p>
+            <p class="de-footer__contact-office-address" itemprop="address">
+              3589 N College Ave<br>
+              Fayetteville, AR 72703
+            </p>
+            <p class="de-footer__contact-row">
+              <a href="tel:+14795210220"
+                 class="de-footer__contact-link"
+                 itemprop="telephone">
+                (479) 521-0220
+              </a>
+            </p>
+          </address>
+        </div>
+
       </div>
 
     </div><!-- /.de-footer__inner -->
