@@ -535,7 +535,7 @@
         <?php endif; ?>
       </a>
       <a
-        href="https://www.coldwellbankerhmf.com"
+        href="https://coldwellbankernwa.com"
         class="de-header__brokerage"
         target="_blank"
         rel="noopener noreferrer"
