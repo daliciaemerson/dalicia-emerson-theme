@@ -112,7 +112,7 @@
     /* Text fallback when logo images are not yet uploaded */
     .de-header__logo-text {
       font-family: var(--de-font-serif);
-      font-size: 1.2rem;
+      font-size: 0.9rem;
       font-weight: 700;
       color: var(--de-black);
       white-space: nowrap;
@@ -120,6 +120,26 @@
       transition: color 0.3s;
     }
     .de-header--transparent:not(.de-header--scrolled) .de-header__logo-text {
+      color: var(--de-white);
+    }
+
+    /* AREC compliance: brokerage name beneath logo/agent name */
+    .de-header__brokerage {
+      display: block;
+      font-family: var(--de-font-sans);
+      font-size: 0.7rem;
+      color: #888;
+      letter-spacing: 0.05em;
+      margin-top: 2px;
+      white-space: nowrap;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .de-header__brokerage:hover { color: var(--de-gold); }
+    .de-header--transparent:not(.de-header--scrolled) .de-header__brokerage {
+      color: rgba(255,255,255,0.72);
+    }
+    .de-header--transparent:not(.de-header--scrolled) .de-header__brokerage:hover {
       color: var(--de-white);
     }
 
@@ -514,6 +534,13 @@
           <span class="de-header__logo-text"><?php echo esc_html( DE_AGENT_NAME ); ?></span>
         <?php endif; ?>
       </a>
+      <a
+        href="https://www.coldwellbankerhmf.com"
+        class="de-header__brokerage"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="<?php echo esc_attr( DE_BROKERAGE ); ?> — opens in new tab"
+      ><?php echo esc_html( DE_BROKERAGE ); ?></a>
     </div>
 
     <!-- ── Desktop Navigation ───────────────────────────────────────── -->
