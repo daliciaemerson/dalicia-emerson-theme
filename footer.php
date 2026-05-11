@@ -55,6 +55,10 @@
           <meta itemprop="name" content="<?php echo esc_attr( DE_AGENT_NAME ); ?>">
           <p class="de-footer__contact-name" itemprop="name"><?php echo esc_html( DE_AGENT_NAME ); ?></p>
           <p class="de-footer__contact-brokerage" itemprop="worksFor"><?php echo esc_html( DE_BROKERAGE ); ?></p>
+          <p class="de-footer__contact-office-address" itemprop="address">
+            3589 N College Ave<br>
+            Fayetteville, AR 72703
+          </p>
           <p class="de-footer__contact-row">
             <a href="tel:<?php echo esc_attr( DE_PHONE ); ?>"
                class="de-footer__contact-link de-footer__contact-link--phone"
