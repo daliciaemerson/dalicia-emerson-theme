@@ -56,7 +56,10 @@
         <address class="de-footer__address" itemscope itemtype="https://schema.org/Person">
           <meta itemprop="name" content="<?php echo esc_attr( DE_AGENT_NAME ); ?>">
           <p class="de-footer__contact-name" itemprop="name"><?php echo esc_html( DE_AGENT_NAME ); ?></p>
-          <p class="de-footer__contact-title">REALTOR&reg; &middot; Coldwell Banker Global Luxury&reg;</p>
+          <p class="de-footer__contact-title">
+            <span class="de-footer__credential">REALTOR&reg;</span>
+            <span class="de-footer__credential">Coldwell Banker Global Luxury&reg;</span>
+          </p>
           <p class="de-footer__contact-row">
             <a href="tel:<?php echo esc_attr( DE_PHONE ); ?>"
                class="de-footer__contact-link de-footer__contact-link--phone"
