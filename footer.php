@@ -86,13 +86,6 @@
               3589 N College Ave<br>
               Fayetteville, AR 72703
             </p>
-            <p class="de-footer__contact-row">
-              <a href="tel:+14795210220"
-                 class="de-footer__contact-link"
-                 itemprop="telephone">
-                (479) 521-0220
-              </a>
-            </p>
           </address>
         </div>
 
