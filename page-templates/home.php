@@ -66,55 +66,28 @@ get_header();
 		<div class="de-container">
 			<h2 id="cities-heading" class="de-section-title">Explore NWA Communities</h2>
 			<div class="de-cities__grid">
-
-				<a href="/bentonville-ar-real-estate/" class="de-city-card">
-					<div class="de-city-card__bg"></div>
-					<span class="de-city-card__name">Bentonville</span>
-					<span class="de-city-card__sub">Walmart HQ &bull; Crystal Bridges</span>
+				<?php
+				$de_cities = [
+					[ 'slug' => 'bentonville-ar-real-estate',   'name' => 'Bentonville',    'sub' => 'Walmart HQ &bull; Crystal Bridges' ],
+					[ 'slug' => 'rogers-ar-real-estate',        'name' => 'Rogers',         'sub' => 'Pinnacle Hills &bull; Lake Leatherwood' ],
+					[ 'slug' => 'fayetteville-ar-real-estate',  'name' => 'Fayetteville',   'sub' => 'U of A &bull; Dickson Street' ],
+					[ 'slug' => 'springdale-ar-real-estate',    'name' => 'Springdale',     'sub' => 'Tyson Foods HQ &bull; Arvest Ballpark' ],
+					[ 'slug' => 'bella-vista-ar-real-estate',   'name' => 'Bella Vista',    'sub' => 'Lakes &bull; Golf &bull; Trails' ],
+					[ 'slug' => 'lowell-ar-real-estate',        'name' => 'Lowell',         'sub' => 'J.B. Hunt HQ &bull; Growing Fast' ],
+					[ 'slug' => 'siloam-springs-ar-real-estate','name' => 'Siloam Springs', 'sub' => 'Illinois River &bull; John Brown Univ.' ],
+					[ 'slug' => 'eureka-springs-ar-real-estate','name' => 'Eureka Springs', 'sub' => 'Historic District &bull; Arts Scene' ],
+				];
+				foreach ( $de_cities as $de_city ) :
+					$de_page = get_page_by_path( $de_city['slug'] );
+					$de_img  = $de_page ? get_the_post_thumbnail_url( $de_page->ID, 'large' ) : '';
+					$de_bg   = $de_img ? ' style="background-image:url(' . esc_url( $de_img ) . ');"' : '';
+				?>
+				<a href="/<?php echo esc_attr( $de_city['slug'] ); ?>/" class="de-city-card">
+					<div class="de-city-card__bg"<?php echo $de_bg; ?>></div>
+					<span class="de-city-card__name"><?php echo esc_html( $de_city['name'] ); ?></span>
+					<span class="de-city-card__sub"><?php echo $de_city['sub']; ?></span>
 				</a>
-
-				<a href="/rogers-ar-real-estate/" class="de-city-card">
-					<div class="de-city-card__bg"></div>
-					<span class="de-city-card__name">Rogers</span>
-					<span class="de-city-card__sub">Pinnacle Hills &bull; Lake Leatherwood</span>
-				</a>
-
-				<a href="/fayetteville-ar-real-estate/" class="de-city-card">
-					<div class="de-city-card__bg"></div>
-					<span class="de-city-card__name">Fayetteville</span>
-					<span class="de-city-card__sub">U of A &bull; Dickson Street</span>
-				</a>
-
-				<a href="/springdale-ar-real-estate/" class="de-city-card">
-					<div class="de-city-card__bg"></div>
-					<span class="de-city-card__name">Springdale</span>
-					<span class="de-city-card__sub">Tyson Foods HQ &bull; Arvest Ballpark</span>
-				</a>
-
-				<a href="/bella-vista-ar-real-estate/" class="de-city-card">
-					<div class="de-city-card__bg"></div>
-					<span class="de-city-card__name">Bella Vista</span>
-					<span class="de-city-card__sub">Lakes &bull; Golf &bull; Trails</span>
-				</a>
-
-				<a href="/lowell-ar-real-estate/" class="de-city-card">
-					<div class="de-city-card__bg"></div>
-					<span class="de-city-card__name">Lowell</span>
-					<span class="de-city-card__sub">J.B. Hunt HQ &bull; Growing Fast</span>
-				</a>
-
-				<a href="/siloam-springs-ar-real-estate/" class="de-city-card">
-					<div class="de-city-card__bg"></div>
-					<span class="de-city-card__name">Siloam Springs</span>
-					<span class="de-city-card__sub">Illinois River &bull; John Brown Univ.</span>
-				</a>
-
-				<a href="/eureka-springs-ar-real-estate/" class="de-city-card">
-					<div class="de-city-card__bg"></div>
-					<span class="de-city-card__name">Eureka Springs</span>
-					<span class="de-city-card__sub">Historic District &bull; Arts Scene</span>
-				</a>
-
+				<?php endforeach; ?>
 			</div>
 		</div>
 	</section>
