@@ -57,7 +57,7 @@ get_header();
 	<section class="de-listings" aria-labelledby="featured-listings-heading">
 		<div class="de-container">
 			<h2 id="featured-listings-heading" class="de-section-title">Featured NWA Listings</h2>
-			<?php echo do_shortcode( '[showcaseidx_hotsheet]' ); ?>
+			<?php echo do_shortcode( '[showcaseidx_hotsheet name="Featured NWA Listings"]' ); ?>
 		</div>
 	</section>
 
