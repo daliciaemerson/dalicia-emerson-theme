@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      1.4.2
+Version:      1.4.5
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -1037,73 +1037,63 @@ body:has([class*="showcaseidx"]) .site-main {
 
 .de-city-card {
   position: relative;
-  border-radius: var(--de-radius-lg);
-  overflow: hidden;
-  aspect-ratio: 4 / 3;
-  background: var(--de-navy-deep);
-  text-decoration: none;
   display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 220px;
+  text-decoration: none;
+  background: var(--de-navy-deep);
 }
+.de-city-card:hover .de-city-card__bg { transform: scale(1.05); }
 
 .de-city-card__bg {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.55;
-  transition: opacity 0.35s ease, transform 0.45s ease;
+  transition: transform 0.45s ease;
 }
-.de-city-card:hover .de-city-card__bg { opacity: 0.38; transform: scale(1.05); }
 
 .de-city-card__bg::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
-  pointer-events: none;
-  z-index: 1;
-}
-
-.de-city-card__label {
-  position: absolute;
   inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding: 20px 18px;
-  background: linear-gradient(to top, rgba(26, 43, 74, 0.80) 0%, transparent 60%);
+  background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.15) 60%, transparent 100%);
 }
 
-.de-city-card__content,
-.de-city-card__name,
-.de-city-card__sub,
-.de-city-card__tags {
-  position: relative;
+.de-city-card__content {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
   z-index: 2;
 }
 
 .de-city-card__name {
+  display: block;
   font-family: var(--de-font-serif);
   font-size: 1.1rem;
   font-weight: 700;
-  color: #ffffff !important;
-  line-height: 1.2;
-  margin-bottom: 4px;
+  color: var(--de-gold);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   text-shadow: 0 1px 4px rgba(0,0,0,0.8);
 }
 
-.de-city-card__sub,
-.de-city-card__tags {
+.de-city-card__tags,
+.de-city-card__sub {
+  display: block;
   font-family: var(--de-font-sans);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-size: 0.62rem;
+  font-weight: 500;
+  color: var(--de-gold-light);
+  letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.85) !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 3px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }
 

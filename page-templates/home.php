@@ -84,8 +84,10 @@ get_header();
 				?>
 				<a href="/<?php echo esc_attr( $de_city['slug'] ); ?>/" class="de-city-card">
 					<div class="de-city-card__bg"<?php echo $de_bg; ?>></div>
-					<span class="de-city-card__name"><?php echo esc_html( $de_city['name'] ); ?></span>
-					<span class="de-city-card__sub"><?php echo $de_city['sub']; ?></span>
+					<div class="de-city-card__content">
+						<span class="de-city-card__name"><?php echo esc_html( $de_city['name'] ); ?></span>
+						<span class="de-city-card__tags"><?php echo $de_city['sub']; ?></span>
+					</div>
 				</a>
 				<?php endforeach; ?>
 			</div>
