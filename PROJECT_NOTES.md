@@ -7,6 +7,55 @@
 
 ---
 
+## Session 3 — May 11-14, 2026
+
+### COMPLETED THIS SESSION
+
+**IDX / MLS:**
+- Showcase IDX paid and active
+- NABOR Data Access Agreement fully executed 05/11/2026 — all parties signed (Dalicia, Doyle Yates broker, Constellation/Showcase IDX, ArkansasONE MLS)
+- Live CARMLS data feed activated
+- Hotsheet created: "Featured NWA Listings" showing on homepage gallery carousel
+- Shortcode fixed: showcaseidx_hotsheets → showcaseidx_hotsheet (singular)
+- IDX search default map set to NWA/Bentonville area
+- Property filters set: residential only, no land
+- Left side map view enabled
+
+**AREC Compliance:**
+- Brokerage name "Coldwell Banker Harris McHaney & Faucette" added to header on every page
+- Header brokerage name links to coldwellbankernwa.com
+- Footer reorganized: personal info + office section
+- Office address added to footer: 3589 N College Ave, Fayetteville AR 72703
+- REALTOR® and CB Global Luxury® split to two lines
+- Full compliance audit completed — site is compliant
+
+**Homepage:**
+- City cards fixed to pull featured images from each city page via get_the_post_thumbnail_url()
+- City card text moved to bottom of card
+- Gradient overlay added for text readability
+- City name gold (#d4a865), tags white
+- Text no longer wrapping — ellipsis on overflow
+
+**Footer:**
+- Quick Links and NWA Cities columns centered
+- Single vertical list layout fixed
+- Personal and Office sections separated cleanly
+
+### CURRENT style.css VERSION: 1.4.6
+
+### STILL NEEDS DOING
+1. City card images — some need better photos (Siloam Springs postcard image, Lowell aerial not ideal)
+2. About page content — still empty, needs content
+3. City page SEO content — all 8 cities need copy
+4. DNS flip — point daliciaemerson.com to WP Engine
+5. Submit sitemap to Google Search Console
+6. Set up GA4
+7. RankMath meta titles on all 15 pages
+8. Safari /properties/ page not loading — investigate further
+9. Blog posts — first 3
+
+---
+
 ## Session 3 — May 10, 2026
 
 ### COMPLETED THIS SESSION
