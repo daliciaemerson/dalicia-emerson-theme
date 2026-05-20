@@ -22,7 +22,7 @@
       --de-white:      #ffffff;
       --de-gold:       #c9a84c;
       --de-gold-light: #e8c97a;
-      --de-header-h:   90px;
+      --de-header-h:   110px;
       --de-font-sans:  'Inter', 'Helvetica Neue', Arial, sans-serif;
       --de-font-serif: 'Playfair Display', Georgia, serif;
       --de-ease:       cubic-bezier(0.4, 0, 0.2, 1);
@@ -112,7 +112,7 @@
     /* Text fallback when logo images are not yet uploaded */
     .de-header__logo-text {
       font-family: var(--de-font-serif);
-      font-size: 0.9rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: var(--de-black);
       white-space: nowrap;
@@ -127,9 +127,9 @@
     .de-header__brokerage {
       display: block;
       font-family: var(--de-font-sans);
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       color: #888;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.02em;
       margin-top: 2px;
       white-space: nowrap;
       text-decoration: none;
@@ -168,7 +168,7 @@
       gap: 4px;
       padding: 8px 12px;
       font-family: var(--de-font-sans);
-      font-size: 0.84rem;
+      font-size: 0.92rem;
       font-weight: 500;
       letter-spacing: 0.02em;
       color: var(--de-black);
@@ -288,12 +288,12 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      padding: 9px 18px;
+      padding: 12px 24px;
       background: var(--de-gold);
       color: var(--de-black);
       border-radius: 4px;
       font-family: var(--de-font-sans);
-      font-size: 0.84rem;
+      font-size: 0.88rem;
       font-weight: 700;
       letter-spacing: 0.02em;
       text-decoration: none;
