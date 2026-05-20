@@ -9,18 +9,19 @@
 
 ## WHAT STILL NEEDS DOING
 
-1. City card images — Siloam Springs postcard image, Lowell aerial not ideal
-2. About page content — still empty, needs content
-3. City page SEO content — all 8 cities need copy
+1. City pages — add Showcase IDX search/listings to all 8 city pages
+2. City pages — write unique SEO content for all 8 cities
+3. About page — review and improve existing content
 4. DNS flip — point daliciaemerson.com to WP Engine
 5. Submit sitemap to Google Search Console
 6. Set up GA4
 7. RankMath meta titles on all 15 pages
-8. Safari /properties/ page not loading — investigate further
+8. Safari /properties/ page not loading — investigate
 9. Blog posts — first 3
 10. Fix broken image on Luxury Homes page (CB Global Luxury section)
-11. Add real testimonials from Dalicia
+11. Add real testimonials from Dalicia (replace placeholder quotes)
 12. Social media automation (Phase 2)
+13. Lowell city card — aerial photo still not ideal, replace when possible
 
 ---
 
@@ -185,4 +186,37 @@ DE_EMAIL, DE_LICENSE, DE_REGION
 ## DEPLOYMENT
 - GitHub Actions auto-deploys on every push to main
 - Clear WP Engine cache after each deploy
-- Version bump style.css when making CSS changes (1.4.6 current)
+- Version bump style.css when making CSS changes (1.5.5 current)
+
+---
+
+## Session 5 — May 20, 2026
+
+**style.css version: 1.5.5**
+
+### COMPLETED THIS SESSION
+
+**Homepage visual polish:**
+- Trust bar: flat transparent → solid navy gradient + gold bottom border + gold checkmarks
+- IDX search section: added padding, background #f8f7f5, visual separation from trust bar
+- Featured listings title: renamed to "Homes for Sale in Northwest Arkansas" + gold accent bar (scoped to #featured-listings-heading)
+- City grid title "Explore NWA Communities": gold accent bar added (#communities-heading)
+- Gap above city grid tightened: .de-cities padding-top 88px → 48px
+- Gap above listings tightened: .de-listings padding 88px → 48px top
+
+**Header:**
+- Height increased from 90px to 110px (confirmed working in Chrome; Safari cache issue)
+- Logo text scaled up: 0.9rem → 1.1rem
+- Nav links scaled up to 0.92rem
+- Phone button padding increased: 9px 18px → 12px 24px
+
+**Bio card / testimonials section:**
+- Agent photo scaled up: 88px → 140px circle
+- Agent name: 1.4rem → 1.8rem
+- Brokerage and note text scaled up and made more readable
+- Bio card centered: text-align center added to .de-social-proof__bio
+- Brokerage name corrected to "Coldwell Banker Harris McHaney & Faucette" in bio card, footer contact column, and footer bottom bar
+- "Global Luxury Certified®" added in gold as second line in bio card and footer
+
+**Siloam Springs:**
+- New city card photo uploaded via WP Admin featured image (replaced postcard graphic)
