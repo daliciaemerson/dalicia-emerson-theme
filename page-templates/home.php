@@ -119,7 +119,7 @@ get_header();
 				     width="240" height="300" loading="lazy">
 				<h3 class="de-agent-card__name" style="color:#ffffff;"><?php echo esc_html( DE_AGENT_NAME ); ?></h3>
 				<p class="de-agent-card__brokerage" style="color:rgba(255,255,255,0.75);"><?php echo esc_html( DE_BROKERAGE ); ?></p>
-				<p class="de-agent-card__note" style="color:var(--de-gold);">Global Luxury Certified &bull; License SA00088247</p>
+				<p class="de-agent-card__note" style="color:var(--de-gold);">Global Luxury Certified®</p>
 				<a href="tel:<?php echo esc_attr( DE_PHONE ); ?>" class="de-btn de-btn--primary de-btn--full" style="color:#ffffff;">
 					<?php echo esc_html( DE_PHONE_DISPLAY ); ?>
 				</a>
