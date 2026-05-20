@@ -62,9 +62,9 @@ get_header();
 	</section>
 
 	<!-- ── City Grid ─────────────────────────────────────────────────────── -->
-	<section class="de-cities" aria-labelledby="cities-heading">
+	<section class="de-cities" aria-labelledby="communities-heading">
 		<div class="de-container">
-			<h2 id="cities-heading" class="de-section-title">Explore NWA Communities</h2>
+			<h2 id="communities-heading" class="de-section-title">Explore NWA Communities</h2>
 			<div class="de-cities__grid">
 				<?php
 				$de_cities = [
