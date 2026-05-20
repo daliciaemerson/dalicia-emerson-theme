@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      1.4.6
+Version:      1.4.7
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -648,11 +648,11 @@ body.home .entry-content,
 .de-trust-bar {
   position: relative;
   z-index: 2;
-  background: rgba(26, 43, 74, 0.80);
-  border-top: 1px solid rgba(255, 255, 255, 0.10);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 20px 40px;
+  background: linear-gradient(135deg, #1a2744 0%, #2c3e6b 100%);
+  border-top: none;
+  border-bottom: 2px solid #C9A84C;
+  backdrop-filter: none;
+  padding: 18px 40px;
   margin-top: auto;
 }
 
@@ -671,11 +671,11 @@ body.home .entry-content,
   align-items: center;
   gap: 10px;
   padding: 8px 28px;
-  color: rgba(255, 255, 255, 0.92);
+  color: #ffffff;
   font-family: var(--de-font-sans);
   font-size: 0.82rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   white-space: nowrap;
   position: relative;
@@ -690,6 +690,11 @@ body.home .entry-content,
 }
 .de-trust-item__icon { color: var(--de-gold); font-size: 1rem; flex-shrink: 0; }
 
+.de-idx-search {
+  background: #f8f7f5;
+  padding: 52px 40px 44px;
+  border-bottom: 1px solid #e8e4de;
+}
 
 /* ══════════════════════════════════════════════════════════════════════════
    AGENT IDENTITY STRIP
@@ -2122,12 +2127,21 @@ footer.de-footer,
 
 /* ── Section titles (home.php) ──────────────────────────────────────── */
 .de-section-title {
+  display: inline-block;
   font-family: var(--de-font-serif);
   font-size: clamp(1.5rem, 3vw, 2.2rem);
   font-weight: 700;
   color: var(--de-navy);
   line-height: 1.2;
   margin-bottom: 32px;
+}
+.de-section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #C9A84C;
+  margin-top: 10px;
 }
 .de-social-proof .de-section-title,
 .de-cta-section .de-section-title {

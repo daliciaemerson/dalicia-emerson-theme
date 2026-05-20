@@ -39,10 +39,10 @@ get_header();
 	<!-- ── Trust Bar ─────────────────────────────────────────────────────── -->
 	<div class="de-trust-bar" role="region" aria-label="Credentials">
 		<div class="de-trust-bar__inner">
-			<span class="de-trust-item">&#10003; Global Luxury Certified</span>
-			<span class="de-trust-item">&#10003; Coldwell Banker</span>
-			<span class="de-trust-item">&#10003; NWA Local Expert</span>
-			<span class="de-trust-item">&#10003; 500+ Families Helped</span>
+			<span class="de-trust-item"><span style="color:#C9A84C;">&#10003;</span> Global Luxury Certified</span>
+			<span class="de-trust-item"><span style="color:#C9A84C;">&#10003;</span> Coldwell Banker</span>
+			<span class="de-trust-item"><span style="color:#C9A84C;">&#10003;</span> NWA Local Expert</span>
+			<span class="de-trust-item"><span style="color:#C9A84C;">&#10003;</span> 500+ Families Helped</span>
 		</div>
 	</div>
 
@@ -56,7 +56,7 @@ get_header();
 	<!-- ── Featured Listings ─────────────────────────────────────────────── -->
 	<section class="de-listings" aria-labelledby="featured-listings-heading">
 		<div class="de-container">
-			<h2 id="featured-listings-heading" class="de-section-title">Featured NWA Listings</h2>
+			<h2 id="featured-listings-heading" class="de-section-title">Homes for Sale in Northwest Arkansas</h2>
 			<?php echo do_shortcode( '[showcaseidx_hotsheet name="Featured NWA Listings"]' ); ?>
 		</div>
 	</section>
