@@ -116,7 +116,7 @@ get_header();
 				<img src="https://daliciaemerson.wpenginepowered.com/wp-content/uploads/2026/04/BB6FBCB7-6C67-42D9-A3EE-C7151EB55A70_1_201_a.jpeg"
 				     alt="Dalicia Emerson, Northwest Arkansas REALTOR®"
 				     class="de-agent-card__photo"
-				     width="240" height="300" loading="lazy">
+				     loading="lazy">
 				<h3 class="de-agent-card__name" style="color:#ffffff;"><?php echo esc_html( DE_AGENT_NAME ); ?></h3>
 				<p class="de-agent-card__brokerage" style="color:rgba(255,255,255,0.75);"><?php echo esc_html( DE_BROKERAGE ); ?></p>
 				<p class="de-agent-card__note" style="color:var(--de-gold);">Global Luxury Certified®</p>

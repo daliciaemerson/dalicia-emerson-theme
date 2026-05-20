@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      1.5.1
+Version:      1.5.2
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -1200,7 +1200,7 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 .de-social-proof .de-testimonial__cite {
   display: block;
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1209,19 +1209,19 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 .de-social-proof .de-agent-card__name {
   font-family: var(--de-font-serif);
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: var(--de-white);
-  margin: 12px 0 4px;
+  margin: 20px 0 4px;
 }
 .de-social-proof .de-agent-card__brokerage {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.90);
+  font-size: 1rem;
   margin-bottom: 4px;
 }
 .de-social-proof .de-agent-card__note {
-  color: rgba(255, 255, 255, 0.70);
-  font-size: 0.80rem;
+  color: var(--de-gold);
+  font-size: 0.95rem;
   margin-bottom: 16px;
 }
 .de-social-proof .de-social-proof__testimonials {
@@ -1582,7 +1582,7 @@ footer.de-footer,
 }
 
 .de-agent-card__photo {
-  width: 88px; height: 88px;
+  width: 140px; height: 140px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--de-gold);
