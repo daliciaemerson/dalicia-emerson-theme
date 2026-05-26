@@ -59,10 +59,22 @@ $page_content  = get_the_content();
 				<span class="de-stat__label">Median Home Price</span>
 			</div>
 			<?php endif; ?>
+			<?php
+			$city_dom = [
+				'Bentonville'    => '59',
+				'Rogers'         => '57',
+				'Fayetteville'   => '57',
+				'Springdale'     => '58',
+				'Bella Vista'    => '49',
+				'Lowell'         => '42',
+				'Siloam Springs' => '67',
+			];
+			if ( isset( $city_dom[ $city ] ) ) : ?>
 			<div class="de-stat">
-				<span class="de-stat__value">Arkansas</span>
-				<span class="de-stat__label">State</span>
+				<span class="de-stat__value"><?php echo esc_html( $city_dom[ $city ] ); ?> days</span>
+				<span class="de-stat__label">Avg Days on Market</span>
 			</div>
+			<?php endif; ?>
 		</div>
 	</div>
 	<?php endif; ?>
