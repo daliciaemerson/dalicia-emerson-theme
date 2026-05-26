@@ -59,9 +59,22 @@ $page_content  = get_the_content();
 				<span class="de-stat__label">Median Home Price</span>
 			</div>
 			<?php endif; ?>
+			<?php
+			$city_taglines = [
+				'Bentonville'    => 'Home of Walmart HQ',
+				'Rogers'         => 'Home of Pinnacle Hills',
+				'Fayetteville'   => 'Home of U of A',
+				'Springdale'     => 'Home of Tyson Foods',
+				'Bella Vista'    => 'Master-Planned Community',
+				'Lowell'         => 'Home of J.B. Hunt HQ',
+				'Siloam Springs' => 'Home of John Brown Univ.',
+				'Eureka Springs' => 'Historic Victorian City',
+			];
+			$city_tagline = isset( $city_taglines[ $city ] ) ? $city_taglines[ $city ] : 'Northwest Arkansas';
+			?>
 			<div class="de-stat">
-				<span class="de-stat__value">Arkansas</span>
-				<span class="de-stat__label">State</span>
+				<span class="de-stat__value"><?php echo esc_html( $city_tagline ); ?></span>
+				<span class="de-stat__label">Known For</span>
 			</div>
 		</div>
 	</div>
