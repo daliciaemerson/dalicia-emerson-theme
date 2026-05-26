@@ -79,12 +79,23 @@ $page_content  = get_the_content();
 			     Showcase IDX example:  [showcaseidx_search city="<?php echo esc_attr( $city ); ?>"]
 			     iHomeFinder example:   [ihf_search_form city="<?php echo esc_attr( $city ); ?>"]
 			──────────────────────────────────────────────────────────────── -->
-			<section class="de-idx-placeholder" aria-label="Property Search">
-				<div class="de-idx-placeholder__inner">
-					<p>
-						<strong>IDX search coming soon.</strong>
-						Browse active listings in <?php echo esc_html( $city ); ?> once hosting is configured.
-					</p>
+			<section class="de-city-idx">
+				<div class="de-city-idx__inner">
+					<?php
+					$city_hotsheets = [
+						'Bentonville'    => 'Bentonville Listings',
+						'Rogers'         => 'Rogers Listings',
+						'Fayetteville'   => 'Fayetteville Listings',
+						'Springdale'     => 'Springdale Listings',
+						'Bella Vista'    => 'Bella Vista Listings',
+						'Lowell'         => 'Lowell Listings',
+						'Siloam Springs' => 'Siloam Springs Listings',
+						'Eureka Springs' => 'Eureka Springs Listings',
+					];
+					if ( isset( $city_hotsheets[ $city ] ) ) {
+						echo do_shortcode( '[showcaseidx_hotsheet name="' . esc_attr( $city_hotsheets[ $city ] ) . '"]' );
+					}
+					?>
 				</div>
 			</section>
 
