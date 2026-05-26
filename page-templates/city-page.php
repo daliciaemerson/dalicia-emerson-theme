@@ -71,7 +71,7 @@ $page_content  = get_the_content();
 			];
 			if ( isset( $city_dom[ $city ] ) ) : ?>
 			<div class="de-stat">
-				<span class="de-stat__value"><?php echo esc_html( $city_dom[ $city ] ); ?> days</span>
+				<span class="de-stat__value"><?php echo esc_html( $city_dom[ $city ] ); ?></span>
 				<span class="de-stat__label">Avg Days on Market</span>
 			</div>
 			<?php endif; ?>
