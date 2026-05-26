@@ -90,8 +90,7 @@ $page_content  = get_the_content();
 						'Bella Vista'    => 'Bella Vista Listings',
 						'Lowell'         => 'Lowell Listings',
 						'Siloam Springs' => 'Siloam Springs Listings',
-						'Eureka Springs' => 'Eureka Springs Listings',
-					];
+						];
 					if ( isset( $city_hotsheets[ $city ] ) ) {
 						echo do_shortcode( '[showcaseidx_hotsheet name="' . esc_attr( $city_hotsheets[ $city ] ) . '"]' );
 					}
