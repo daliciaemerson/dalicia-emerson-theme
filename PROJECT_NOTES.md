@@ -9,7 +9,7 @@
 
 ## WHAT STILL NEEDS DOING
 
-1. City pages — add Showcase IDX search/listings to all 8 city pages
+1. City pages — fix IDX map overflow (in progress)
 2. City pages — write unique SEO content for all 8 cities
 3. About page — review and improve existing content
 4. DNS flip — point daliciaemerson.com to WP Engine
@@ -25,168 +25,33 @@
 
 ---
 
-## Session 4 — May 11-14, 2026
+## Session 6 — May 27, 2026
 
-**style.css version: 1.4.6**
-
-### COMPLETED THIS SESSION
-
-**IDX / MLS:**
-- Showcase IDX paid and active
-- NABOR Data Access Agreement fully executed 05/11/2026 — all parties signed (Dalicia, Doyle Yates broker, Constellation/Showcase IDX, ArkansasONE MLS)
-- Live CARMLS data feed activated
-- Hotsheet created: "Featured NWA Listings" showing on homepage gallery carousel
-- Shortcode fixed: showcaseidx_hotsheets → showcaseidx_hotsheet (singular)
-- IDX search default map set to NWA/Bentonville area
-- Property filters set: residential only, no land
-- Left side map view enabled
-
-**AREC Compliance:**
-- Brokerage name "Coldwell Banker Harris McHaney & Faucette" added to header on every page
-- Header brokerage name links to coldwellbankernwa.com
-- Footer reorganized: personal info + office section
-- Office address added to footer: 3589 N College Ave, Fayetteville AR 72703
-- REALTOR® and CB Global Luxury® split to two lines
-- Full compliance audit completed — site is compliant
-
-**Homepage:**
-- City cards fixed to pull featured images from each city page via get_the_post_thumbnail_url()
-- City card text moved to bottom of card
-- Gradient overlay added for text readability
-- City name gold (#d4a865), tags white
-- Text no longer wrapping — ellipsis on overflow
-
-**Footer:**
-- Quick Links and NWA Cities columns centered
-- Single vertical list layout fixed
-- Personal and Office sections separated cleanly
-
----
-
-## Session 3 — May 10, 2026
-
-**style.css version: 1.3.2 (no CSS changes this session)**
+**style.css version: 1.6.4**
 
 ### COMPLETED THIS SESSION
-- About page content added via WP-CLI (post ID 20, slug: about-dalicia-emerson)
-- Block editor content: H1, 5 paragraphs, credentials list, phone CTA
-- Content lives in WordPress database — no theme file changes needed
-- Default Kadence template confirmed correct for About page (no custom template)
-- Title suppression via `is_page('about-dalicia-emerson')` already in place from Session 2
 
----
+**City Pages — IDX Integration:**
+- Created 8 city-specific hotsheets in Showcase IDX dashboard:
+  Bentonville, Rogers, Fayetteville, Springdale, Bella Vista, Lowell, Siloam Springs, Eureka Springs
+- Each hotsheet uses a city-filtered search (Residential, Active, For Sale)
+- Display: Gallery | Limit: 20 | Show Map: Yes | Link to Full Results: Yes
+- Wired all hotsheets into city-page.php via PHP array lookup
+- Eureka Springs removed from IDX array (no MLS data, small market)
+- Shortcode format: [showcaseidx_hotsheet name="[City] Listings"]
 
-## Session 2 — May 9, 2026
+**City Pages — Stats Bar:**
+- Replaced hardcoded "Arkansas / State" stat with real MLS avg days on market
+- Data pulled from CARMLS/Matrix market report:
+  Bentonville: 59 | Rogers: 57 | Fayetteville: 57 | Springdale: 58
+  Bella Vista: 49 | Lowell: 42 | Siloam Springs: 67
+- Eureka Springs has no MLS DOM data — stat hidden for that city
 
-**style.css version: 1.3.2**
-
-### COMPLETED THIS SESSION
-- Footer column headings (Quick Links, NWA Cities) centered
-- Footer nav fixed from 2-column grid to single vertical list
-  (was display:grid grid-template-columns:1fr 1fr, changed to display:block)
-- Showcase IDX confirmed active, paid, and connected to WordPress
-- IDX license agreement (NWAR) signed April 28 via Dropbox Sign
-- Properties page (/properties/) fixed: title hidden, gap removed
-  using kadence_show_title filter + strpos URI match in functions.php
-- About page title hidden via is_page('about-dalicia-emerson')
-- About page gray bar diagnosed: caused by body:not(.is-front-page)
-  padding-top in style.css — NOT a bug, just empty page with no content
-- Full site audit completed (screenshots reviewed)
-
-### SITE AUDIT FINDINGS
-
-**Home page:**
-- Hero looks great
-- City cards all showing black/dark — needed hero images uploaded for all 8 cities
-- [showcaseidx_hotsheets] showing as raw text — rendered after MLS approval
-- Testimonials section working with placeholder quotes
-
-**Luxury Homes page:**
-- Hero, credentials bar, content all look great
-- One broken image placeholder (? box) in CB Global Luxury section — needs real image
-- "Luxury listings loading after IDX setup" placeholder working correctly
-
-**Walmart Relocation page:**
-- Looks excellent — no issues
-- Full content, timeline, neighborhood grid, sidebar form all working
-
-**Contact page:**
-- Looks great — detailed form with dropdowns, agent photo, What to Expect sidebar
-
-**About page:**
-- Title hidden ✅
-- Gray bar is just empty page with no content — not a bug
-
-**City pages:**
-- Not yet audited at time of this session
-
----
-
-## ARCHITECTURE
-- `style.css` — single source of truth for all CSS; Additional CSS in Customizer is EMPTY
-- `header.php` — fully custom, overrides Kadence via remove_action/add_filter in functions.php
-- `footer.php` — 4-column layout, no inline styles (all CSS in style.css)
-- `page-templates/` — 7 templates: home, city-page, relocation-hub, luxury-homes, walmart-relocation, contact, plus home.php
-
----
-
-## HEADER
-- Always white background (transparent removed)
-- Height: 90px
-- Nav font: 0.92rem
-- Walkers: DE_Primary_Nav_Walker, DE_Mobile_Primary_Walker, DE_Dropdown_Walker, DE_Mobile_Cities_Walker
-- Cities dropdown from WP nav menu — Cities Dropdown menu location
-
----
-
-## FOOTER (4 columns)
-- Col 1: Identity — name, bio, license
-- Col 2: Quick Links in single vertical list (display:block)
-- Col 3: NWA Cities in single vertical list (display:block)
-- Col 4: Contact — name, brokerage, phone, email, gold CTA
-- Bottom bar: copyright left, badges right
-- Responsive: 2-col at ≤1100px, 1-col at ≤640px
-
----
-
-## HOMEPAGE (home.php)
-- Hero: full-bleed image, gold CTA + white outline CTA
-- Trust bar: 4 credentials
-- IDX search shortcode
-- City grid: 8 cards with .de-city-card__bg div pulling featured image via get_the_post_thumbnail_url()
-- Social proof: 2 testimonials + agent column with explicit inline colors
-
----
-
-## CITY PAGES (city-page.php)
-- Hero: featured image via inline background-image on section tag
-- Stats bar: population, median price, state
-- Custom fields: _de_city_name, _de_city_population, _de_city_median_price
-- 2-col layout: content + sidebar with agent card + form
-- Template assigned via template_include filter in functions.php
-
----
-
-## KEY CSS RULES
-- Never use background shorthand on .de-hero--city (resets background-image)
-- .de-btn--full uses display:flex not inline-flex
-- Footer grid on .de-footer__inner not .de-footer__main
-- body:not(.is-front-page) padding-top: 90px is intentional — do not remove
-
----
-
-## CONSTANTS (functions.php)
-```
-DE_AGENT_NAME, DE_BROKERAGE, DE_PHONE, DE_PHONE_DISPLAY,
-DE_EMAIL, DE_LICENSE, DE_REGION
-```
-
----
-
-## DEPLOYMENT
-- GitHub Actions auto-deploys on every push to main
-- Clear WP Engine cache after each deploy
-- Version bump style.css when making CSS changes (1.5.5 current)
+**City Pages — Layout Fix (in progress):**
+- IDX map overflowing sidebar grid — Showcase IDX widget injects fixed widths
+- Fix: moving .de-city-idx outside and above .de-city-page__layout grid
+  so IDX is full width, sidebar grid only contains text content + agent card
+- style.css at 1.6.4 — fix pushed, verify after cache clear
 
 ---
 
@@ -220,3 +85,103 @@ DE_EMAIL, DE_LICENSE, DE_REGION
 
 **Siloam Springs:**
 - New city card photo uploaded via WP Admin featured image (replaced postcard graphic)
+
+---
+
+## Session 4 — May 11-14, 2026
+
+**style.css version: 1.4.6**
+
+### COMPLETED THIS SESSION
+
+**IDX / MLS:**
+- Showcase IDX paid and active
+- NABOR Data Access Agreement fully executed 05/11/2026
+- Live CARMLS data feed activated
+- Hotsheet created: "Featured NWA Listings" showing on homepage gallery carousel
+- Shortcode fixed: showcaseidx_hotsheets → showcaseidx_hotsheet (singular)
+- IDX search default map set to NWA/Bentonville area
+- Property filters set: residential only, no land
+
+**AREC Compliance:**
+- Brokerage name "Coldwell Banker Harris McHaney & Faucette" added to header on every page
+- Header brokerage name links to coldwellbankernwa.com
+- Footer reorganized: personal info + office section
+- Office address added to footer: 3589 N College Ave, Fayetteville AR 72703
+- Full compliance audit completed — site is compliant
+
+**Homepage:**
+- City cards fixed to pull featured images via get_the_post_thumbnail_url()
+- City card text moved to bottom of card
+- Gradient overlay added for text readability
+
+**Footer:**
+- Quick Links and NWA Cities columns centered
+- Single vertical list layout fixed
+
+---
+
+## Session 3 — May 10, 2026
+
+**style.css version: 1.3.2**
+
+### COMPLETED THIS SESSION
+- About page content added via WP-CLI (post ID 20, slug: about-dalicia-emerson)
+- Block editor content: H1, 5 paragraphs, credentials list, phone CTA
+
+---
+
+## Session 2 — May 9, 2026
+
+**style.css version: 1.3.2**
+
+### COMPLETED THIS SESSION
+- Footer column headings centered
+- Footer nav fixed from 2-column grid to single vertical list
+- Properties page (/properties/) fixed: title hidden, gap removed
+- About page title hidden via is_page('about-dalicia-emerson')
+- Full site audit completed
+
+---
+
+## ARCHITECTURE
+- style.css — single source of truth; Additional CSS in Customizer is EMPTY
+- header.php — fully custom, overrides Kadence; inline style block wins over style.css for header
+- footer.php — 4-column layout
+- page-templates/ — 7 templates
+
+## KEY CSS RULES
+- NEVER use background shorthand on .de-hero--city
+- NEVER put CSS in Additional CSS — always style.css
+- NEVER edit in Theme File Editor
+- Always bump style.css version on CSS changes (currently 1.6.4)
+- Always clear WP Engine cache after deploy
+- City hero images = WordPress featured image, not theme files
+- IDX hotsheet shortcode: [showcaseidx_hotsheet name="[City] Listings"]
+
+## HEADER
+- Height: 110px (increased Session 5)
+- Always white background
+- Inline styles in header.php override style.css for header elements
+
+## CITY PAGES
+- Hero: featured image via inline background-image
+- Stats bar: population, median price, avg days on market (real MLS data)
+- Custom fields: _de_city_name, _de_city_population, _de_city_median_price
+- IDX hotsheet: full width above sidebar grid (as of Session 6)
+- 2-col layout below IDX: content + sidebar with agent card + lead form
+
+## AREC COMPLIANCE
+- Brokerage name in header every page ✅
+- Office address in footer ✅
+- License SA00088247 on homepage ✅
+
+## DNS FLIP (pending)
+1. Add daliciaemerson.com in WP Engine → Domains
+2. GoDaddy: change CNAME to daliciaemerson.wpengine.com
+3. SSL auto-provisions
+4. Set up 301 redirects from old Moxi URLs
+
+## DEPLOYMENT
+- GitHub Actions auto-deploys on push to main
+- Clear WP Engine cache after each deploy
