@@ -91,19 +91,17 @@ get_header();
 					What Coldwell Banker Global Luxury® Means for You
 				</h2>
 				<p>
-					The Global Luxury designation isn&rsquo;t a logo &mdash; it&rsquo;s a network and a
-					standard. When you list or buy with me, your property is marketed across
-					Coldwell Banker&rsquo;s international affiliate network, exposed to
-					<strong>affluent buyers from over 40 countries</strong>, and presented through
-					premium print, digital, and social channels that most local agents simply
-					don&rsquo;t have access to.
+					The Global Luxury designation is a network and a standard.
+					Your property reaches <strong>affluent buyers from over 40 countries</strong>
+					through premium print, digital, and social channels most agents
+					simply don't have access to.
 				</p>
 				<ul class="de-feature-list">
-					<li>International property marketing through the CB Global Luxury® network</li>
+					<li>International marketing through CB Global Luxury® network</li>
 					<li>Professional photography, video, and 3D Matterport tours</li>
-					<li>Targeted digital advertising to high-net-worth audiences</li>
-					<li>White-glove negotiation and confidential transaction management</li>
-					<li>Relocation buyer network from Walmart, Tyson, and J.B. Hunt</li>
+					<li>Targeted digital advertising to high-net-worth buyers</li>
+					<li>White-glove negotiation and transaction management</li>
+					<li>Relocation network from Walmart, Tyson, and J.B. Hunt</li>
 				</ul>
 			</div>
 
