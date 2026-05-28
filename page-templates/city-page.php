@@ -79,36 +79,32 @@ $page_content  = get_the_content();
 	</div>
 	<?php endif; ?>
 
+	<!-- ── IDX Listings ──────────────────────────────────────────────────── -->
+	<section class="de-city-idx">
+		<div class="de-city-idx__inner">
+			<?php
+			$city_hotsheets = [
+				'Bentonville'    => 'Bentonville Listings',
+				'Rogers'         => 'Rogers Listings',
+				'Fayetteville'   => 'Fayetteville Listings',
+				'Springdale'     => 'Springdale Listings',
+				'Bella Vista'    => 'Bella Vista Listings',
+				'Lowell'         => 'Lowell Listings',
+				'Siloam Springs' => 'Siloam Springs Listings',
+			];
+			if ( isset( $city_hotsheets[ $city ] ) ) {
+				echo do_shortcode( '[showcaseidx_hotsheet name="' . esc_attr( $city_hotsheets[ $city ] ) . '"]' );
+			}
+			?>
+		</div>
+	</section>
+
 	<div class="de-container de-city-page__layout">
 
 		<!-- ── Main Column ───────────────────────────────────────────────── -->
 		<article class="de-city-page__content"
 		         itemscope itemtype="https://schema.org/WebPage"
 		         itemprop="name" content="Homes for Sale in <?php echo esc_attr( $city ); ?>, AR">
-
-			<!-- ── IDX Listing Search ─────────────────────────────────────
-			     Replace this block with your IDX plugin's shortcode.
-			     Showcase IDX example:  [showcaseidx_search city="<?php echo esc_attr( $city ); ?>"]
-			     iHomeFinder example:   [ihf_search_form city="<?php echo esc_attr( $city ); ?>"]
-			──────────────────────────────────────────────────────────────── -->
-			<section class="de-city-idx">
-				<div class="de-city-idx__inner">
-					<?php
-					$city_hotsheets = [
-						'Bentonville'    => 'Bentonville Listings',
-						'Rogers'         => 'Rogers Listings',
-						'Fayetteville'   => 'Fayetteville Listings',
-						'Springdale'     => 'Springdale Listings',
-						'Bella Vista'    => 'Bella Vista Listings',
-						'Lowell'         => 'Lowell Listings',
-						'Siloam Springs' => 'Siloam Springs Listings',
-						];
-					if ( isset( $city_hotsheets[ $city ] ) ) {
-						echo do_shortcode( '[showcaseidx_hotsheet name="' . esc_attr( $city_hotsheets[ $city ] ) . '"]' );
-					}
-					?>
-				</div>
-			</section>
 
 			<!-- ── Page Content (written in WordPress editor) ────────────── -->
 			<?php if ( $page_content ) : ?>
