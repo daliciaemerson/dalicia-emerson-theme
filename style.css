@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      1.6.5
+Version:      1.6.6
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -526,9 +526,9 @@ body.home .entry-content,
 
 .de-hero__eyebrow {
   font-family: var(--de-font-sans);
-  font-size: 0.78rem;
+  font-size: 0.92rem;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--de-gold);
   margin-bottom: 20px;
@@ -2203,8 +2203,8 @@ footer.de-footer,
 .de-hero__title span { display: block; color: var(--de-gold-light); }
 .de-hero__subtitle {
   font-family: var(--de-font-sans);
-  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
-  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: rgba(255, 255, 255, 1);
   line-height: 1.65;
   margin-bottom: 32px;
 }
@@ -2264,17 +2264,18 @@ footer.de-footer,
   max-width: var(--de-max-width);
   margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  gap: 32px;
+  gap: 24px;
+  overflow-x: auto;
 }
 .de-credential {
   display: flex;
   align-items: center;
   gap: 8px;
   font-family: var(--de-font-sans);
-  font-size: 0.80rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -2282,6 +2283,14 @@ footer.de-footer,
   white-space: nowrap;
 }
 .de-credential__icon { font-size: 1rem; }
+.de-credential:not(:last-child)::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 16px;
+  background: rgba(255,255,255,0.4);
+  margin-left: 24px;
+}
 
 /* ── Luxury: sections and grids ─────────────────────────────────────── */
 .de-section { padding: 64px 0; }
