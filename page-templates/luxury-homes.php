@@ -76,7 +76,9 @@ get_header();
 		     iHomeFinder example:
 		       [ihf_search_form min_price="500000"]
 		────────────────────────────────────────────────────────────────────── -->
-		<?php echo do_shortcode( '[showcaseidx_hotsheet name="Luxury NWA Listings"]' ); ?>
+		<div class="de-luxury-idx-wrap">
+			<?php echo do_shortcode( '[showcaseidx_hotsheet name="Luxury NWA Listings"]' ); ?>
+		</div>
 
 	</section>
 
