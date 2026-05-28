@@ -47,12 +47,8 @@ get_header();
 				<span>Coldwell Banker Global Luxury® Certified</span>
 			</div>
 			<div class="de-credential">
-				<span class="de-credential__icon" aria-hidden="true">◈</span>
-				<span>Licensed in Arkansas (#<?php echo esc_html( DE_LICENSE ); ?>)</span>
-			</div>
-			<div class="de-credential">
 				<span class="de-credential__icon" aria-hidden="true">◉</span>
-				<span>Specializing in $500K+ Properties</span>
+				<span>Specializing in $800K+ Properties</span>
 			</div>
 			<div class="de-credential">
 				<span class="de-credential__icon" aria-hidden="true">◎</span>
