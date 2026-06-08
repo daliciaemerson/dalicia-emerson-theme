@@ -75,8 +75,7 @@ get_header();
 					[ 'slug' => 'bella-vista-ar-real-estate',   'name' => 'Bella Vista',    'sub' => 'Lakes &bull; Golf &bull; Trails' ],
 					[ 'slug' => 'lowell-ar-real-estate',        'name' => 'Lowell',         'sub' => 'J.B. Hunt HQ &bull; Growing Fast' ],
 					[ 'slug' => 'siloam-springs-ar-real-estate','name' => 'Siloam Springs', 'sub' => 'Illinois River &bull; John Brown Univ.' ],
-					[ 'slug' => 'eureka-springs-ar-real-estate','name' => 'Eureka Springs', 'sub' => 'Historic District &bull; Arts Scene' ],
-				];
+					];
 				foreach ( $de_cities as $de_city ) :
 					$de_page = get_page_by_path( $de_city['slug'] );
 					$de_img  = $de_page ? get_the_post_thumbnail_url( $de_page->ID, 'large' ) : '';
