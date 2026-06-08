@@ -9,19 +9,21 @@
 
 ## WHAT STILL NEEDS DOING
 
-1. City pages — fix IDX map overflow (in progress)
-2. City pages — write unique SEO content for all 8 cities
-3. About page — review and improve existing content
-4. DNS flip — point daliciaemerson.com to WP Engine
-5. Submit sitemap to Google Search Console
-6. Set up GA4
-7. RankMath meta titles on all 15 pages
-8. Safari /properties/ page not loading — investigate
-9. Blog posts — first 3
-10. Fix broken image on Luxury Homes page (CB Global Luxury section)
-11. Add real testimonials from Dalicia (replace placeholder quotes)
-12. Social media automation (Phase 2)
-13. Lowell city card — aerial photo still not ideal, replace when possible
+1. Spoke pages — add hero featured images (walmart, tyson, jb-hunt, vendor)
+2. Spoke pages — add unique content per company (neighborhoods, tips, IDX)
+3. Hub page — update current Walmart Relocation page to hub with 4 spoke cards
+4. City pages — verify IDX map overflow fix
+5. City pages — write unique SEO content for all 8 cities
+6. About page — review and improve content
+7. DNS flip — point daliciaemerson.com to WP Engine
+8. Submit sitemap to Google Search Console
+9. Set up GA4
+10. RankMath meta titles on all 15 pages
+11. Safari /properties/ page not loading — investigate
+12. Blog posts — first 3
+13. Add real testimonials from Dalicia
+14. Lowell city card aerial photo
+15. J.B. Hunt hero image needed
 
 ---
 
@@ -52,6 +54,38 @@
 - Fix: moving .de-city-idx outside and above .de-city-page__layout grid
   so IDX is full width, sidebar grid only contains text content + agent card
 - style.css at 1.6.4 — fix pushed, verify after cache clear
+
+---
+
+## Session 8 — June 1, 2026
+
+**style.css version: 1.7.4**
+
+### COMPLETED THIS SESSION
+
+**Relocation Hub & Spoke Architecture:**
+- Decided to restructure Walmart Relocation page into hub + 4 spoke pages
+- Created 4 new WordPress pages via WP Admin + SSH WP-CLI:
+  - ID 167 — Relocating for Walmart (/walmart-relocation/)
+  - ID 168 — Walmart Vendor Relocation (/walmart-vendor-relocation/)
+  - ID 169 — Relocating for Tyson Foods (/tyson-foods-relocation/)
+  - ID 170 — Relocating for J.B. Hunt (/jb-hunt-relocation/)
+- Built relocation-spoke.php template with dynamic company name via custom fields
+- Assigned template and custom fields to all 4 pages via SSH WP-CLI
+- All 4 spoke pages live and rendering correctly
+- Hero images pending — will add tomorrow via WP Admin featured images
+
+**Homepage:**
+- Removed Eureka Springs from city grid
+- Changed city grid to repeat(auto-fill, minmax(280px, 1fr)) for flexible layout
+
+**Luxury Page:**
+- Credential bar: removed license item, updated threshold $500K → $800K
+- Global Luxury copy shortened for better visual balance
+
+**Workflow rule added:**
+- Always use Claude Code / SSH WP-CLI for changes when possible
+- Only use WP Admin manually when WP-CLI is not an option
 
 ---
 
