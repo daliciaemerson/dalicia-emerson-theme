@@ -787,3 +787,88 @@
 
 }());
 </script>
+
+<script>
+// ── Relocation dropdown (keyboard + click) ──────────────────────────────────
+(function () {
+  'use strict';
+
+  var relTrigger  = document.getElementById('relocation-dropdown-trigger');
+  var relDropdown = document.getElementById('relocation-dropdown');
+
+  if (!relTrigger || !relDropdown) return;
+
+  function openRelDropdown() {
+    relDropdown.classList.add('de-dropdown--open');
+    relTrigger.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeRelDropdown() {
+    relDropdown.classList.remove('de-dropdown--open');
+    relTrigger.setAttribute('aria-expanded', 'false');
+  }
+
+  // Click to toggle
+  relTrigger.addEventListener('click', function (e) {
+    e.stopPropagation();
+    if (relDropdown.classList.contains('de-dropdown--open')) {
+      closeRelDropdown();
+    } else {
+      openRelDropdown();
+      var firstItem = relDropdown.querySelector('[role="menuitem"]');
+      if (firstItem) firstItem.focus();
+    }
+  });
+
+  // Enter / Space
+  relTrigger.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      relTrigger.click();
+    }
+    // Arrow Down: open and move to first item
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      openRelDropdown();
+      var firstItem = relDropdown.querySelector('[role="menuitem"]');
+      if (firstItem) firstItem.focus();
+    }
+  });
+
+  // Arrow key navigation inside dropdown
+  relDropdown.addEventListener('keydown', function (e) {
+    var items = Array.from(relDropdown.querySelectorAll('[role="menuitem"]'));
+    var idx   = items.indexOf(document.activeElement);
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      var next = items[idx + 1] || items[0];
+      next.focus();
+    }
+    if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      var prev = items[idx - 1] || items[items.length - 1];
+      prev.focus();
+    }
+    if (e.key === 'Tab' || e.key === 'Escape') {
+      closeRelDropdown();
+      relTrigger.focus();
+    }
+  });
+
+  // Close when clicking outside
+  document.addEventListener('click', function (e) {
+    if (!relDropdown.contains(e.target) && e.target !== relTrigger) {
+      closeRelDropdown();
+    }
+  });
+
+  // Escape closes
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closeRelDropdown();
+    }
+  });
+
+}());
+</script>

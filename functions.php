@@ -72,8 +72,9 @@ add_action( 'after_setup_theme', function () {
 	add_image_size( 'de-headshot',      400, 500,  true );
 
 	register_nav_menus( [
-		'primary' => 'Primary Navigation',
-		'cities'  => 'Cities Dropdown',
+		'primary'    => 'Primary Navigation',
+		'cities'     => 'Cities Dropdown',
+		'relocation' => 'Relocation Dropdown',
 	] );
 } );
 
@@ -411,18 +412,19 @@ class DE_Primary_Nav_Walker extends Walker_Nav_Menu {
 				'fallback_cb'    => false,
 				'echo'           => false,
 			] );
-		} elseif ( $depth === 0 && ! empty( $args->has_children ) ) {
-			$slug = sanitize_title( $data_object->title );
-			$output .= '<li class="de-nav__item de-nav__item--dropdown">';
-			$output .= '<button class="de-nav__link de-nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="' . esc_attr( $slug ) . '-dropdown" id="' . esc_attr( $slug ) . '-dropdown-trigger">';
-			$output .= esc_html( $data_object->title ) . ' <span class="de-nav__chevron" aria-hidden="true">▾</span>';
+		} elseif ( strtolower( trim( $data_object->title ) ) === 'relocating to nwa' ) {
+			$output .= '<li class="de-nav__item de-nav__item--dropdown" id="relocation-nav-item">';
+			$output .= '<button class="de-nav__link de-nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="relocation-dropdown" id="relocation-dropdown-trigger">';
+			$output .= 'Relocating To NWA <span class="de-nav__chevron" aria-hidden="true">▾</span>';
 			$output .= '</button>';
-			$output .= '<ul class="de-dropdown" id="' . esc_attr( $slug ) . '-dropdown" role="menu" aria-labelledby="' . esc_attr( $slug ) . '-dropdown-trigger">';
-		} elseif ( $depth > 0 ) {
-			$output .= '<li class="de-dropdown__item" role="none">';
-			$output .= '<a href="' . esc_url( $data_object->url ) . '" class="de-dropdown__link' . ( $is_active ? ' de-dropdown__link--active' : '' ) . '" role="menuitem">';
-			$output .= esc_html( $data_object->title );
-			$output .= '</a>';
+			$output .= wp_nav_menu( [
+				'theme_location' => 'relocation',
+				'items_wrap'     => '<ul class="de-dropdown" id="relocation-dropdown" role="menu" aria-labelledby="relocation-dropdown-trigger">%3$s</ul>',
+				'container'      => false,
+				'walker'         => new DE_Dropdown_Walker(),
+				'fallback_cb'    => false,
+				'echo'           => false,
+			] );
 		} else {
 			$output .= '<li class="de-nav__item">';
 			$output .= '<a href="' . esc_url( $data_object->url ) . '" class="de-nav__link' . ( $is_active ? ' de-nav__link--active' : '' ) . '"' . ( $is_active ? ' aria-current="page"' : '' ) . '>';
@@ -431,18 +433,7 @@ class DE_Primary_Nav_Walker extends Walker_Nav_Menu {
 		}
 	}
 	public function end_el( &$output, $data_object, $depth = 0, $args = null ) {
-		if ( $depth === 0 && ! empty( $args->has_children ) && strtolower( trim( $data_object->title ) ) !== 'cities' ) {
-			$output .= '</ul></li>';
-		} else {
-			$output .= '</li>';
-		}
-	}
-	public function start_lvl( &$output, $depth = 0, $args = null ) {
-		// Suppressed — we manually output the <ul class="de-dropdown">
-		// wrapper inside start_el() for depth-0 dropdown parents.
-	}
-	public function end_lvl( &$output, $depth = 0, $args = null ) {
-		// Suppressed — closing </ul> is handled manually in end_el().
+		$output .= '</li>';
 	}
 }
 
