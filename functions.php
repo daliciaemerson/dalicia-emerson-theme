@@ -411,6 +411,18 @@ class DE_Primary_Nav_Walker extends Walker_Nav_Menu {
 				'fallback_cb'    => false,
 				'echo'           => false,
 			] );
+		} elseif ( $depth === 0 && ! empty( $args->walker->has_children ) ) {
+			$slug = sanitize_title( $data_object->title );
+			$output .= '<li class="de-nav__item de-nav__item--dropdown">';
+			$output .= '<button class="de-nav__link de-nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="' . esc_attr( $slug ) . '-dropdown" id="' . esc_attr( $slug ) . '-dropdown-trigger">';
+			$output .= esc_html( $data_object->title ) . ' <span class="de-nav__chevron" aria-hidden="true">▾</span>';
+			$output .= '</button>';
+			$output .= '<ul class="de-dropdown" id="' . esc_attr( $slug ) . '-dropdown" role="menu" aria-labelledby="' . esc_attr( $slug ) . '-dropdown-trigger">';
+		} elseif ( $depth > 0 ) {
+			$output .= '<li class="de-dropdown__item" role="none">';
+			$output .= '<a href="' . esc_url( $data_object->url ) . '" class="de-dropdown__link' . ( $is_active ? ' de-dropdown__link--active' : '' ) . '" role="menuitem">';
+			$output .= esc_html( $data_object->title );
+			$output .= '</a>';
 		} else {
 			$output .= '<li class="de-nav__item">';
 			$output .= '<a href="' . esc_url( $data_object->url ) . '" class="de-nav__link' . ( $is_active ? ' de-nav__link--active' : '' ) . '"' . ( $is_active ? ' aria-current="page"' : '' ) . '>';
@@ -419,7 +431,11 @@ class DE_Primary_Nav_Walker extends Walker_Nav_Menu {
 		}
 	}
 	public function end_el( &$output, $data_object, $depth = 0, $args = null ) {
-		$output .= '</li>';
+		if ( $depth === 0 && ! empty( $args->walker->has_children ) && strtolower( trim( $data_object->title ) ) !== 'cities' ) {
+			$output .= '</ul></li>';
+		} else {
+			$output .= '</li>';
+		}
 	}
 }
 
