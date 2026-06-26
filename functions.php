@@ -411,7 +411,7 @@ class DE_Primary_Nav_Walker extends Walker_Nav_Menu {
 				'fallback_cb'    => false,
 				'echo'           => false,
 			] );
-		} elseif ( $depth === 0 && ! empty( $args->walker->has_children ) ) {
+		} elseif ( $depth === 0 && ! empty( $args->has_children ) ) {
 			$slug = sanitize_title( $data_object->title );
 			$output .= '<li class="de-nav__item de-nav__item--dropdown">';
 			$output .= '<button class="de-nav__link de-nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="' . esc_attr( $slug ) . '-dropdown" id="' . esc_attr( $slug ) . '-dropdown-trigger">';
@@ -431,11 +431,18 @@ class DE_Primary_Nav_Walker extends Walker_Nav_Menu {
 		}
 	}
 	public function end_el( &$output, $data_object, $depth = 0, $args = null ) {
-		if ( $depth === 0 && ! empty( $args->walker->has_children ) && strtolower( trim( $data_object->title ) ) !== 'cities' ) {
+		if ( $depth === 0 && ! empty( $args->has_children ) && strtolower( trim( $data_object->title ) ) !== 'cities' ) {
 			$output .= '</ul></li>';
 		} else {
 			$output .= '</li>';
 		}
+	}
+	public function start_lvl( &$output, $depth = 0, $args = null ) {
+		// Suppressed — we manually output the <ul class="de-dropdown">
+		// wrapper inside start_el() for depth-0 dropdown parents.
+	}
+	public function end_lvl( &$output, $depth = 0, $args = null ) {
+		// Suppressed — closing </ul> is handled manually in end_el().
 	}
 }
 
