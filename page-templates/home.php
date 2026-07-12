@@ -14,7 +14,7 @@ get_header();
 
 	<!-- ── Hero ──────────────────────────────────────────────────────────── -->
 	<section class="de-hero de-hero--home" aria-labelledby="home-hero-heading">
-		<div class="de-hero__bg" style="background-image:url('https://daliciaemerson.wpenginepowered.com/wp-content/uploads/2026/04/NWA-Most-Dynamic-Metros.jpg');"></div>
+		<div class="de-hero__bg" style="background-image:url('<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(), 'full' ) ); ?>');"></div>
 		<div class="de-hero__overlay"></div>
 		<div class="de-container de-hero__inner">
 			<h1 id="home-hero-heading" class="de-hero__headline">
