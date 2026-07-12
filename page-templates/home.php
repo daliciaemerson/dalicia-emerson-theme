@@ -41,8 +41,8 @@ get_header();
 		<div class="de-trust-bar__inner">
 			<span class="de-trust-item"><span style="color:#C9A84C;">&#10003;</span> Global Luxury Certified</span>
 			<span class="de-trust-item"><span style="color:#C9A84C;">&#10003;</span> Coldwell Banker</span>
-			<span class="de-trust-item"><span style="color:#C9A84C;">&#10003;</span> NWA Local Expert</span>
-			<span class="de-trust-item"><span style="color:#C9A84C;">&#10003;</span> 500+ Families Helped</span>
+			<span class="de-trust-item"><span style="color:#C9A84C;">&#10003;</span> 40+ Years in NWA</span>
+			<span class="de-trust-item"><span style="color:#C9A84C;">&#10003;</span> Trusted NWA REALTOR®</span>
 		</div>
 	</div>
 
