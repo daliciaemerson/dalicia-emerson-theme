@@ -127,6 +127,16 @@ get_header();
 					     class="de-agent-bio-card__photo"
 					     loading="eager">
 				</div>
+				<div class="de-agent-bio-card__info">
+					<h3 class="de-agent-bio-card__info-name"><?php echo esc_html( DE_AGENT_NAME ); ?></h3>
+					<p class="de-agent-bio-card__info-title">REALTOR® &bull; Coldwell Banker Global Luxury®</p>
+					<a href="tel:<?php echo esc_attr( DE_PHONE ); ?>" class="de-btn de-btn--primary de-btn--full">
+						<?php echo esc_html( DE_PHONE_DISPLAY ); ?>
+					</a>
+					<a href="/reviews/" class="de-agent-bio-card__info-reviews">
+						&#9733;&#9733;&#9733;&#9733;&#9733; Read 28 Client Reviews
+					</a>
+				</div>
 			</div>
 
 		</div>
