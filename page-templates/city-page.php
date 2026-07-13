@@ -139,11 +139,9 @@ $page_content  = get_the_content();
 				<div class="de-agent-bio-card__body">
 					<h2 class="de-agent-bio-card__name"><?php echo esc_html( DE_AGENT_NAME ); ?></h2>
 					<p class="de-agent-bio-card__title">REALTOR® &bull; Coldwell Banker Global Luxury®</p>
-					<p class="de-agent-bio-card__brokerage"><?php echo esc_html( DE_BROKERAGE ); ?></p>
 					<ul class="de-agent-bio-card__contact">
 						<li>
-							<a href="tel:<?php echo esc_attr( DE_PHONE ); ?>" class="de-agent-bio-card__contact-link">
-								<span class="screen-reader-text">Phone: </span>
+							<a href="tel:<?php echo esc_attr( DE_PHONE ); ?>" class="de-btn de-btn--primary de-btn--full">
 								<?php echo esc_html( DE_PHONE_DISPLAY ); ?>
 							</a>
 						</li>
@@ -154,9 +152,6 @@ $page_content  = get_the_content();
 							</a>
 						</li>
 					</ul>
-					<p class="de-agent-bio-card__license">
-						AR License #<?php echo esc_html( DE_LICENSE ); ?>
-					</p>
 				</div>
 			</div>
 
