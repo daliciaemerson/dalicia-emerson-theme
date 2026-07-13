@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.0.6
+Version:      2.0.7
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -1203,7 +1203,8 @@ footer.de-footer,
   padding-left: 0;
   padding-right: 0;
   box-sizing: border-box;
-  background: #0a0a0a;
+  background: #0f1923;
+  border-top: 3px solid var(--de-gold);
   color: rgba(255, 255, 255, 0.80);
   font-family: var(--de-font-sans);
 }
@@ -1231,9 +1232,9 @@ footer.de-footer,
   margin: 0;
 }
 .de-footer__bio {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   line-height: 1.7;
-  color: #c8c8c8;
+  color: rgba(255, 255, 255, 0.55);
   margin-top: 12px;
   margin-bottom: 0;
 }
@@ -1253,24 +1254,26 @@ footer.de-footer,
   text-transform: uppercase;
   color: var(--de-gold);
   margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.25);
 }
 
-/* Center headings and links in Quick Links and NWA Cities columns */
+/* Left-align headings and links in Quick Links and NWA Cities columns */
 .de-footer__col--links .de-footer__col-heading,
 .de-footer__col--cities .de-footer__col-heading {
-  text-align: center;
+  text-align: left;
 }
 .de-footer__col--links .de-footer__links,
 .de-footer__col--cities .de-footer__links {
-  text-align: center;
+  text-align: left;
 }
 .de-footer__col--links .de-footer__links li,
 .de-footer__col--cities .de-footer__links li {
-  text-align: center;
+  text-align: left;
 }
 .de-footer__col--links .de-footer__link,
 .de-footer__col--cities .de-footer__link {
-  text-align: center;
+  text-align: left;
 }
 
 /* Links */
@@ -1342,17 +1345,18 @@ footer.de-footer,
 }
 .de-footer__contact-link:hover { color: var(--de-gold); }
 .de-footer__contact-link--phone {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.88);
+  color: #ffffff;
 }
 .de-footer__cta {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 10px 18px;
+  display: block;
+  text-align: center;
+  margin-top: 18px;
+  padding: 14px 24px;
   background: var(--de-gold);
-  color: #0a0a0a;
-  font-size: 0.80rem;
+  color: #0f1923;
+  font-size: 0.84rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   border-radius: var(--de-radius);
@@ -1365,7 +1369,7 @@ footer.de-footer,
 /* Bottom bar */
 .de-footer__bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 18px 0;
+  padding: 18px 40px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -1385,6 +1389,23 @@ footer.de-footer,
   font-size: 0.76rem;
   color: rgba(255, 255, 255, 0.38);
   margin: 0;
+}
+.de-footer__legal {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.de-footer__legal a {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.35);
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+.de-footer__legal a:hover {
+  color: rgba(255, 255, 255, 0.70);
 }
 .de-footer__badges { display: flex; align-items: center; gap: 10px; }
 .de-footer__badge {
