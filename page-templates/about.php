@@ -37,20 +37,33 @@ get_header();
 
     <!-- ── Sidebar ───────────────────────────────────────────────────── -->
     <aside class="de-about-page__sidebar" role="complementary">
-      <div class="de-agent-card">
+      <div class="de-agent-bio-card">
         <img src="<?php echo esc_url( get_theme_file_uri( '/assets/images/dalicia-headshot.jpg' ) ); ?>"
-             alt="Dalicia Emerson, Northwest Arkansas REALTOR®"
-             class="de-agent-card__photo">
-        <h3 class="de-agent-card__name"><?php echo esc_html( DE_AGENT_NAME ); ?></h3>
-        <p class="de-agent-card__brokerage"><?php echo esc_html( DE_BROKERAGE ); ?></p>
-        <p class="de-agent-card__note" style="color:var(--de-gold);">Global Luxury Certified®</p>
-        <a href="tel:<?php echo esc_attr( DE_PHONE ); ?>"
-           class="de-btn de-btn--primary de-btn--full">
-          Call <?php echo esc_html( DE_PHONE_DISPLAY ); ?>
-        </a>
-        <a href="/reviews/" class="de-btn de-btn--outline-navy de-btn--full" style="margin-top:12px; display:block; text-align:center; padding:12px; border:2px solid var(--de-navy); color:var(--de-navy); border-radius:var(--de-radius); font-weight:700; font-size:0.88rem;">
-          Read Client Reviews
-        </a>
+             alt="Dalicia Emerson, REALTOR® — Northwest Arkansas"
+             class="de-agent-bio-card__photo"
+             width="300" height="375" loading="eager">
+        <div class="de-agent-bio-card__body">
+          <h2 class="de-agent-bio-card__name"><?php echo esc_html( DE_AGENT_NAME ); ?></h2>
+          <p class="de-agent-bio-card__title">REALTOR® &bull; Coldwell Banker Global Luxury®</p>
+          <p class="de-agent-bio-card__brokerage"><?php echo esc_html( DE_BROKERAGE ); ?></p>
+          <ul class="de-agent-bio-card__contact">
+            <li>
+              <a href="tel:<?php echo esc_attr( DE_PHONE ); ?>" class="de-agent-bio-card__contact-link">
+                <span class="screen-reader-text">Phone: </span>
+                <?php echo esc_html( DE_PHONE_DISPLAY ); ?>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:<?php echo esc_attr( DE_EMAIL ); ?>" class="de-agent-bio-card__contact-link">
+                <span class="screen-reader-text">Email: </span>
+                <?php echo esc_html( DE_EMAIL ); ?>
+              </a>
+            </li>
+          </ul>
+          <p class="de-agent-bio-card__license">
+            AR License #<?php echo esc_html( DE_LICENSE ); ?>
+          </p>
+        </div>
       </div>
     </aside>
 
