@@ -133,8 +133,8 @@ get_header();
 					<a href="tel:<?php echo esc_attr( DE_PHONE ); ?>" class="de-btn de-btn--primary de-btn--full">
 						<?php echo esc_html( DE_PHONE_DISPLAY ); ?>
 					</a>
-					<a href="/reviews/" class="de-agent-bio-card__info-reviews">
-						&#9733;&#9733;&#9733;&#9733;&#9733; Read 28 Client Reviews
+					<a href="mailto:<?php echo esc_attr( DE_EMAIL ); ?>" class="de-agent-bio-card__info-email">
+						<?php echo esc_html( DE_EMAIL ); ?>
 					</a>
 				</div>
 			</div>
