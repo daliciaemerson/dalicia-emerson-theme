@@ -126,23 +126,6 @@ get_header();
 					     alt="Dalicia Emerson, REALTOR® — Northwest Arkansas"
 					     class="de-agent-bio-card__photo"
 					     width="300" height="375" loading="eager">
-					<div class="de-agent-bio-card__body">
-						<h2 class="de-agent-bio-card__name"><?php echo esc_html( DE_AGENT_NAME ); ?></h2>
-						<p class="de-agent-bio-card__title">REALTOR® &bull; Coldwell Banker Global Luxury®</p>
-						<ul class="de-agent-bio-card__contact">
-							<li>
-								<a href="tel:<?php echo esc_attr( DE_PHONE ); ?>" class="de-btn de-btn--primary de-btn--full">
-									<?php echo esc_html( DE_PHONE_DISPLAY ); ?>
-								</a>
-							</li>
-							<li>
-								<a href="mailto:<?php echo esc_attr( DE_EMAIL ); ?>" class="de-agent-bio-card__contact-link">
-									<span class="screen-reader-text">Email: </span>
-									<?php echo esc_html( DE_EMAIL ); ?>
-								</a>
-							</li>
-						</ul>
-					</div>
 				</div>
 			</div>
 
