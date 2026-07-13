@@ -151,7 +151,7 @@ get_header();
 		<aside class="de-contact-page__info-col" role="complementary" aria-label="Contact information">
 
 			<div class="de-agent-bio-card">
-				<img src="<?php echo esc_url( get_theme_file_uri( '/assets/images/dalicia-headshot.jpg' ) ); ?>"
+				<img src="<?php echo esc_url( get_theme_file_uri( '/assets/images/headshot/dalicia-headshot.jpg' ) ); ?>"
 				     alt="Dalicia Emerson, REALTOR® — Northwest Arkansas"
 				     class="de-agent-bio-card__photo"
 				     width="300" height="375" loading="eager">

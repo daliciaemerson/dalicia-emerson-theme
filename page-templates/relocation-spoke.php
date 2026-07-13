@@ -101,7 +101,7 @@ $subtitle    = get_post_meta( get_the_ID(), '_de_subtitle', true ) ?: 'Fast time
     <!-- ── Sidebar ───────────────────────────────────────────────────── -->
     <aside class="de-walmart-page__sidebar" role="complementary">
       <div class="de-agent-bio-card">
-        <img src="<?php echo esc_url( get_theme_file_uri( '/assets/images/dalicia-headshot.jpg' ) ); ?>"
+        <img src="<?php echo esc_url( get_theme_file_uri( '/assets/images/headshot/dalicia-headshot.jpg' ) ); ?>"
              alt="Dalicia Emerson, REALTOR® — Northwest Arkansas"
              class="de-agent-bio-card__photo"
              width="300" height="375" loading="eager">

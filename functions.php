@@ -110,7 +110,7 @@ function de_agent_schema(): array {
 		],
 		'image' => [
 			'@type' => 'ImageObject',
-			'url'   => get_stylesheet_directory_uri() . '/assets/images/dalicia-headshot.jpg',
+			'url'   => get_stylesheet_directory_uri() . '/assets/images/headshot/dalicia-headshot.jpg',
 		],
 		'hasCredential' => [
 			'@type'              => 'EducationalOccupationalCredential',
@@ -396,7 +396,15 @@ class DE_Mobile_Cities_Walker extends Walker_Nav_Menu {
 // ─── Nav walker: desktop primary nav ─────────────────────────────────────────
 
 class DE_Primary_Nav_Walker extends Walker_Nav_Menu {
+	public function start_lvl( &$output, $depth = 0, $args = null ) {
+		// Suppressed — dropdowns use separate menu locations, not WP child items.
+	}
+	public function end_lvl( &$output, $depth = 0, $args = null ) {
+		// Suppressed.
+	}
 	public function start_el( &$output, $data_object, $depth = 0, $args = null, $current_object_id = 0 ) {
+		if ( $depth > 0 ) return; // skip any child items attached in WP Admin
+
 		$is_active = in_array( 'current-menu-item', $data_object->classes ?? [] );
 
 		if ( strtolower( trim( $data_object->title ) ) === 'cities' ) {
@@ -433,6 +441,7 @@ class DE_Primary_Nav_Walker extends Walker_Nav_Menu {
 		}
 	}
 	public function end_el( &$output, $data_object, $depth = 0, $args = null ) {
+		if ( $depth > 0 ) return; // skip any child items attached in WP Admin
 		$output .= '</li>';
 	}
 }
@@ -441,7 +450,15 @@ class DE_Primary_Nav_Walker extends Walker_Nav_Menu {
 // ─── Nav walker: mobile primary nav ──────────────────────────────────────────
 
 class DE_Mobile_Primary_Walker extends Walker_Nav_Menu {
+	public function start_lvl( &$output, $depth = 0, $args = null ) {
+		// Suppressed — same reason as desktop walker.
+	}
+	public function end_lvl( &$output, $depth = 0, $args = null ) {
+		// Suppressed.
+	}
 	public function start_el( &$output, $data_object, $depth = 0, $args = null, $current_object_id = 0 ) {
+		if ( $depth > 0 ) return;
+
 		$is_active = in_array( 'current-menu-item', $data_object->classes ?? [] );
 
 		if ( strtolower( trim( $data_object->title ) ) === 'cities' ) {
@@ -465,6 +482,7 @@ class DE_Mobile_Primary_Walker extends Walker_Nav_Menu {
 		}
 	}
 	public function end_el( &$output, $data_object, $depth = 0, $args = null ) {
+		if ( $depth > 0 ) return;
 		$output .= '</li>';
 	}
 }
