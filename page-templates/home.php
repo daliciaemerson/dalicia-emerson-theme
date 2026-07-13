@@ -101,14 +101,23 @@ get_header();
 				<h2 id="social-proof-heading" class="de-section-title">What Clients Say</h2>
 
 				<blockquote class="de-testimonial">
-					<p class="de-testimonial__quote">&ldquo;Dalicia made our relocation from Dallas seamless. She knew every neighborhood, every price point, and had us under contract in two weeks.&rdquo;</p>
-					<cite class="de-testimonial__cite">&mdash; Relocating family, Bentonville AR</cite>
+					<p class="de-testimonial__quote">"Dalicia has been keeping an eye on the market for a while for us. We knew we were relocating to the area but were not sure exactly when, where, and what our situation would be. When we found the place, she made quick work of the offer, negotiations, and everything needed to get the ball rolling!"</p>
+					<cite class="de-testimonial__cite">— Jason L., Relocating Family</cite>
 				</blockquote>
 
 				<blockquote class="de-testimonial">
-					<p class="de-testimonial__quote">&ldquo;We needed a luxury specialist who understood the NWA market. Dalicia delivered — and sold our home above asking price.&rdquo;</p>
-					<cite class="de-testimonial__cite">&mdash; Seller, Rogers AR</cite>
+					<p class="de-testimonial__quote">"Dalicia sold my house in less than two weeks and that is huge for me. She communicates daily and does not leave me hanging. She made the process as stress free as possible."</p>
+					<cite class="de-testimonial__cite">— Linda S., Home Seller</cite>
 				</blockquote>
+
+				<blockquote class="de-testimonial">
+					<p class="de-testimonial__quote">"Dalicia is deeply knowledgeable, diligent, and supportive. She had our best interest in mind from beginning to end. Thank you for helping us secure the home of our dreams!"</p>
+					<cite class="de-testimonial__cite">— Madison S., First-Time Buyer</cite>
+				</blockquote>
+
+				<a href="/reviews/" class="de-btn de-btn--outline-white" style="margin-top:24px; display:inline-block;">
+					Read All 28 Reviews →
+				</a>
 			</div>
 
 			<div class="de-social-proof__bio">

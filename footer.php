@@ -30,6 +30,7 @@
           <li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="de-footer__link">About</a></li>
           <li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="de-footer__link">Contact</a></li>
           <li><a href="<?php echo esc_url( home_url( '/nwa-home-valuation/' ) ); ?>" class="de-footer__link">Home Valuation</a></li>
+          <li><a href="<?php echo esc_url( home_url( '/reviews/' ) ); ?>" class="de-footer__link">Client Reviews</a></li>
         </ul>
       </nav>
 
