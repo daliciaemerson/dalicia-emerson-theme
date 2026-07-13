@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.0.5
+Version:      2.0.6
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -1107,115 +1107,86 @@ body:has([class*="showcaseidx"]) .site-main {
 /* ══════════════════════════════════════════════════════════════════════════
    SOCIAL PROOF
    ══════════════════════════════════════════════════════════════════════════ */
+/* ── Social Proof / Testimonials Section ──────────────────── */
 .de-social-proof {
   background: var(--de-navy);
   padding: 88px 40px;
 }
-
-.de-social-proof__inner {
-  max-width: var(--de-max-width);
+.de-social-proof__container {
+  max-width: 1200px;
   margin: 0 auto;
-  display: block;
+  text-align: center;
 }
-
-.de-social-proof__quote {
+.de-social-proof__heading {
   font-family: var(--de-font-serif);
-  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
-  font-weight: 400;
-  font-style: italic;
-  color: var(--de-white);
-  line-height: 1.65;
-  margin-bottom: 28px;
-}
-.de-social-proof__quote::before {
-  content: '\201C';
-  color: var(--de-gold);
-  font-size: 3rem;
-  line-height: 0;
-  vertical-align: -0.5em;
-  margin-right: 4px;
-}
-
-.de-social-proof__attribution {
-  font-family: var(--de-font-sans);
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--de-gold);
-}
-
-.de-social-proof__bio-name {
-  font-family: var(--de-font-serif);
-  font-size: 1.5rem;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: #ffffff;
+  margin-bottom: 48px;
   font-weight: 700;
-  color: var(--de-white);
-  margin-bottom: 6px;
 }
-
-.de-social-proof__bio-title {
-  display: block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.de-social-proof__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+.de-testimonial-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 12px;
+  padding: 32px 28px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.de-testimonial-card__stars {
   color: var(--de-gold);
-  margin-bottom: 20px;
-}
-
-.de-social-proof__bio a {
-  display: inline-block;
-  margin-top: 24px;
-  font-family: var(--de-font-sans);
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--de-gold);
-  transition: color var(--de-transition);
-}
-.de-social-proof__bio a:hover { color: var(--de-gold-light); }
-
-/* Visibility rules for actual HTML classes used in the social proof section */
-.de-social-proof .de-section-title {
-  color: var(--de-white);
-}
-.de-social-proof .de-testimonial__quote {
-  font-family: var(--de-font-serif);
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  font-style: italic;
-  color: rgba(255, 255, 255, 0.95);
-  line-height: 1.65;
-  margin-bottom: 16px;
-}
-.de-social-proof .de-testimonial__cite {
-  display: block;
   font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+.de-testimonial-card__quote {
+  color: rgba(255,255,255,0.88);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  font-style: normal;
+  flex-grow: 1;
+  margin: 0;
+}
+.de-testimonial-card__author {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(201,168,76,0.30);
+}
+.de-testimonial-card__name {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+}
+.de-testimonial-card__label {
+  color: var(--de-gold);
+  font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+.de-social-proof__cta {
+  text-align: center;
+}
+.de-social-proof__reviews-link {
+  color: rgba(255,255,255,0.70);
+  font-size: 0.92rem;
+  font-weight: 600;
+  font-style: italic;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
+}
+.de-social-proof__reviews-link:hover {
   color: var(--de-gold);
-  font-style: normal;
-}
-.de-social-proof .de-agent-card__name {
-  font-family: var(--de-font-serif);
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--de-white);
-  margin: 20px 0 4px;
-}
-.de-social-proof .de-agent-card__brokerage {
-  color: rgba(255, 255, 255, 0.90);
-  font-size: 1rem;
-  margin-bottom: 4px;
-}
-.de-social-proof .de-agent-card__note {
-  color: var(--de-gold);
-  font-size: 0.95rem;
-  margin-bottom: 16px;
-}
-.de-social-proof .de-social-proof__testimonials {
-  color: rgba(255, 255, 255, 0.90);
 }
 
 
@@ -1694,8 +1665,6 @@ footer.de-footer,
 
   .de-value-props__grid { grid-template-columns: repeat(2, 1fr); }
   .de-cities__grid { grid-template-columns: repeat(2, 1fr); }
-  .de-social-proof__inner { grid-template-columns: 1fr; gap: 52px; }
-
   .de-city-layout { grid-template-columns: 1fr; }
   .de-agent-card { position: static; }
 
@@ -1726,8 +1695,6 @@ footer.de-footer,
   .de-value-props__grid { grid-template-columns: 1fr; }
   .de-cities { padding: 56px 24px; }
   .de-cities__grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .de-social-proof { padding: 56px 24px; }
-
   .de-footer__inner { grid-template-columns: 1fr; padding: 0 24px; gap: 32px; }
   .de-footer__bottom-inner { padding: 20px 24px; flex-direction: column; gap: 16px; }
 
@@ -2139,30 +2106,10 @@ footer.de-footer,
   background: #C9A84C;
   margin-top: 10px;
 }
-.de-social-proof .de-section-title,
 .de-cta-section .de-section-title {
   color: var(--de-white);
 }
 
-/* ── Testimonials on navy background ────────────────────────────────── */
-.de-testimonial { margin-bottom: 32px; border-left: 3px solid var(--de-gold); border-right: 3px solid var(--de-gold); padding-left: 20px; padding-right: 20px; }
-.de-testimonial__quote {
-  font-family: var(--de-font-serif);
-  font-size: 1.05rem;
-  font-style: italic;
-  color: rgba(255, 255, 255, 0.92);
-  line-height: 1.7;
-  margin-bottom: 10px;
-}
-.de-testimonial__cite {
-  font-family: var(--de-font-sans);
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--de-gold);
-  letter-spacing: 0.06em;
-  text-align: center;
-  display: block;
-}
 
 /* ── Agent card: fix white text on white body background ─────────────── */
 .de-agent-card__body .de-agent-card__name { color: var(--de-navy); }
@@ -2258,20 +2205,6 @@ footer.de-footer,
   border: 2px solid rgba(255, 255, 255, 0.72);
 }
 .de-btn--outline-white:hover { background: rgba(255,255,255,0.12); border-color: var(--de-white); color: var(--de-white); }
-.de-social-proof .de-btn--outline-white {
-  border: none;
-  background: transparent;
-  color: rgba(255,255,255,0.70);
-  font-size: 0.9rem;
-  font-weight: 600;
-  font-style: italic;
-  padding: 0;
-  margin-top: 32px;
-  display: inline-block;
-}
-.de-social-proof .de-btn--outline-white:hover {
-  color: var(--de-gold);
-}
 .de-btn--large { padding: 16px 40px; font-size: 1rem; }
 
 /* ── Luxury: credentials bar ────────────────────────────────────────── */
