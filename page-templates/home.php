@@ -120,26 +120,8 @@ get_header();
 				</a>
 			</div>
 
-			<div class="de-social-proof__bio">
-				<div class="de-agent-bio-card">
-					<img src="<?php echo esc_url( get_theme_file_uri( '/assets/images/headshot/dalicia-headshot.jpg' ) ); ?>"
-					     alt="Dalicia Emerson, REALTOR® — Northwest Arkansas"
-					     class="de-agent-bio-card__photo"
-					     loading="eager">
-				</div>
-				<div class="de-agent-bio-card__info">
-					<h3 class="de-agent-bio-card__info-name"><?php echo esc_html( DE_AGENT_NAME ); ?></h3>
-					<p class="de-agent-bio-card__info-title">REALTOR® &bull; Coldwell Banker Global Luxury®</p>
-					<a href="tel:<?php echo esc_attr( DE_PHONE ); ?>" class="de-btn de-btn--primary de-btn--full">
-						<?php echo esc_html( DE_PHONE_DISPLAY ); ?>
-					</a>
-					<a href="mailto:<?php echo esc_attr( DE_EMAIL ); ?>" class="de-agent-bio-card__info-email">
-						<?php echo esc_html( DE_EMAIL ); ?>
-					</a>
-				</div>
-			</div>
 
-		</div>
+</div>
 	</section>
 
 </main>

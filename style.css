@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.0.2
+Version:      2.0.3
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -1108,18 +1108,14 @@ body:has([class*="showcaseidx"]) .site-main {
    SOCIAL PROOF
    ══════════════════════════════════════════════════════════════════════════ */
 .de-social-proof {
-  background: linear-gradient(to right, var(--de-navy) 50%, #ffffff 50%);
-  padding: 88px 0;
+  background: var(--de-navy);
+  padding: 88px 40px;
 }
 
 .de-social-proof__inner {
   max-width: var(--de-max-width);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  align-items: start;
-  padding: 0;
+  display: block;
 }
 
 .de-social-proof__quote {
@@ -1147,53 +1143,6 @@ body:has([class*="showcaseidx"]) .site-main {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--de-gold);
-}
-
-.de-social-proof__bio {
-  background: #ffffff;
-  padding: 40px;
-  margin: -88px 0;
-  overflow: hidden;
-}
-.de-social-proof__bio .de-btn {
-  display: block;
-}
-.de-agent-bio-card__info {
-  padding: 24px;
-  text-align: center;
-}
-.de-agent-bio-card__info-name {
-  font-family: var(--de-font-serif);
-  font-size: 1.4rem;
-  color: var(--de-navy);
-  margin-bottom: 6px;
-}
-.de-agent-bio-card__info-title {
-  color: var(--de-gold);
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-.de-agent-bio-card__info-email {
-  display: block;
-  margin-top: 12px;
-  color: var(--de-navy);
-  font-size: 0.85rem;
-  text-decoration: none;
-  font-weight: 600;
-}
-.de-agent-bio-card__info-email:hover {
-  color: var(--de-gold);
-}
-.de-social-proof__bio .de-btn--primary {
-  display: block;
-  width: 100%;
-  text-align: center;
-  color: #ffffff;
-}
-.de-social-proof__bio .de-agent-bio-card {
-  margin-top: 32px;
-  padding-top: 0;
 }
 
 .de-social-proof__bio-name {
@@ -2534,10 +2483,6 @@ footer.de-footer,
   object-fit: cover;
   object-position: center 20%;
   display: block;
-}
-.de-social-proof__bio .de-agent-bio-card__photo {
-  height: 560px;
-  object-position: center 15%;
 }
 .de-contact-expectations, .de-service-area { background: var(--de-gray-light); border-radius: var(--de-radius-lg); padding: 20px 24px; margin-bottom: 16px; }
 .de-contact-expectations h3, .de-service-area h3 { font-family: var(--de-font-serif); font-size: 1rem; font-weight: 700; color: var(--de-navy); margin-bottom: 12px; }
