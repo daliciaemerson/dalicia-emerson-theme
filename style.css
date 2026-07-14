@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.1.0
+Version:      2.2.0
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -1203,49 +1203,27 @@ footer.de-footer,
   padding-left: 0;
   padding-right: 0;
   box-sizing: border-box;
-  background: #0f1923;
-  border-top: 3px solid var(--de-gold);
-  color: rgba(255, 255, 255, 0.80);
+  background: #071018;
+  border-top: 2px solid var(--de-gold);
+  color: rgba(255, 255, 255, 0.72);
   font-family: var(--de-font-sans);
 }
 
-.de-footer__main { padding: 56px 0 40px; }
+.de-footer__main { padding: 48px 0 42px; }
 
 .de-footer__inner {
-  max-width: 1200px;
+  max-width: 960px;
   width: 100%;
   margin: 0 auto;
   padding: 0 40px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1.3fr;
-  gap: 40px;
+  grid-template-columns: 5fr 6fr;
+  gap: 64px;
   align-items: start;
   box-sizing: border-box;
 }
 
-/* Col 1: Identity */
-.de-footer__name {
-  font-family: var(--de-font-serif);
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.95);
-  margin: 0;
-}
-.de-footer__bio {
-  font-size: 0.85rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.55);
-  margin-top: 12px;
-  margin-bottom: 0;
-}
-.de-footer__license {
-  font-size: 0.80rem;
-  color: #888;
-  margin-top: 16px;
-  display: block;
-}
-
-/* Col headings */
+/* Column headings */
 .de-footer__col-heading {
   font-family: var(--de-font-sans);
   font-size: 0.65rem;
@@ -1255,98 +1233,58 @@ footer.de-footer,
   color: var(--de-gold);
   margin: 0 0 16px;
   padding-bottom: 10px;
-  border-bottom: 1px solid rgba(201, 168, 76, 0.25);
+  border-bottom: 1px solid rgba(201, 166, 70, 0.35);
 }
 
-/* Left-align headings and links in Quick Links column */
-.de-footer__col--links .de-footer__col-heading { text-align: left; }
-.de-footer__col--links .de-footer__links { text-align: left; }
-.de-footer__col--links .de-footer__links li { text-align: left; }
-.de-footer__col--links .de-footer__link { text-align: left; }
-
-/* Links */
+/* Quick Links column — centered */
+.de-footer__col--links { text-align: center; }
 .de-footer__links {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: block;
 }
 .de-footer__link {
   font-size: 0.84rem;
-  color: rgba(255, 255, 255, 0.60);
+  color: rgba(255, 255, 255, 0.58);
   text-decoration: none;
   padding: 5px 0;
   display: block;
   transition: color var(--de-transition);
-  white-space: nowrap;
 }
-.de-footer__link:hover { color: var(--de-gold); }
+.de-footer__link:hover { color: rgba(255, 255, 255, 0.88); }
 
-/* Col 4: Contact */
+/* Contact column */
 .de-footer__address { font-style: normal; }
 .de-footer__contact-name {
-  font-size: 0.95rem;
+  font-size: 1.0rem;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.90);
-  margin: 0 0 4px;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0 0 8px;
 }
-.de-footer__contact-title {
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.55);
-  line-height: 1.4;
-  margin: 0 0 6px;
-}
-.de-footer__credential { display: block; font-size: 0.82rem; margin-bottom: 3px; }
-.de-footer__office-section {
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.10);
-}
-.de-footer__office-label {
-  font-family: var(--de-font-sans);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--de-gold);
-  margin: 0 0 12px;
-}
-.de-footer__contact-brokerage {
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.65);
-  line-height: 1.4;
-  margin: 0 0 6px;
-}
-.de-footer__contact-office-address {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.65);
-  line-height: 1.5;
-  font-style: normal;
-  margin: 0 0 14px;
-}
-.de-footer__contact-row { margin: 0 0 4px; }
+.de-footer__contact-row { margin: 0 0 6px; }
 .de-footer__contact-link {
   font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.70);
+  color: rgba(255, 255, 255, 0.62);
   text-decoration: none;
   transition: color var(--de-transition);
 }
-.de-footer__contact-link:hover { color: var(--de-gold); }
+.de-footer__contact-link:hover { color: rgba(255, 255, 255, 0.90); }
 .de-footer__contact-link--phone {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #ffffff;
-}
-.de-footer__cta {
-  display: block;
-  text-align: center;
-  margin-top: 18px;
-  padding: 10px 16px;
-  background: var(--de-gold);
-  color: #0f1923;
-  font-size: 0.78rem;
+  font-size: 1.0rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* CTA button — compact, not full-width */
+.de-footer__cta {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 9px 22px;
+  background: var(--de-gold);
+  color: #071018;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   border-radius: var(--de-radius);
   text-decoration: none;
   transition: background var(--de-transition);
@@ -1354,28 +1292,75 @@ footer.de-footer,
 }
 .de-footer__cta:hover { background: var(--de-gold-light); }
 
+/* Credentials line — below CTA, small and muted */
+.de-footer__credentials {
+  font-size: 0.71rem;
+  color: rgba(255, 255, 255, 0.38);
+  margin: 10px 0 0;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+}
+
+/* Office sub-section */
+.de-footer__office-section {
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(201, 166, 70, 0.18);
+}
+.de-footer__office-label {
+  font-family: var(--de-font-sans);
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--de-gold);
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(201, 166, 70, 0.35);
+}
+.de-footer__contact-brokerage {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  margin: 0 0 6px;
+}
+.de-footer__contact-office-address {
+  font-size: 0.78rem;
+  line-height: 1.6;
+  font-style: normal;
+  margin: 0;
+}
+.de-footer__office-link {
+  color: rgba(255, 255, 255, 0.60);
+  text-decoration: none;
+  transition: color var(--de-transition);
+}
+.de-footer__office-link:hover {
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: underline;
+}
+
 /* Bottom bar */
 .de-footer__bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 18px 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 16px 40px;
   width: 100%;
   box-sizing: border-box;
 }
 .de-footer__bottom-inner {
-  max-width: 1200px;
+  max-width: 960px;
   width: 100%;
   margin: 0 auto;
   padding: 0 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 20px;
   flex-wrap: wrap;
   box-sizing: border-box;
 }
 .de-footer__copyright {
-  font-size: 0.76rem;
-  color: rgba(255, 255, 255, 0.38);
+  font-size: 0.73rem;
+  color: rgba(255, 255, 255, 0.32);
   margin: 0;
 }
 .de-footer__legal {
@@ -1383,45 +1368,46 @@ footer.de-footer,
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 20px;
+  gap: 18px;
   flex-wrap: wrap;
 }
 .de-footer__legal a {
-  font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.70rem;
+  color: rgba(255, 255, 255, 0.30);
   text-decoration: none;
   transition: color 0.18s ease;
 }
-.de-footer__legal a:hover {
-  color: rgba(255, 255, 255, 0.70);
-}
-.de-footer__badges { display: flex; align-items: center; gap: 10px; }
-.de-footer__badge {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.40);
-}
-.de-footer__badge-sep { color: rgba(255, 255, 255, 0.18); font-size: 0.75rem; }
-.de-footer__badge-link {
-  color: rgba(255, 255, 255, 0.35);
+.de-footer__legal a:hover { color: rgba(255, 255, 255, 0.62); }
+.de-footer__brokerage-bar { margin: 0; }
+.de-footer__brokerage-link {
+  font-size: 0.70rem;
+  color: rgba(255, 255, 255, 0.30);
   text-decoration: none;
   transition: color 0.18s ease;
 }
-.de-footer__badge-link:hover {
-  color: var(--de-gold);
+.de-footer__brokerage-link:hover {
+  color: rgba(255, 255, 255, 0.62);
+  text-decoration: underline;
 }
 
 /* Footer responsive */
-@media (max-width: 1100px) {
-  .de-footer__inner { grid-template-columns: 1fr 1fr; gap: 36px; }
-  .de-footer__col--about { grid-column: 1 / -1; }
-}
-@media (max-width: 640px) {
-  .de-footer__inner { grid-template-columns: 1fr; gap: 32px; padding: 0 24px; }
+@media (max-width: 768px) {
   .de-footer__main { padding: 40px 0 32px; }
-  .de-footer__bottom-inner { padding: 0 24px; flex-direction: column; align-items: flex-start; gap: 10px; }
+  .de-footer__inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 0 24px;
+    text-align: center;
+  }
+  .de-footer__cta { display: block; text-align: center; }
+  .de-footer__bottom-inner {
+    padding: 0 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+  }
+  .de-footer__legal { justify-content: center; }
 }
 
 
@@ -1677,9 +1663,6 @@ footer.de-footer,
 
   .de-header__hamburger { display: flex; }
 
-  .de-footer__inner { grid-template-columns: 1fr 1fr; gap: 36px; }
-  .de-footer__col--about { grid-column: 1 / -1; }
-
   .de-value-props__grid { grid-template-columns: repeat(2, 1fr); }
   .de-cities__grid { grid-template-columns: repeat(2, 1fr); }
   .de-city-layout { grid-template-columns: 1fr; }
@@ -1712,9 +1695,6 @@ footer.de-footer,
   .de-value-props__grid { grid-template-columns: 1fr; }
   .de-cities { padding: 56px 24px; }
   .de-cities__grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .de-footer__inner { grid-template-columns: 1fr; padding: 0 24px; gap: 32px; }
-  .de-footer__bottom-inner { padding: 20px 24px; flex-direction: column; gap: 16px; }
-
   .de-city-layout { padding: 40px 24px; }
   .de-city-stats { padding: 20px 24px; flex-direction: column; }
   .de-city-stats__item + .de-city-stats__item::before { display: none; }
