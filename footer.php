@@ -15,8 +15,8 @@
           <p class="de-footer__brand-tagline">Luxury Real Estate</p>
           <p class="de-footer__brand-copy">Helping families relocate and find their next home across Northwest Arkansas with a global luxury network behind every deal.</p>
           <div class="de-footer__social">
-            <a href="https://www.instagram.com" target="_blank" rel="noopener" class="de-footer__social-btn" aria-label="Instagram">IG</a>
-            <a href="https://www.facebook.com" target="_blank" rel="noopener" class="de-footer__social-btn" aria-label="Facebook">FB</a>
+            <a href="https://www.instagram.com/dalicia_emersonnwarealtor/" target="_blank" rel="noopener" class="de-footer__social-btn" aria-label="Instagram">IG</a>
+            <a href="https://www.facebook.com/watch/?v=2108780623329518" target="_blank" rel="noopener" class="de-footer__social-btn" aria-label="Facebook">FB</a>
             <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="de-footer__social-btn" aria-label="LinkedIn">IN</a>
             <a href="https://www.youtube.com" target="_blank" rel="noopener" class="de-footer__social-btn" aria-label="YouTube">YT</a>
           </div>
