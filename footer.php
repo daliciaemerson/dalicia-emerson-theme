@@ -34,20 +34,6 @@
         </ul>
       </nav>
 
-      <!-- Column 3: NWA Cities ───────────────────────────────────────── -->
-      <nav class="de-footer__col de-footer__col--cities" aria-label="NWA city pages">
-        <h3 class="de-footer__col-heading">NWA Cities</h3>
-        <ul class="de-footer__links de-footer__links--cities" role="list">
-          <li><a href="<?php echo esc_url( home_url( '/bentonville-ar-real-estate/' ) ); ?>" class="de-footer__link">Bentonville</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/lowell-ar-real-estate/' ) ); ?>" class="de-footer__link">Lowell</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/rogers-ar-real-estate/' ) ); ?>" class="de-footer__link">Rogers</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/siloam-springs-ar-real-estate/' ) ); ?>" class="de-footer__link">Siloam Springs</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/fayetteville-ar-real-estate/' ) ); ?>" class="de-footer__link">Fayetteville</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/eureka-springs-ar-real-estate/' ) ); ?>" class="de-footer__link">Eureka Springs</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/springdale-ar-real-estate/' ) ); ?>" class="de-footer__link">Springdale</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/bella-vista-ar-real-estate/' ) ); ?>" class="de-footer__link">Bella Vista</a></li>
-        </ul>
-      </nav>
 
       <!-- Column 4: Contact ──────────────────────────────────────────── -->
       <div class="de-footer__col de-footer__col--contact">

@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.0.7
+Version:      2.0.8
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -1217,7 +1217,7 @@ footer.de-footer,
   margin: 0 auto;
   padding: 0 40px;
   display: grid;
-  grid-template-columns: 0.75fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1.3fr;
   gap: 40px;
   align-items: start;
   box-sizing: border-box;
@@ -1258,23 +1258,11 @@ footer.de-footer,
   border-bottom: 1px solid rgba(201, 168, 76, 0.25);
 }
 
-/* Left-align headings and links in Quick Links and NWA Cities columns */
-.de-footer__col--links .de-footer__col-heading,
-.de-footer__col--cities .de-footer__col-heading {
-  text-align: left;
-}
-.de-footer__col--links .de-footer__links,
-.de-footer__col--cities .de-footer__links {
-  text-align: left;
-}
-.de-footer__col--links .de-footer__links li,
-.de-footer__col--cities .de-footer__links li {
-  text-align: left;
-}
-.de-footer__col--links .de-footer__link,
-.de-footer__col--cities .de-footer__link {
-  text-align: left;
-}
+/* Left-align headings and links in Quick Links column */
+.de-footer__col--links .de-footer__col-heading { text-align: left; }
+.de-footer__col--links .de-footer__links { text-align: left; }
+.de-footer__col--links .de-footer__links li { text-align: left; }
+.de-footer__col--links .de-footer__link { text-align: left; }
 
 /* Links */
 .de-footer__links {
