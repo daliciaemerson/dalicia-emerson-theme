@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.0.9
+Version:      2.1.0
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -1341,10 +1341,10 @@ footer.de-footer,
   display: block;
   text-align: center;
   margin-top: 18px;
-  padding: 14px 24px;
+  padding: 10px 16px;
   background: var(--de-gold);
   color: #0f1923;
-  font-size: 0.84rem;
+  font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   border-radius: var(--de-radius);
