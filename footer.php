@@ -17,8 +17,7 @@
           <div class="de-footer__social">
             <a href="https://www.instagram.com/dalicia_emersonnwarealtor/" target="_blank" rel="noopener" class="de-footer__social-btn" aria-label="Instagram">IG</a>
             <a href="https://www.facebook.com/watch/?v=2108780623329518" target="_blank" rel="noopener" class="de-footer__social-btn" aria-label="Facebook">FB</a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="de-footer__social-btn" aria-label="LinkedIn">IN</a>
-            <a href="https://www.youtube.com" target="_blank" rel="noopener" class="de-footer__social-btn" aria-label="YouTube">YT</a>
+            <a href="https://www.linkedin.com/in/dalicia-emerson-482ab2a3/" target="_blank" rel="noopener" class="de-footer__social-btn" aria-label="LinkedIn">IN</a>
           </div>
         </div>
       </div>
