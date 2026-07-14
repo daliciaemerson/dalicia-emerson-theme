@@ -45,7 +45,6 @@
           <p class="de-footer__contact-name" itemprop="name"><?php echo esc_html( DE_AGENT_NAME ); ?></p>
           <p class="de-footer__contact-title">
             <span class="de-footer__credential">REALTOR&reg;</span>
-            <span class="de-footer__credential">Coldwell Banker Harris McHaney &amp; Faucette</span>
           <span class="de-footer__credential" style="color:var(--de-gold);">Global Luxury Certified&reg;</span>
           </p>
           <p class="de-footer__contact-row">
@@ -106,7 +105,7 @@
       <div class="de-footer__badges" aria-label="Affiliations">
         <span class="de-footer__badge">REALTOR&reg;</span>
         <span class="de-footer__badge-sep">|</span>
-        <span class="de-footer__badge">Coldwell Banker Harris McHaney &amp; Faucette</span>
+        <a href="https://www.coldwellbankernwa.com" target="_blank" rel="noopener" class="de-footer__badge-link">Coldwell Banker Harris McHaney &amp; Faucette</a>
       </div>
 
     </div><!-- /.de-footer__bottom-inner -->
