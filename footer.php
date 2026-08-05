@@ -11,7 +11,7 @@
       <!-- Col 1: Brand -->
       <div class="de-footer__col de-footer__col--brand">
         <div class="de-footer__brand">
-          <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/de-monogram.png' ); ?>" alt="Dalicia Emerson monogram" class="de-footer__monogram" width="54" height="54">
+          <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/de-monogram.png' ); ?>" alt="Dalicia Emerson monogram" class="de-footer__monogram" width="72" height="72">
           <p class="de-footer__brand-name">Dalicia Emerson</p>
           <p class="de-footer__brand-tagline">Luxury Real Estate</p>
           <p class="de-footer__brand-copy">Helping families relocate and find their next home across Northwest Arkansas with a global luxury network behind every deal.</p>
