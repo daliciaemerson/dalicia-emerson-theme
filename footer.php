@@ -15,9 +15,15 @@
           <p class="de-footer__brand-tagline">Luxury Real Estate</p>
           <p class="de-footer__brand-copy">Helping families relocate and find their next home across Northwest Arkansas with a global luxury network behind every deal.</p>
           <div class="de-footer__social">
-            <a href="https://www.instagram.com/dalicia_emersonnwarealtor/" target="_blank" rel="noopener" class="de-footer__social-btn" aria-label="Instagram">IG</a>
-            <a href="https://www.facebook.com/watch/?v=2108780623329518" target="_blank" rel="noopener" class="de-footer__social-btn" aria-label="Facebook">FB</a>
-            <a href="https://www.linkedin.com/in/dalicia-emerson-482ab2a3/" target="_blank" rel="noopener" class="de-footer__social-btn" aria-label="LinkedIn">IN</a>
+            <a href="https://www.instagram.com/dalicia_emersonnwarealtor/" target="_blank" rel="noopener" class="de-footer__social-btn" aria-label="Instagram">
+              <img src="<?php echo esc_url( get_theme_file_uri( '/assets/images/social-media-icons/icons8-instagram-48.png' ) ); ?>" alt="Instagram" width="24" height="24">
+            </a>
+            <a href="https://www.facebook.com/watch/?v=2108780623329518" target="_blank" rel="noopener" class="de-footer__social-btn" aria-label="Facebook">
+              <img src="<?php echo esc_url( get_theme_file_uri( '/assets/images/social-media-icons/icons8-facebook-48.png' ) ); ?>" alt="Facebook" width="24" height="24">
+            </a>
+            <a href="https://www.linkedin.com/in/dalicia-emerson-482ab2a3/" target="_blank" rel="noopener" class="de-footer__social-btn" aria-label="LinkedIn">
+              <img src="<?php echo esc_url( get_theme_file_uri( '/assets/images/social-media-icons/icons8-linkedin-48.png' ) ); ?>" alt="LinkedIn" width="24" height="24">
+            </a>
           </div>
         </div>
       </div>
