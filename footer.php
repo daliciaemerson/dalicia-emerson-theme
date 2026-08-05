@@ -46,7 +46,7 @@
         <a href="mailto:<?php echo esc_attr( DE_EMAIL ); ?>" class="de-footer__email">
           <?php echo esc_html( DE_EMAIL ); ?>
         </a>
-        <a href="/contact-dalicia-emerson/" class="de-footer__cta">
+        <a href="/contact-dalicia-emerson/" class="de-footer__cta-link">
           Schedule a Consultation
         </a>
         <ul class="de-footer__credentials">
