@@ -130,13 +130,7 @@ $page_content  = get_the_content();
 		<!-- ── Sidebar ───────────────────────────────────────────────────── -->
 		<aside class="de-city-page__sidebar" role="complementary" aria-label="Contact and resources">
 
-			<!-- Agent contact card -->
-			<div class="de-agent-bio-card">
-				<img src="<?php echo esc_url( get_theme_file_uri( '/assets/images/headshot/dalicia-headshot.jpg' ) ); ?>"
-				     alt="Dalicia Emerson, REALTOR® — Northwest Arkansas"
-				     class="de-agent-bio-card__photo"
-				     width="300" height="375" loading="eager">
-			</div>
+			<?php get_template_part( 'template-parts/agent-contact-card' ); ?>
 
 			<!-- Quick contact form -->
 			<div id="city-contact-form" class="de-sidebar-form">

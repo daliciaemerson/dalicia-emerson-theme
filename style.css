@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.3.14
+Version:      2.3.15
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -1727,73 +1727,6 @@ body:has([class*="showcaseidx"]) .site-main {
   width: 100%;
 }
 
-/* ── Agent Sidebar Card ─────────────────────────────────────────────────── */
-.de-agent-card {
-  background: var(--de-white);
-  border: 1px solid var(--de-gray-border);
-  border-radius: var(--de-radius-lg);
-  overflow: hidden;
-  position: sticky;
-  top: calc(var(--de-header-h) + 24px);
-}
-
-.de-agent-card__header {
-  background: var(--de-navy);
-  padding: 28px 24px 24px;
-  text-align: center;
-}
-
-.de-agent-card__photo {
-  width: 140px; height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--de-gold);
-  margin: 0 auto 14px;
-  display: block;
-}
-
-.de-agent-card__name {
-  font-family: var(--de-font-serif);
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--de-white);
-  margin-bottom: 4px;
-}
-
-.de-agent-card__title {
-  font-family: var(--de-font-sans);
-  font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.62);
-  line-height: 1.5;
-}
-
-.de-agent-card__body { padding: 24px; }
-
-.de-agent-card__cred {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--de-font-sans);
-  font-size: 0.80rem;
-  color: var(--de-text-muted);
-  margin-bottom: 8px;
-}
-.de-agent-card__cred::before { content: '✓'; color: var(--de-gold); font-weight: 700; flex-shrink: 0; }
-
-.de-agent-card__divider { height: 1px; background: var(--de-gray-border); margin: 16px 0; }
-
-.de-agent-card__phone {
-  display: block;
-  font-family: var(--de-font-sans);
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--de-navy);
-  text-align: center;
-  margin-bottom: 12px;
-  transition: color var(--de-transition);
-}
-.de-agent-card__phone:hover { color: var(--de-gold); }
-
 
 /* ══════════════════════════════════════════════════════════════════════════
    PAGE TEMPLATE: LUXURY HOMES — Credentials Bar
@@ -1871,7 +1804,6 @@ body:has([class*="showcaseidx"]) .site-main {
   .de-value-props__grid { grid-template-columns: repeat(2, 1fr); }
   .de-cities__grid { grid-template-columns: repeat(2, 1fr); }
   .de-city-layout { grid-template-columns: 1fr; }
-  .de-agent-card { position: static; }
 
   .de-trust-stats__grid { gap: 24px; }
 }
@@ -2311,20 +2243,6 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 
 
-/* ── Agent card: fix white text on white body background ─────────────── */
-.de-agent-card__body .de-agent-card__name { color: var(--de-navy); }
-.de-agent-card__brokerage {
-  font-family: var(--de-font-sans);
-  font-size: 0.82rem;
-  color: var(--de-text-muted);
-  margin-bottom: 14px;
-}
-.de-agent-card__note {
-  font-family: var(--de-font-sans);
-  font-size: 0.78rem;
-  color: var(--de-gray-mid);
-  margin-bottom: 14px;
-}
 
 /* ── Hero base: title + subtitle (luxury, corporate heroes) ─────────── */
 .de-hero__title {
@@ -2625,14 +2543,6 @@ body:has([class*="showcaseidx"]) .site-main {
 .de-contact-page__form-col h2 { font-family: var(--de-font-serif); font-size: 1.6rem; font-weight: 700; color: var(--de-navy); margin-bottom: 24px; }
 .de-form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .de-form__disclaimer { font-family: var(--de-font-sans); font-size: 0.78rem; color: var(--de-gray-mid); margin-top: 12px; line-height: 1.5; }
-.de-agent-bio-card { display: block; }
-.de-agent-bio-card__photo {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  object-position: center 20%;
-  display: block;
-}
 .de-contact-expectations, .de-service-area { background: var(--de-gray-light); border-radius: var(--de-radius-lg); padding: 20px 24px; margin-bottom: 16px; }
 .de-contact-expectations h3, .de-service-area h3 { font-family: var(--de-font-serif); font-size: 1rem; font-weight: 700; color: var(--de-navy); margin-bottom: 12px; }
 .de-contact-expectations ul { list-style: none; padding: 0; margin: 0; }
