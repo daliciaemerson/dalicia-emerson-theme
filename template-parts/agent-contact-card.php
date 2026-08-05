@@ -54,7 +54,7 @@
   <div class="de-agent-contact-card__cta">
     <a href="/contact-dalicia-emerson/" class="de-agent-contact-card__cta-btn">
       <span class="de-agent-contact-card__cta-main">Have Dalicia Contact Me</span>
-      <span class="de-agent-contact-card__cta-sub">Leave your information and she'll reach out shortly.</span>
+      <span class="de-agent-contact-card__cta-sub">Leave your information and I'll reach out shortly.</span>
     </a>
   </div>
 
