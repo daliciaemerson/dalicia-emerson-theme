@@ -92,7 +92,6 @@
           3589 N College Ave<br>
           Fayetteville, AR 72703
         </p>
-        <a href="https://www.coldwellbankernwa.com" target="_blank" rel="noopener" class="de-footer__office-btn">Visit Office</a>
       </div>
 
     </div>
