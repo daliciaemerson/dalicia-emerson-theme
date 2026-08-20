@@ -75,10 +75,12 @@ get_header();
               . ' class="de-about-float-img"'
               . ' width="320" height="420">';
 
-            $creds_img = '<img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/images/family-pictures/E -8158.jpeg' ) . '"'
-              . ' alt="Dalicia Emerson with family"'
-              . ' class="de-about-creds-img"'
-              . ' width="400" height="300">';
+            $creds_img = '<div class="de-about-creds-pair">'
+              . '<img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/images/family-pictures/E -8158.jpeg' ) . '"'
+              . ' alt="Dalicia Emerson with family" class="de-about-creds-pair__img">'
+              . '<img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/images/family-pictures/E -8409.jpeg' ) . '"'
+              . ' alt="Dalicia Emerson" class="de-about-creds-pair__img">'
+              . '</div>';
 
             $content = preg_replace( '/<\/p>/', '</p>' . $float_img, $content, 1 );
             $content = preg_replace( '/(<h3[^>]*>Credentials<\/h3>)/', $creds_img . '$1', $content, 1 );
