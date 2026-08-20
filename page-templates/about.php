@@ -75,7 +75,14 @@ get_header();
               . ' class="de-about-float-img"'
               . ' width="320" height="420">';
 
-            echo preg_replace( '/<\/p>/', '</p>' . $float_img, $content, 1 );
+            $creds_img = '<img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/images/family-pictures/Facetune_01-12-2024-15-50-37.jpeg' ) . '"'
+              . ' alt="Dalicia Emerson"'
+              . ' class="de-about-creds-img"'
+              . ' width="400" height="300">';
+
+            $content = preg_replace( '/<\/p>/', '</p>' . $float_img, $content, 1 );
+            $content = preg_replace( '/(<h3[^>]*>Credentials<\/h3>)/', $creds_img . '$1', $content, 1 );
+            echo $content;
           ?>
         </div>
       <?php endwhile; endif; ?>
