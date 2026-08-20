@@ -24,6 +24,41 @@ get_header();
     </div>
   </section>
 
+  <!-- ── Stats Bar ────────────────────────────────────────────────────── -->
+  <div class="de-about-stats">
+    <div class="de-about-stats__inner">
+      <div class="de-about-stat">
+        <span class="de-about-stat__number">30+</span>
+        <span class="de-about-stat__label">Years in NWA</span>
+      </div>
+      <div class="de-about-stat__divider"></div>
+      <div class="de-about-stat">
+        <span class="de-about-stat__number">$500K–$3M</span>
+        <span class="de-about-stat__label">Luxury Specialty</span>
+      </div>
+      <div class="de-about-stat__divider"></div>
+      <div class="de-about-stat">
+        <span class="de-about-stat__number">8</span>
+        <span class="de-about-stat__label">NWA Communities Served</span>
+      </div>
+      <div class="de-about-stat__divider"></div>
+      <div class="de-about-stat">
+        <span class="de-about-stat__number">28</span>
+        <span class="de-about-stat__label">5-Star Reviews</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Quote Callout ─────────────────────────────────────────────────── -->
+  <div class="de-about-quote">
+    <div class="de-container">
+      <blockquote class="de-about-quote__text">
+        "What I love most is helping people see the potential in a space — and find the home that fits the life they're building."
+      </blockquote>
+      <cite class="de-about-quote__cite">— Dalicia Emerson, NWA REALTOR®</cite>
+    </div>
+  </div>
+
   <!-- ── Main Content ──────────────────────────────────────────────────── -->
   <div class="de-container de-about-page__layout">
 

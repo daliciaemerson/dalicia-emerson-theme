@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.3.15
+Version:      2.3.16
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -2653,17 +2653,48 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 .de-about-page__body h2 {
   font-family: var(--de-font-serif);
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  color: var(--de-navy);
+  margin: 0 0 24px;
+  padding-bottom: 16px;
+  border-bottom: 3px solid #d4af5a;
+}
+.de-about-page__body h3 {
+  font-family: var(--de-font-serif);
   color: var(--de-navy);
   margin: 40px 0 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.85rem;
 }
 .de-about-page__body ul {
-  padding-left: 20px;
-  margin-bottom: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .de-about-page__body ul li {
-  margin-bottom: 8px;
-  color: var(--de-text);
+  padding: 12px 16px;
+  background: #f8f7f5;
+  border-left: 3px solid #d4af5a;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.92rem;
+  color: var(--de-navy);
+  font-weight: 500;
+}
+.de-about-page__body p:last-of-type {
+  background: var(--de-navy);
+  color: #ffffff;
+  padding: 24px 28px;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.de-about-page__body p:last-of-type a {
+  color: #d4af5a;
+  font-weight: 700;
 }
 .de-about-page__sidebar {
   position: sticky;
@@ -2679,6 +2710,91 @@ body:has([class*="showcaseidx"]) .site-main {
   }
 }
 
+
+/* ══════════════════════════════════════════════════════════════════════════
+   ABOUT PAGE: STATS BAR
+   ══════════════════════════════════════════════════════════════════════════ */
+.de-about-stats {
+  background: var(--de-navy);
+  padding: 40px;
+  border-bottom: 2px solid #d4af5a;
+}
+.de-about-stats__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.de-about-stat {
+  text-align: center;
+  flex: 1;
+}
+.de-about-stat__number {
+  display: block;
+  font-family: var(--de-font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: #d4af5a;
+  margin-bottom: 6px;
+}
+.de-about-stat__label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+}
+.de-about-stat__divider {
+  width: 1px;
+  height: 48px;
+  background: rgba(255,255,255,0.15);
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   ABOUT PAGE: QUOTE CALLOUT
+   ══════════════════════════════════════════════════════════════════════════ */
+.de-about-quote {
+  background: #f8f7f5;
+  padding: 56px 40px;
+  text-align: center;
+  border-bottom: 1px solid #e8e4de;
+}
+.de-about-quote__text {
+  font-family: var(--de-font-serif);
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  color: var(--de-navy);
+  font-style: italic;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 16px;
+}
+.de-about-quote__cite {
+  font-size: 0.85rem;
+  color: #d4af5a;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  font-style: normal;
+}
+
+@media (max-width: 768px) {
+  .de-about-stats__inner {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .de-about-stat__divider {
+    display: none;
+  }
+  .de-about-stat {
+    flex: 0 0 45%;
+  }
+  .de-about-quote {
+    padding: 40px 24px;
+  }
+}
 
 /* ══════════════════════════════════════════════════════════════════════════
    ABOUT PAGE: AGENT CONTACT CARD
