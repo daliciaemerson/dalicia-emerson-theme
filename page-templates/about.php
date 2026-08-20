@@ -65,7 +65,18 @@ get_header();
     <article class="de-about-page__content">
       <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <div class="de-about-page__body entry-content">
-          <?php the_content(); ?>
+          <?php
+            ob_start();
+            the_content();
+            $content = ob_get_clean();
+
+            $float_img = '<img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/images/family-pictures/E -8158.jpeg' ) . '"'
+              . ' alt="Dalicia Emerson with family"'
+              . ' class="de-about-float-img"'
+              . ' width="320" height="420">';
+
+            echo preg_replace( '/<\/p>/', '</p>' . $float_img, $content, 1 );
+          ?>
         </div>
       <?php endwhile; endif; ?>
     </article>
