@@ -70,13 +70,13 @@ get_header();
             the_content();
             $content = ob_get_clean();
 
-            $float_img = '<img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/images/family-pictures/E -8158.jpeg' ) . '"'
-              . ' alt="Dalicia Emerson with family"'
+            $float_img = '<img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/images/family-pictures/Facetune_01-12-2024-15-50-37.jpeg' ) . '"'
+              . ' alt="Dalicia Emerson"'
               . ' class="de-about-float-img"'
               . ' width="320" height="420">';
 
-            $creds_img = '<img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/images/family-pictures/Facetune_01-12-2024-15-50-37.jpeg' ) . '"'
-              . ' alt="Dalicia Emerson"'
+            $creds_img = '<img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/images/family-pictures/E -8158.jpeg' ) . '"'
+              . ' alt="Dalicia Emerson with family"'
               . ' class="de-about-creds-img"'
               . ' width="400" height="300">';
 
