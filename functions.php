@@ -308,12 +308,12 @@ function de_handle_lead_submission(): void {
 		$body,
 		[
 			'Content-Type: text/plain; charset=UTF-8',
-			'From: ' . DE_AGENT_NAME . ' Website <noreply@daliciaemerson.com>',
+			'From: ' . DE_AGENT_NAME . ' Website <noreply@daliciaemerson.wpenginepowered.com>',
 		]
 	);
 
 	if ( $sent ) {
-		wp_send_json_success( [ 'message' => 'Thanks, ' . esc_html( $name ) . '! I\'ll be in touch within one business day.' ] );
+		wp_send_json_success( [ 'redirect' => home_url( '/thank-you/' ) ] );
 	} else {
 		wp_send_json_error( [ 'message' => 'Something went wrong. Please email me directly at ' . DE_EMAIL ] );
 	}

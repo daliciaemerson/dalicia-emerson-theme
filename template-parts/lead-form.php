@@ -119,6 +119,10 @@ $nonce_val  = wp_create_nonce( 'de_lead_nonce' );
 		fetch( DE.ajaxUrl, { method: 'POST', body: new FormData( form ) } )
 			.then( function (r) { return r.json(); } )
 			.then( function (json) {
+				if ( json.success && json.data && json.data.redirect ) {
+					window.location.href = json.data.redirect;
+					return;
+				}
 				status.className  = 'de-form__status ' + ( json.success ? 'de-form__status--success' : 'de-form__status--error' );
 				status.textContent = json.data.message;
 				status.style.display = 'block';
