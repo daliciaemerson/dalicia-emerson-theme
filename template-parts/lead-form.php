@@ -102,6 +102,7 @@ $nonce_val  = wp_create_nonce( 'de_lead_nonce' );
 </form>
 
 <script>
+document.addEventListener('DOMContentLoaded', function () {
 (function () {
 	var form   = document.getElementById( <?php echo wp_json_encode( $form_id ); ?> );
 	var status = document.getElementById( <?php echo wp_json_encode( $status_id ); ?> );
@@ -139,4 +140,5 @@ $nonce_val  = wp_create_nonce( 'de_lead_nonce' );
 			} );
 	} );
 }());
+});
 </script>
