@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.3.23
+Version:      2.3.24
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -341,144 +341,8 @@ body.home .entry-content,
 .de-header__btn:hover { background: var(--de-gold-light); transform: translateY(-1px); color: var(--de-white); }
 
 /* ── Hamburger ─────────────────────────────────────────────────────────── */
-.de-header__hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  width: 40px;
-  height: 40px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-  border-radius: var(--de-radius);
-  flex-shrink: 0;
-}
-.de-header__hamburger span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--de-navy);
-  border-radius: 2px;
-  transition: background var(--de-transition), transform 0.22s ease, opacity 0.22s ease;
-}
-.de-header--transparent:not(.de-header--scrolled) .de-header__hamburger span { background: var(--de-white); }
-.de-header__hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.de-header__hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.de-header__hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-/* ── Mobile Overlay ────────────────────────────────────────────────────── */
-.de-mobile-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(26, 43, 74, 0.50);
-  z-index: 1000;
-  opacity: 0;
-  transition: opacity 0.25s ease;
-}
-.de-mobile-overlay.is-active { display: block; opacity: 1; }
-
-/* ── Mobile Nav Panel ──────────────────────────────────────────────────── */
-.de-mobile-nav {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: min(320px, 88vw);
-  height: 100%;
-  background: var(--de-white);
-  z-index: 1001;
-  overflow-y: auto;
-  padding: 0 0 40px;
-  box-shadow: -8px 0 40px rgba(26, 43, 74, 0.18);
-  transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.de-mobile-nav.is-open { right: 0; }
-
-.de-mobile-nav__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 24px;
-  border-bottom: 1px solid var(--de-gray-border);
-}
-
-.de-mobile-nav__close {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px; height: 36px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.4rem;
-  color: var(--de-navy);
-  border-radius: var(--de-radius);
-}
-.de-mobile-nav__close:hover { background: var(--de-gray-light); }
-
-.de-mobile-nav__links { padding: 12px 0; }
-
-.de-mobile-nav__links a,
-.de-mobile-nav__cities-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 24px;
-  font-family: var(--de-font-sans);
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--de-navy);
-  border: none;
-  background: none;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-  transition: color var(--de-transition), background var(--de-transition);
-}
-.de-mobile-nav__links a:hover,
-.de-mobile-nav__cities-toggle:hover { color: var(--de-gold); background: var(--de-gold-faint); }
-
-.de-mobile-nav__cities-panel {
-  display: none;
-  padding: 4px 0 4px 16px;
-  background: var(--de-gray-light);
-}
-.de-mobile-nav__cities-panel.is-open { display: block; }
-.de-mobile-nav__cities-panel a { padding: 11px 24px; font-size: 0.88rem; font-weight: 500; }
-
-.de-mobile-nav__footer {
-  padding: 24px 24px 0;
-  border-top: 1px solid var(--de-gray-border);
-  margin-top: 8px;
-}
-
-.de-mobile-nav__phone {
-  display: block;
-  font-family: var(--de-font-sans);
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--de-navy);
-  margin-bottom: 12px;
-  letter-spacing: 0.02em;
-}
-
-.de-mobile-nav__btn {
-  display: block;
-  width: 100%;
-  text-align: center;
-  padding: 14px 24px;
-  background: var(--de-gold);
-  color: var(--de-white);
-  border-radius: var(--de-radius);
-  font-family: var(--de-font-sans);
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-}
-.de-mobile-nav__btn:hover { background: var(--de-gold-light); color: var(--de-white); }
+/* Mobile nav styles live in header.php <style> block — class names are
+   .de-hamburger, .de-mobile-nav-overlay, .de-mobile-nav, .de-mobile-nav--open */
 
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -1846,14 +1710,27 @@ body:has([class*="showcaseidx"]) .site-main {
 
   .de-creds-bar { padding: 16px 24px; }
   .de-creds-bar__inner { gap: 20px; justify-content: flex-start; }
+
+  .de-container { padding: 0 20px; }
+  .de-about-page__layout { padding: 48px 20px; }
+  .de-article { padding: 40px 20px; }
+  .de-hero--luxury .de-container,
+  .de-hero--corporate .de-container,
+  .de-hero--about .de-container { padding-left: 20px; padding-right: 20px; }
+  .de-hero--luxury,
+  .de-hero--corporate,
+  .de-hero--about { min-height: 38vh; padding-bottom: 32px; }
 }
 
 /* ── Small Mobile ≤ 480px ──────────────────────────────────────────────── */
 @media (max-width: 480px) {
   .de-trust-bar__inner { flex-direction: column; gap: 4px; align-items: flex-start; }
   .de-cities__grid { grid-template-columns: 1fr; }
-.de-agent-strip__contact { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .de-agent-strip__contact { flex-direction: column; align-items: flex-start; gap: 10px; }
   .de-listings__footer { text-align: left; }
+  .de-about-stats { padding: 28px 20px; }
+  .de-about-stat__number { font-size: 1.4rem; }
+  .de-footer__brand-identity { flex-direction: column; align-items: flex-start; gap: 8px; }
 }
 
 
