@@ -65,21 +65,32 @@ get_header();
 				<h2 id="relocation-cta-heading">Ready to Start Your NWA Search?</h2>
 				<p>
 					Whether your move is six weeks away or six months out, the best time to
-					start the conversation is now. The NWA market moves quickly &mdash; let&rsquo;s
-					get ahead of it together.
+					start the conversation is now. NWA&rsquo;s best neighborhoods move quickly,
+					and knowing which areas fit your life &mdash; before you fly in for a
+					house-hunting trip &mdash; puts you in a completely different position than
+					buyers who show up without a plan.
+				</p>
+				<p>
+					I offer free relocation consultations by phone or video call. We&rsquo;ll
+					talk through your timeline, your priorities, and what I&rsquo;m seeing in
+					the market right now. No pressure, no pitch &mdash; just honest information
+					from someone who lives and works here.
 				</p>
 				<ul class="de-contact-list">
 					<li>
 						<a href="tel:<?php echo esc_attr( DE_PHONE ); ?>" class="de-contact-list__link">
-							<?php echo esc_html( DE_PHONE_DISPLAY ); ?>
+							Call <?php echo esc_html( DE_PHONE_DISPLAY ); ?>
 						</a>
 					</li>
 					<li>
-						<a href="mailto:<?php echo esc_attr( DE_EMAIL ); ?>" class="de-contact-list__link">
-							<?php echo esc_html( DE_EMAIL ); ?>
+						<a href="#de-lead-form-relocation-hub" class="de-contact-list__link">
+							Send a Message
 						</a>
 					</li>
 				</ul>
+				<p class="de-cta-section__byline">
+					Dalicia Emerson &bull; Coldwell Banker Harris McHaney &amp; Faucette &bull; AR License #SA00088247
+				</p>
 			</div>
 
 			<div class="de-cta-section__form">
