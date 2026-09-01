@@ -13,8 +13,12 @@ get_header();
 <main id="main" class="de-relocation-hub" role="main">
 
 	<!-- ── Hero ──────────────────────────────────────────────────────────── -->
+	<?php
+	$hero_img = get_the_post_thumbnail_url( get_the_ID(), 'full' )
+	            ?: get_stylesheet_directory_uri() . '/assets/images/nwa-relocation-hero.jpg';
+	?>
 	<section class="de-hero de-hero--relocation" aria-labelledby="relocation-hero-heading">
-		<div class="de-hero__bg" style="background-image:url('https://daliciaemerson.wpenginepowered.com/wp-content/uploads/2026/04/fayetteville-2-1568752221.jpg');"></div>
+		<div class="de-hero__bg" style="background-image:url('<?php echo esc_url( $hero_img ); ?>');"></div>
 		<div class="de-hero__overlay"></div>
 		<div class="de-container">
 			<h1 id="relocation-hero-heading" class="de-hero__headline">
