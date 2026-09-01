@@ -57,6 +57,7 @@ get_header();
 
 	</article>
 
+	<?php get_template_part( 'template-parts/contact-section', null, [ 'source' => 'relocation-hub' ] ); ?>
 
 </main>
 
