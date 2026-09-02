@@ -74,7 +74,7 @@
     }
 
     /* Push page content below fixed header */
-    body:not(.is-front-page) { padding-top: var(--de-header-h); }
+    body:not(.de-has-hero) { padding-top: var(--de-header-h); }
 
     .de-header__inner {
       max-width: 1280px;
@@ -483,7 +483,19 @@
   </style>
 </head>
 
-<body <?php body_class( is_front_page() ? 'is-front-page' : '' ); ?>>
+<?php
+$de_has_hero = is_front_page()
+    || is_page_template( [
+        'page-templates/city-page.php',
+        'page-templates/luxury-homes.php',
+        'page-templates/about.php',
+        'page-templates/relocation-hub.php',
+        'page-templates/relocation-spoke.php',
+        'page-templates/walmart-relocation.php',
+    ] );
+$de_has_hero = apply_filters( 'de_header_transparent', $de_has_hero );
+?>
+<body <?php body_class( $de_has_hero ? 'de-has-hero' : '' ); ?>>
 <?php wp_body_open(); ?>
 
 <a class="de-skip-link" href="#main">Skip to main content</a>
@@ -493,7 +505,7 @@
 ════════════════════════════════════════════════════════════════════════════ -->
 <header
   id="site-header"
-  class="de-header"
+  class="de-header<?php echo $de_has_hero ? ' de-header--transparent' : ''; ?>"
   role="banner"
 >
   <div class="de-header__inner">
