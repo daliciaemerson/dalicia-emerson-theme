@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.3.37
+Version:      2.3.38
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -30,8 +30,22 @@ Text Domain:  daliciaemerson
   --de-max-width:   1200px;
   --de-radius:      4px;
   --de-radius-lg:   8px;
+  --de-radius-xl:   12px;
+  --de-radius-2xl:  20px;
   --de-header-h:    110px;
   --de-transition:  0.22s ease;
+
+  /* ── Extended tokens (design system) ──────────────────────────── */
+  --de-navy-ink:       #071525;
+  --de-text-slate:     #6b7280;
+  --de-on-dark:        rgba(255, 255, 255, 0.92);
+  --de-on-dark-muted:  rgba(255, 255, 255, 0.78);
+  --de-border-gold:    1px solid var(--de-gold);
+  --de-shadow-agent:   0 14px 36px rgba(7, 21, 37, 0.16);
+  --de-shadow-card:    0 2px 12px rgba(26, 43, 74, 0.08);
+  --de-track-toc:      0.14em;
+  --de-track-label:    0.08em;
+  --de-weight-bold:    700;
 }
 
 
@@ -2051,30 +2065,196 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 
 
-/* ── Standardized Contact Section (card + form combo) ─────────────────── */
+/* ── Standardized Contact Section (agent panel + OR + form) ───────────── */
 .de-contact-section {
   background: var(--de-navy);
-  padding: 80px 40px;
+  padding: 72px 24px;
 }
 .de-contact-section__inner {
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Optional header */
+.de-contact-section__header { text-align: center; margin-bottom: 16px; }
+.de-contact-section__eyebrow {
+  margin: 0 0 12px;
+  font-family: var(--de-font-sans);
+  font-size: 0.70rem;
+  font-weight: var(--de-weight-bold);
+  letter-spacing: var(--de-track-toc);
+  text-transform: uppercase;
+  color: var(--de-gold);
+}
+.de-contact-section__heading {
+  margin: 0;
+  font-family: var(--de-font-serif);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: var(--de-weight-bold);
+  line-height: 1.15;
+  color: var(--de-white);
+}
+.de-contact-section__intro {
+  margin: 14px 0 0;
+  font-family: var(--de-font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--de-on-dark-muted);
+}
+
+/* Agent panel — horizontal: photo left, info right */
+.de-agent-panel {
   display: grid;
-  grid-template-columns: 340px 1fr;
-  gap: 48px;
-  align-items: start;
-}
-.de-contact-section__form {
+  grid-template-columns: 230px 1fr;
   background: var(--de-white);
-  border-radius: var(--de-radius-lg);
-  padding: 32px 28px;
+  border-radius: var(--de-radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--de-shadow-agent);
+  border: var(--de-border-gold);
 }
-@media (max-width: 900px) {
-  .de-contact-section__inner {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
+.de-agent-panel__photo { position: relative; min-height: 260px; }
+.de-agent-panel__photo-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 12%;
+  display: block;
 }
-@media (max-width: 768px) {
-  .de-contact-section { padding: 56px 24px; }
+.de-agent-panel__body {
+  display: flex;
+  flex-direction: column;
+  padding: 26px 28px 22px;
+  min-width: 0;
+}
+.de-agent-panel__identity {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.20);
+}
+.de-agent-panel__monogram {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.de-agent-panel__name {
+  margin: 0 0 3px;
+  font-family: var(--de-font-serif);
+  font-size: 1.35rem;
+  font-weight: var(--de-weight-bold);
+  color: var(--de-navy-ink);
+  line-height: 1.2;
+}
+.de-agent-panel__title {
+  margin: 0;
+  font-family: var(--de-font-sans);
+  font-size: 0.66rem;
+  font-weight: var(--de-weight-bold);
+  letter-spacing: var(--de-track-toc);
+  text-transform: uppercase;
+  color: var(--de-gold);
+}
+.de-agent-panel__rows {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0 4px;
+}
+.de-agent-panel__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 7px 0;
+  min-height: 40px;
+  font-family: var(--de-font-sans);
+  font-size: 0.86rem;
+  color: #111827;
+  text-decoration: none;
+  word-break: break-word;
+  transition: color var(--de-transition);
+}
+.de-agent-panel__row--muted { font-size: 0.78rem; color: var(--de-text-slate); }
+.de-agent-panel__row:not(.de-agent-panel__row--muted):hover { color: var(--de-gold); }
+.de-agent-panel__row-icon {
+  color: var(--de-gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: flex;
+}
+.de-agent-panel__social {
+  margin-top: auto;
+  display: flex;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(201, 168, 76, 0.20);
+}
+.de-agent-panel__social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--de-gray-light);
+  transition: background var(--de-transition);
+}
+.de-agent-panel__social-btn:hover { background: rgba(201, 168, 76, 0.15); }
+
+/* OR divider */
+.de-contact-section__divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.de-contact-section__divider-rule {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.22);
+}
+.de-contact-section__divider-label {
+  font-family: var(--de-font-sans);
+  font-size: 0.72rem;
+  font-weight: var(--de-weight-bold);
+  letter-spacing: var(--de-track-toc);
+  text-transform: uppercase;
+  color: var(--de-gold);
+}
+
+/* Lead form panel */
+.de-lead-form-panel {
+  background: var(--de-white);
+  border-radius: var(--de-radius-2xl);
+  box-shadow: var(--de-shadow-agent);
+  padding: 28px 32px 26px;
+}
+.de-lead-form-panel__heading {
+  margin: 0 0 5px;
+  font-family: var(--de-font-serif);
+  font-size: 1.25rem;
+  font-weight: var(--de-weight-bold);
+  color: var(--de-navy);
+  line-height: 1.2;
+}
+.de-lead-form-panel__intro {
+  margin: 0 0 18px;
+  font-family: var(--de-font-sans);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--de-text-slate);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .de-contact-section { padding: 56px 20px; }
+  .de-agent-panel { grid-template-columns: 1fr; }
+  .de-agent-panel__photo { min-height: 220px; }
+  .de-lead-form-panel { padding: 24px 20px 22px; }
 }
 
 
