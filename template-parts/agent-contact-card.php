@@ -1,8 +1,11 @@
 <?php
 /**
  * Agent Contact Card — reusable component
- * Usage: get_template_part( 'template-parts/agent-contact-card' )
+ * Usage: get_template_part( 'template-parts/agent-contact-card', null, [ 'cta' => false ] )
+ * Args:
+ *   cta (bool) — show the "Have Dalicia Contact Me" button. Default true.
  */
+$show_cta = $args['cta'] ?? true;
 ?>
 <div class="de-agent-contact-card">
 
@@ -48,6 +51,7 @@
     </div>
   </div>
 
+  <?php if ( $show_cta ) : ?>
   <div class="de-agent-contact-card__divider" aria-hidden="true"></div>
 
   <!-- Lead Button -->
@@ -57,6 +61,7 @@
       <span class="de-agent-contact-card__cta-sub">Leave your information and I'll reach out shortly.</span>
     </a>
   </div>
+  <?php endif; ?>
 
   <!-- Social Links -->
   <div class="de-agent-contact-card__social">

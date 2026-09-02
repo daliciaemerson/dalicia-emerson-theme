@@ -59,6 +59,7 @@ get_header();
 
 	<?php get_template_part( 'template-parts/contact-section', null, [
 		'source'     => 'relocation-hub',
+		'eyebrow'    => 'Relocation Consultations',
 		'heading'    => 'Ready to Start Your NWA Search?',
 		'paragraphs' => [
 			'Whether your move is six weeks away or six months out, the best time to start the conversation is now. NWA\'s best neighborhoods move quickly, and knowing which areas fit your life — before you fly in for a house-hunting trip — puts you in a completely different position than buyers who show up without a plan.',
