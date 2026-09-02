@@ -11,10 +11,10 @@
  *   ]);
  */
 
-$source  = $args['source']  ?? 'generic';
-$eyebrow = $args['eyebrow'] ?? '';
-$heading = $args['heading'] ?? '';
-$intro   = $args['intro']   ?? '';
+$source     = $args['source']     ?? 'generic';
+$eyebrow    = $args['eyebrow']    ?? '';
+$heading    = $args['heading']    ?? '';
+$paragraphs = $args['paragraphs'] ?? [];
 
 $headshot = get_theme_file_uri( '/assets/images/headshot/dalicia-headshot.jpg' );
 $monogram = get_theme_file_uri( '/assets/images/de-monogram.png' );
@@ -26,7 +26,7 @@ $li       = get_theme_file_uri( '/assets/images/social-media-icons/icons8-linked
 <section class="de-contact-section" aria-label="Contact Dalicia Emerson">
 	<div class="de-contact-section__inner">
 
-		<?php if ( $eyebrow || $heading || $intro ) : ?>
+		<?php if ( $eyebrow || $heading || $paragraphs ) : ?>
 		<div class="de-contact-section__header">
 			<?php if ( $eyebrow ) : ?>
 				<p class="de-contact-section__eyebrow"><?php echo esc_html( $eyebrow ); ?></p>
@@ -34,9 +34,9 @@ $li       = get_theme_file_uri( '/assets/images/social-media-icons/icons8-linked
 			<?php if ( $heading ) : ?>
 				<h2 class="de-contact-section__heading"><?php echo esc_html( $heading ); ?></h2>
 			<?php endif; ?>
-			<?php if ( $intro ) : ?>
-				<p class="de-contact-section__intro"><?php echo esc_html( $intro ); ?></p>
-			<?php endif; ?>
+			<?php foreach ( $paragraphs as $p ) : ?>
+				<p class="de-contact-section__intro"><?php echo esc_html( $p ); ?></p>
+			<?php endforeach; ?>
 		</div>
 		<?php endif; ?>
 
