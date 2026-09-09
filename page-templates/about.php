@@ -26,8 +26,9 @@ get_header();
 
   <!-- ── Stats Bar ────────────────────────────────────────────────────── -->
   <?php get_template_part( 'template-parts/stats-bar', null, [
-    'dividers' => true,
-    'items'    => [
+    'dividers'  => true,
+    'goldRule'  => true,
+    'items'     => [
       [ 'value' => '30+',       'label' => 'Years in NWA' ],
       [ 'value' => '$500K–$3M', 'label' => 'Luxury Specialty' ],
       [ 'value' => '8',         'label' => 'NWA Communities Served' ],

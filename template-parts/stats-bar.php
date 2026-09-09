@@ -9,6 +9,7 @@
  *     @type string $tone       Optional. 'dark'|'light'. Default 'dark'.
  *     @type bool   $boxed      Optional. Card surface per item. Default false.
  *     @type bool   $dividers   Optional. Hairlines between items. Auto-off when boxed. Default true.
+ *     @type bool   $gold_rule  Optional. Gold-warm bottom border (about page context). Default false.
  * }
  */
 $items      = $args['items']      ?? [];
@@ -17,12 +18,14 @@ $contained  = $args['contained']  ?? false;
 $tone       = $args['tone']       ?? 'dark';
 $boxed      = $args['boxed']      ?? false;
 $dividers   = $args['dividers']   ?? true;
+$gold_rule  = $args['goldRule']   ?? false;
 
 $show_dividers = $dividers && ! $boxed;
 
 $bar_classes = [ 'de-stats-bar' ];
 if ( $contained )        $bar_classes[] = 'de-stats-bar--contained';
 if ( ! $show_dividers )  $bar_classes[] = 'de-stats-bar--no-dividers';
+if ( $gold_rule )        $bar_classes[] = 'de-stats-bar--gold-rule';
 
 $inner_classes = [ 'de-stats-bar__inner' ];
 if ( ! $contained )      $inner_classes[] = 'de-container';
