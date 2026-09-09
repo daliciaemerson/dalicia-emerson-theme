@@ -36,15 +36,15 @@ get_header();
 		</div>
 	</section>
 
-	<!-- ── Trust Bar ─────────────────────────────────────────────────────── -->
-	<div class="de-trust-bar" role="region" aria-label="Credentials">
-		<div class="de-trust-bar__inner">
-			<span class="de-trust-item"><span class="de-trust-item__check">&#10003;</span> Global Luxury Certified</span>
-			<span class="de-trust-item"><span class="de-trust-item__check">&#10003;</span> Coldwell Banker</span>
-			<span class="de-trust-item"><span class="de-trust-item__check">&#10003;</span> 30+ Years in NWA</span>
-			<span class="de-trust-item"><span class="de-trust-item__check">&#10003;</span> Trusted NWA REALTOR®</span>
-		</div>
-	</div>
+	<!-- ── Credential Bar ───────────────────────────────────────────────── -->
+	<?php get_template_part( 'template-parts/credential-bar', null, [
+		'items' => [
+			[ 'icon' => '✓', 'label' => 'Global Luxury Certified' ],
+			[ 'icon' => '✓', 'label' => 'Coldwell Banker' ],
+			[ 'icon' => '✓', 'label' => '30+ Years in NWA' ],
+			[ 'icon' => '✓', 'label' => 'Trusted NWA REALTOR®' ],
+		],
+	] ); ?>
 
 	<!-- ── IDX Search ────────────────────────────────────────────────────── -->
 	<section class="de-idx-search" aria-label="Search NWA Homes">

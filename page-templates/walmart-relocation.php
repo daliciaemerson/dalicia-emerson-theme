@@ -41,23 +41,15 @@ get_header();
 		</div>
 	</section>
 
-	<!-- ── Trust Signals ─────────────────────────────────────────────────── -->
-	<div class="de-trust-bar" role="region" aria-label="Relocation stats">
-		<div class="de-container de-trust-bar__inner">
-			<div class="de-trust-item">
-				<span class="de-trust-item__number">36</span>
-				<span class="de-trust-item__label">New residents per day in NWA</span>
-			</div>
-			<div class="de-trust-item">
-				<span class="de-trust-item__number">500+</span>
-				<span class="de-trust-item__label">Walmart supplier companies in the area</span>
-			</div>
-			<div class="de-trust-item">
-				<span class="de-trust-item__number">11%</span>
-				<span class="de-trust-item__label">Below national avg. cost of living</span>
-			</div>
-		</div>
-	</div>
+	<!-- ── Stats Bar ────────────────────────────────────────────────────── -->
+	<?php get_template_part( 'template-parts/stats-bar', null, [
+		'aria_label' => 'Relocation stats',
+		'items'      => [
+			[ 'value' => '36',   'label' => 'New residents per day in NWA' ],
+			[ 'value' => '500+', 'label' => 'Walmart supplier companies in the area' ],
+			[ 'value' => '11%',  'label' => 'Below national avg. cost of living' ],
+		],
+	] ); ?>
 
 	<!-- ── Main Content ──────────────────────────────────────────────────── -->
 	<div class="de-container de-walmart-page__layout">

@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.6.3
+Version:      2.6.4
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -583,8 +583,8 @@ body.home .entry-content,
   border-color: var(--de-gold-light) !important;
 }
 
-/* ── Trust Bar ─────────────────────────────────────────────────────────── */
-.de-trust-bar {
+/* ── Credential Bar ─────────────────────────────────────────────────────── */
+.de-credential-bar {
   position: relative;
   z-index: 2;
   background: var(--de-navy-grad);
@@ -595,7 +595,7 @@ body.home .entry-content,
   margin-top: auto;
 }
 
-.de-trust-bar__inner {
+.de-credential-bar__inner {
   max-width: var(--de-max-width);
   margin: 0 auto;
   display: flex;
@@ -605,7 +605,7 @@ body.home .entry-content,
   gap: 0;
 }
 
-.de-trust-item {
+.de-credential-bar__item {
   display: flex;
   align-items: center;
   gap: var(--de-space-3);
@@ -619,7 +619,7 @@ body.home .entry-content,
   white-space: nowrap;
   position: relative;
 }
-.de-trust-item + .de-trust-item::before {
+.de-credential-bar__item + .de-credential-bar__item::before {
   content: '';
   position: absolute;
   left: 0; top: 50%;
@@ -627,8 +627,7 @@ body.home .entry-content,
   height: 18px; width: 1px;
   background: rgba(255, 255, 255, 0.25);
 }
-.de-trust-item__icon { color: var(--de-gold); font-size: var(--de-text-base); flex-shrink: 0; }
-.de-trust-item__check { color: var(--de-gold); }
+.de-credential-bar__icon { color: var(--de-gold); flex-shrink: 0; }
 
 .de-idx-search {
   background: var(--de-gray-warm);
@@ -1858,10 +1857,10 @@ body:has([class*="showcaseidx"]) .site-main {
 
   .de-btn-hero { padding: var(--de-space-4) var(--de-space-6); width: 100%; }
 
-  .de-trust-bar { padding: var(--de-space-4) var(--de-space-5); text-align: center; }
-  .de-trust-bar__inner { flex-direction: column; gap: var(--de-space-1); align-items: center; }
-  .de-trust-item { padding: var(--de-space-1) var(--de-space-4); font-size: var(--de-text-3xs); white-space: normal; text-align: center; justify-content: center; }
-  .de-trust-item + .de-trust-item::before { display: none; }
+  .de-credential-bar { padding: var(--de-space-4) var(--de-space-5); text-align: center; }
+  .de-credential-bar__inner { flex-direction: column; gap: var(--de-space-1); align-items: center; }
+  .de-credential-bar__item { padding: var(--de-space-1) var(--de-space-4); font-size: var(--de-text-3xs); white-space: normal; text-align: center; justify-content: center; }
+  .de-credential-bar__item + .de-credential-bar__item::before { display: none; }
 
   .de-agent-strip { padding: var(--de-space-4) var(--de-space-5); }
   .de-agent-strip__inner { justify-content: flex-start; }
@@ -1899,7 +1898,7 @@ body:has([class*="showcaseidx"]) .site-main {
 
 /* ── Small Mobile ≤ 480px ──────────────────────────────────────────────── */
 @media (max-width: 480px) {
-  .de-trust-bar__inner { flex-direction: column; gap: var(--de-space-1); align-items: center; text-align: center; }
+  .de-credential-bar__inner { flex-direction: column; gap: var(--de-space-1); align-items: center; text-align: center; }
   .de-cities__grid { grid-template-columns: 1fr; }
   .de-agent-strip__contact { flex-direction: column; align-items: flex-start; gap: var(--de-space-3); }
   .de-listings__footer { text-align: left; }
@@ -2730,9 +2729,6 @@ body:has([class*="showcaseidx"]) .site-main {
 .de-relocation-option { background: var(--de-white); border: 1px solid var(--de-gray-border); border-radius: var(--de-radius-lg); padding: var(--de-space-5) var(--de-space-5); }
 .de-relocation-option h3 { font-family: var(--de-font-serif); font-size: var(--de-text-base); font-weight: 700; color: var(--de-navy); margin-bottom: var(--de-space-3); }
 .de-relocation-option p { font-size: var(--de-text-xs); color: var(--de-text-muted); margin-bottom: var(--de-space-2); line-height: 1.5; }
-.de-trust-item__number { font-family: var(--de-font-serif); font-size: var(--de-text-xl); font-weight: 700; color: var(--de-gold-light); display: block; }
-.de-trust-item__label { font-size: var(--de-text-2xs); color: rgba(255,255,255,0.75); display: block; }
-
 /* ── City page: stats bar ───────────────────────────────────────────── */
 .de-stats-bar { background: var(--de-navy); padding: var(--de-space-5) 0; }
 .de-stats-bar__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; }
