@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.6.9
+Version:      2.7.0
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -1903,8 +1903,6 @@ body:has([class*="showcaseidx"]) .site-main {
   .de-cities__grid { grid-template-columns: 1fr; }
   .de-agent-strip__contact { flex-direction: column; align-items: flex-start; gap: var(--de-space-3); }
   .de-listings__footer { text-align: left; }
-  .de-about-stats { padding: var(--de-space-6) var(--de-space-5); }
-  .de-about-stat__number { font-size: var(--de-text-xl); }
   .de-footer__brand-identity { flex-direction: column; align-items: flex-start; gap: var(--de-space-2); }
 }
 
@@ -1987,42 +1985,6 @@ body:has([class*="showcaseidx"]) .site-main {
   border-left: 3px solid var(--de-gold);
   padding-left: var(--de-space-5);
   margin-bottom: var(--de-space-6) !important;
-}
-
-
-/* ── Stat Callout Boxes ────────────────────────────────────────────────── */
-.de-stat-callouts {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--de-space-5);
-  margin: var(--de-space-6) 0 var(--de-space-7);
-}
-
-.de-stat-callout {
-  background: var(--de-gray-light);
-  border-top: 3px solid var(--de-gold);
-  border-radius: var(--de-radius-lg);
-  padding: var(--de-space-5) var(--de-space-5);
-  text-align: center;
-}
-
-.de-stat-callout__number {
-  display: block;
-  font-family: var(--de-font-serif);
-  font-size: var(--de-h2);
-  font-weight: 700;
-  color: var(--de-navy);
-  line-height: 1;
-  margin-bottom: var(--de-space-2);
-}
-
-.de-stat-callout__label {
-  font-family: var(--de-font-sans);
-  font-size: var(--de-text-2xs);
-  font-weight: 600;
-  color: var(--de-text-muted);
-  line-height: 1.4;
-  letter-spacing: 0.02em;
 }
 
 
@@ -2417,16 +2379,11 @@ body:has([class*="showcaseidx"]) .site-main {
   .de-article { padding: var(--de-space-7) var(--de-space-5); }
   .de-toc { padding: var(--de-space-5) var(--de-space-5); }
   .de-toc__list { flex-direction: column; gap: var(--de-space-2); }
-  .de-stat-callouts { grid-template-columns: 1fr; gap: var(--de-space-4); }
   .de-cta-section { padding-block: var(--de-space-7); padding-inline: var(--de-space-4); }
   .de-cta-section__inner { grid-template-columns: 1fr; gap: var(--de-space-7); }
   .de-inline-cta__actions { flex-direction: column; }
   .de-btn--lg { width: 100%; justify-content: center; }
   .de-content-section--cta-inline { padding: var(--de-space-6) var(--de-space-5); }
-}
-
-@media (max-width: 480px) {
-  .de-stat-callouts { grid-template-columns: 1fr; }
 }
 
 
@@ -2991,49 +2948,6 @@ body:has([class*="showcaseidx"]) .site-main {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   ABOUT PAGE: STATS BAR
-   ══════════════════════════════════════════════════════════════════════════ */
-.de-about-stats {
-  background: var(--de-navy);
-  padding: var(--de-space-7);
-  border-bottom: 2px solid var(--de-gold-warm);
-}
-.de-about-stats__inner {
-  max-width: var(--de-max-width);
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-}
-.de-about-stat {
-  text-align: center;
-  flex: 1;
-}
-.de-about-stat__number {
-  display: block;
-  font-family: var(--de-font-serif);
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  font-weight: 700;
-  color: var(--de-gold);
-  margin-bottom: var(--de-space-2);
-}
-.de-about-stat__label {
-  display: block;
-  font-size: var(--de-text-3xs);
-  font-weight: 600;
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.65);
-}
-.de-about-stat__divider {
-  width: 1px;
-  height: 48px;
-  background: rgba(255,255,255,0.15);
-  flex-shrink: 0;
-}
-
-/* ══════════════════════════════════════════════════════════════════════════
    ABOUT PAGE: QUOTE CALLOUT
    ══════════════════════════════════════════════════════════════════════════ */
 .de-about-quote {
@@ -3060,16 +2974,6 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 
 @media (max-width: 768px) {
-  .de-about-stats__inner {
-    flex-wrap: wrap;
-    gap: var(--de-space-5);
-  }
-  .de-about-stat__divider {
-    display: none;
-  }
-  .de-about-stat {
-    flex: 0 0 45%;
-  }
   .de-about-quote {
     padding: var(--de-space-7) var(--de-space-5);
   }
