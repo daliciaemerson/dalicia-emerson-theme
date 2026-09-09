@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.7.1
+Version:      2.7.2
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -689,13 +689,16 @@ body.home .entry-content,
   color: var(--de-navy);
   letter-spacing: 0.02em;
   transition: color var(--de-transition);
+  display: inline-flex;
+  align-items: center;
+  padding: var(--de-space-4) 0;
 }
 .de-agent-strip__phone:hover { color: var(--de-gold); }
 
 .de-agent-strip__cta {
   background: var(--de-navy);
   color: var(--de-white);
-  padding: var(--de-space-3) var(--de-space-5);
+  padding: var(--de-space-4) var(--de-space-5);
   border-radius: var(--de-radius);
   font-family: var(--de-font-sans);
   font-size: var(--de-text-xs);
@@ -1325,8 +1328,8 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 
 .de-footer__social-btn {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: 1px solid rgba(201,168,76,0.75);
   background: transparent;
@@ -1387,7 +1390,7 @@ body:has([class*="showcaseidx"]) .site-main {
   color: rgba(255,255,255,0.78);
   text-decoration: none;
   padding: var(--de-space-2) 0;
-  min-height: 42px;
+  min-height: 44px;
   transition: color 0.18s ease;
 }
 .de-footer__link:hover {
@@ -1417,15 +1420,14 @@ body:has([class*="showcaseidx"]) .site-main {
 
 .de-footer__contact-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: var(--de-space-3);
-  min-height: 42px;
+  min-height: 44px;
 }
 
 .de-footer__contact-icon {
   color: var(--de-gold);
   flex-shrink: 0;
-  margin-top: var(--de-space-1);
   display: flex;
 }
 
@@ -1436,6 +1438,9 @@ body:has([class*="showcaseidx"]) .site-main {
   text-decoration: none;
   transition: color 0.18s ease;
   word-break: break-word;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
 }
 .de-footer__contact-link:hover {
   color: #ffffff;
@@ -1559,7 +1564,7 @@ body:has([class*="showcaseidx"]) .site-main {
   text-decoration: none;
   transition: color 0.18s ease;
   white-space: nowrap;
-  min-height: 42px;
+  min-height: 44px;
   display: flex;
   align-items: center;
 }
@@ -2081,6 +2086,8 @@ body:has([class*="showcaseidx"]) .site-main {
   font-weight: 700;
   color: var(--de-gold-light);
   transition: color var(--de-transition);
+  display: block;
+  padding: var(--de-space-4) 0;
 }
 .de-contact-list__link:hover { color: var(--de-white); }
 
@@ -2646,7 +2653,7 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 .de-card--place__name { font-family: var(--de-font-serif); font-size: var(--de-text-xl); font-weight: 700; color: var(--de-gold); margin-bottom: var(--de-space-3); }
 .de-card--place__desc { font-size: var(--de-text-xs); color: var(--de-text-muted); line-height: 1.6; margin-bottom: var(--de-space-3); }
-.de-card--place__link { font-size: var(--de-text-xs); font-weight: 700; color: var(--de-gold); }
+.de-card--place__link { font-size: var(--de-text-xs); font-weight: 700; color: var(--de-gold); display: block; padding: var(--de-space-4) 0; }
 .de-card--place__link:hover { color: var(--de-gold-light); }
 
 /* ── Walmart: employer / timeline / relocation grids ────────────────── */
@@ -3139,8 +3146,8 @@ a.de-agent-contact-card__row:hover {
 }
 
 .de-agent-contact-card__social-btn {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: 1px solid rgba(201, 168, 76, 0.50);
   display: flex;

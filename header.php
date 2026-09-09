@@ -155,7 +155,7 @@
       display: flex;
       align-items: center;
       gap: 4px;
-      padding: 8px 12px;
+      padding: 13px 12px;
       font-family: var(--de-font-sans);
       font-size: var(--de-text-sm);
       font-weight: 500;
@@ -252,7 +252,7 @@
 
     .de-dropdown__link {
       display: block;
-      padding: 9px 20px;
+      padding: 13px 20px;
       font-family: var(--de-font-sans);
       font-size: var(--de-text-xs);
       color: var(--de-black);
@@ -277,7 +277,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      padding: 12px 24px;
+      padding: 14px 24px;
       background: var(--de-gold);
       color: var(--de-black);
       border-radius: 4px;
@@ -304,9 +304,9 @@
       flex-direction: column;
       justify-content: center;
       gap: 5px;
-      width: 40px;
-      height: 40px;
-      padding: 8px;
+      width: 44px;
+      height: 44px;
+      padding: 10px;
       background: none;
       border: none;
       cursor: pointer;
@@ -427,7 +427,7 @@
 
     .de-mobile-nav__sublink {
       display: block;
-      padding: 11px 28px 11px 44px;
+      padding: 14px 28px 14px 44px;
       font-family: var(--de-font-sans);
       font-size: var(--de-text-xs);
       color: #444;
@@ -462,7 +462,7 @@
       .de-nav { display: none; }
       .de-hamburger { display: flex; }
       .de-header__cta-number { display: none; }
-      .de-header__cta { padding: 9px 12px; }
+      .de-header__cta { padding: 15px; }
     }
 
     @media (max-width: 640px) {
