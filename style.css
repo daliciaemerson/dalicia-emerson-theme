@@ -13,39 +13,88 @@ Text Domain:  daliciaemerson
    BRAND TOKENS
    ══════════════════════════════════════════════════════════════════════════ */
 :root {
-  --de-navy:        #1a2b4a;
-  --de-navy-deep:   #111e35;
-  --de-gold:        #b8924a;
-  --de-gold-light:  #d4a865;
-  --de-gold-faint:  rgba(184, 146, 74, 0.12);
-  --de-white:       #ffffff;
-  --de-gray-light:  #f5f5f3;
-  --de-gray-mid:    #8a8a8a;
-  --de-gray-border: #e0e0dc;
-  --de-text:        #1a2b4a;
-  --de-text-muted:  #5a6a7a;
-  --de-overlay:     rgba(26, 43, 74, 0.58);
-  --de-font-serif:  'Playfair Display', Georgia, serif;
-  --de-font-sans:   'Inter', 'Helvetica Neue', Arial, sans-serif;
-  --de-max-width:   1200px;
-  --de-radius:      4px;
-  --de-radius-lg:   8px;
-  --de-radius-xl:   12px;
-  --de-radius-2xl:  20px;
-  --de-header-h:    110px;
-  --de-transition:  0.22s ease;
+  /* ── Brand colors ─────────────────────────────────────────────── */
+  --de-navy:         #1a2b4a;
+  --de-navy-deep:    #111e35;
+  --de-navy-ink:     #1c1c1e;
+  --de-black:        #0a0a0a;
 
-  /* ── Extended tokens (design system) ──────────────────────────── */
-  --de-navy-ink:       #071525;
-  --de-text-slate:     #6b7280;
-  --de-on-dark:        rgba(255, 255, 255, 0.92);
-  --de-on-dark-muted:  rgba(255, 255, 255, 0.78);
-  --de-border-gold:    1px solid var(--de-gold);
-  --de-shadow-agent:   0 14px 36px rgba(7, 21, 37, 0.16);
-  --de-shadow-card:    0 2px 12px rgba(26, 43, 74, 0.08);
-  --de-track-toc:      0.14em;
-  --de-track-label:    0.08em;
-  --de-weight-bold:    700;
+  --de-gold:         #c9a84c;
+  --de-gold-light:   #e8c97a;
+  --de-gold-warm:    #d4af5a;
+  --de-gold-faint:   rgba(201, 168, 76, 0.12);
+
+  --de-white:        #ffffff;
+  --de-gray-light:   #f5f5f3;
+  --de-gray-warm:    #f8f7f5;
+  --de-gray-mid:     #8a8a8a;
+  --de-gray-border:  #e0e0dc;
+  --de-border-light: #e8e8e4;
+
+  /* ── Semantic aliases ──────────────────────────────────────────── */
+  --de-text:          #1a2b4a;
+  --de-text-muted:    #5a6a7a;
+  --de-text-slate:    #6b7280;
+  --de-on-dark:       rgba(255, 255, 255, 0.92);
+  --de-on-dark-muted: rgba(255, 255, 255, 0.78);
+  --de-overlay:       rgba(26, 43, 74, 0.58);
+
+  /* ── Typography ────────────────────────────────────────────────── */
+  --de-font-serif: 'Playfair Display', Georgia, serif;
+  --de-font-sans:  'Inter', 'Helvetica Neue', Arial, sans-serif;
+
+  /* ── Type scale ─────────────────────────────────────────────────── */
+  --de-text-2xs:  0.72rem;
+  --de-text-xs:   0.82rem;
+  --de-text-sm:   0.875rem;
+  --de-text-base: 1rem;
+  --de-text-lg:   1.125rem;
+  --de-text-xl:   1.5rem;
+  --de-text-2xl:  2.2rem;
+  --de-text-3xl:  2.8rem;
+  --de-text-hero: clamp(2.5rem, 5vw, 4rem);
+
+  /* ── Spacing scale ───────────────────────────────────────────────── */
+  --de-space-1:  4px;
+  --de-space-2:  8px;
+  --de-space-3:  12px;
+  --de-space-4:  16px;
+  --de-space-5:  20px;
+  --de-space-6:  24px;
+  --de-space-8:  32px;
+  --de-space-10: 40px;
+  --de-space-12: 48px;
+  --de-space-16: 64px;
+  --de-space-20: 80px;
+
+  /* ── Layout ────────────────────────────────────────────────────── */
+  --de-max-width: 1200px;
+  --de-header-h:  110px;
+
+  /* ── Border radius ─────────────────────────────────────────────── */
+  --de-radius:     4px;
+  --de-radius-lg:  8px;
+  --de-radius-xl:  12px;
+  --de-radius-2xl: 20px;
+
+  /* ── Shadows ───────────────────────────────────────────────────── */
+  --de-shadow-card:  0 2px 12px rgba(26, 43, 74, 0.08);
+  --de-shadow-agent: 0 14px 36px rgba(7, 21, 37, 0.16);
+
+  /* ── Motion ────────────────────────────────────────────────────── */
+  --de-transition: 0.22s ease;
+  --de-ease:       cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ── Typography utilities ──────────────────────────────────────── */
+  --de-track-toc:   0.14em;
+  --de-track-label: 0.08em;
+  --de-weight-bold: 700;
+
+  /* ── Gradients ─────────────────────────────────────────────────── */
+  --de-navy-grad: linear-gradient(135deg, #1a2744 0%, #2c3e6b 100%);
+
+  /* ── Composites ────────────────────────────────────────────────── */
+  --de-border-gold: 1px solid var(--de-gold);
 }
 
 
