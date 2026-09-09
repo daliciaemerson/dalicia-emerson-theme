@@ -25,7 +25,7 @@
       background: var(--de-gold);
       color: var(--de-black);
       font-family: var(--de-font-sans);
-      font-size: 0.875rem;
+      font-size: var(--de-text-xs);
       font-weight: 600;
       padding: 8px 16px;
       border-radius: 0 0 4px 4px;
@@ -101,7 +101,7 @@
     /* Text fallback when logo images are not yet uploaded */
     .de-header__logo-text {
       font-family: var(--de-font-serif);
-      font-size: 1.1rem;
+      font-size: var(--de-text-lg);
       font-weight: 700;
       color: var(--de-black);
       white-space: nowrap;
@@ -116,7 +116,7 @@
     .de-header__brokerage {
       display: block;
       font-family: var(--de-font-sans);
-      font-size: 0.75rem;
+      font-size: var(--de-text-3xs);
       color: #888;
       letter-spacing: 0.02em;
       margin-top: 2px;
@@ -157,7 +157,7 @@
       gap: 4px;
       padding: 8px 12px;
       font-family: var(--de-font-sans);
-      font-size: 0.92rem;
+      font-size: var(--de-text-sm);
       font-weight: 500;
       letter-spacing: 0.02em;
       color: var(--de-black);
@@ -191,7 +191,7 @@
     .de-nav__link.de-nav__link--active { color: var(--de-gold); }
 
     .de-nav__chevron {
-      font-size: 0.65rem;
+      font-size: var(--de-text-3xs);
       transition: transform 0.2s var(--de-ease);
       display: inline-block;
     }
@@ -254,7 +254,7 @@
       display: block;
       padding: 9px 20px;
       font-family: var(--de-font-sans);
-      font-size: 0.85rem;
+      font-size: var(--de-text-xs);
       color: var(--de-black);
       text-decoration: none;
       transition: background 0.15s, color 0.15s;
@@ -282,7 +282,7 @@
       color: var(--de-black);
       border-radius: 4px;
       font-family: var(--de-font-sans);
-      font-size: 0.88rem;
+      font-size: var(--de-text-xs);
       font-weight: 700;
       letter-spacing: 0.02em;
       text-decoration: none;
@@ -388,7 +388,7 @@
       width: 100%;
       padding: 14px 28px;
       font-family: var(--de-font-sans);
-      font-size: 0.95rem;
+      font-size: var(--de-text-sm);
       font-weight: 500;
       color: var(--de-black);
       text-decoration: none;
@@ -406,7 +406,7 @@
     }
 
     .de-mobile-nav__chevron {
-      font-size: 0.7rem;
+      font-size: var(--de-text-3xs);
       transition: transform 0.2s var(--de-ease);
     }
     .de-mobile-nav__accordion-trigger[aria-expanded="true"] .de-mobile-nav__chevron {
@@ -429,7 +429,7 @@
       display: block;
       padding: 11px 28px 11px 44px;
       font-family: var(--de-font-sans);
-      font-size: 0.875rem;
+      font-size: var(--de-text-xs);
       color: #444;
       text-decoration: none;
       border-bottom: 1px solid #eeede9;
@@ -449,7 +449,7 @@
       background: var(--de-gold);
       color: var(--de-black);
       font-family: var(--de-font-sans);
-      font-size: 0.95rem;
+      font-size: var(--de-text-sm);
       font-weight: 700;
       border-radius: 4px;
       text-decoration: none;
