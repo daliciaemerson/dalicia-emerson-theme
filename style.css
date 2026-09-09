@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.5.2
+Version:      2.5.3
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -204,9 +204,9 @@ body.home .entry-content,
 }
 
 .de-header--scrolled {
-  background: var(--de-white) !important;
-  border-bottom-color: var(--de-gray-border) !important;
-  box-shadow: 0 2px 20px rgba(26, 43, 74, 0.12) !important;
+  background: var(--de-white);
+  border-bottom-color: var(--de-gray-border);
+  box-shadow: 0 2px 20px rgba(26, 43, 74, 0.12);
 }
 
 .de-header__inner {
@@ -1017,7 +1017,7 @@ body:has([class*="showcaseidx"]) .site-main {
   font-family: var(--de-font-serif);
   font-size: var(--de-text-lg);
   font-weight: 700;
-  color: var(--de-gold) !important;
+  color: var(--de-gold);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1030,7 +1030,7 @@ body:has([class*="showcaseidx"]) .site-main {
   font-family: var(--de-font-sans);
   font-size: var(--de-text-3xs);
   font-weight: 600;
-  color: #ffffff !important;
+  color: var(--de-white);
   opacity: 0.85;
   letter-spacing: 0.10em;
   text-transform: uppercase;
@@ -1975,6 +1975,7 @@ body:has([class*="showcaseidx"]) .site-main {
 
 .de-content-section strong { color: var(--de-navy); }
 
+/* !important fights .entry-content p styles injected by Gutenberg */
 .de-lede {
   font-size: var(--de-text-lg) !important;
   line-height: 1.72 !important;

@@ -57,8 +57,8 @@
 
     /* After scrolling — both states become opaque */
     .de-header--scrolled {
-      background: var(--de-white) !important;
-      border-bottom-color: var(--de-border-light) !important;
+      background: var(--de-white);
+      border-bottom-color: var(--de-border-light);
       box-shadow: 0 2px 20px rgba(0,0,0,0.08);
     }
 
