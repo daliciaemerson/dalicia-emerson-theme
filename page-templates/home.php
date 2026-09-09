@@ -81,11 +81,11 @@ get_header();
 					$de_img  = $de_page ? get_the_post_thumbnail_url( $de_page->ID, 'large' ) : '';
 					$de_bg   = $de_img ? ' style="background-image:url(' . esc_url( $de_img ) . ');"' : '';
 				?>
-				<a href="/<?php echo esc_attr( $de_city['slug'] ); ?>/" class="de-city-card">
-					<div class="de-city-card__bg"<?php echo $de_bg; ?>></div>
-					<div class="de-city-card__content">
-						<span class="de-city-card__name"><?php echo esc_html( $de_city['name'] ); ?></span>
-						<span class="de-city-card__tags"><?php echo $de_city['sub']; ?></span>
+				<a href="/<?php echo esc_attr( $de_city['slug'] ); ?>/" class="de-card--city">
+					<div class="de-card--city__bg"<?php echo $de_bg; ?>></div>
+					<div class="de-card--city__content">
+						<span class="de-card--city__name"><?php echo esc_html( $de_city['name'] ); ?></span>
+						<span class="de-card--city__tags"><?php echo $de_city['sub']; ?></span>
 					</div>
 				</a>
 				<?php endforeach; ?>

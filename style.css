@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.6.8
+Version:      2.6.9
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -980,7 +980,7 @@ body:has([class*="showcaseidx"]) .site-main {
   margin-top: var(--de-space-7);
 }
 
-.de-city-card {
+.de-card--city {
   position: relative;
   display: block;
   border-radius: 8px;
@@ -989,9 +989,9 @@ body:has([class*="showcaseidx"]) .site-main {
   text-decoration: none;
   background: var(--de-navy-deep);
 }
-.de-city-card:hover .de-city-card__bg { transform: scale(1.05); }
+.de-card--city:hover .de-card--city__bg { transform: scale(1.05); }
 
-.de-city-card__bg {
+.de-card--city__bg {
   position: absolute;
   inset: 0;
   background-size: cover;
@@ -999,14 +999,14 @@ body:has([class*="showcaseidx"]) .site-main {
   transition: transform 0.45s ease;
 }
 
-.de-city-card__bg::after {
+.de-card--city__bg::after {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.15) 60%, transparent 100%);
 }
 
-.de-city-card__content {
+.de-card--city__content {
   position: absolute;
   bottom: 14px;
   left: 14px;
@@ -1014,7 +1014,7 @@ body:has([class*="showcaseidx"]) .site-main {
   z-index: 2;
 }
 
-.de-city-card__name {
+.de-card--city__name {
   display: block;
   font-family: var(--de-font-serif);
   font-size: var(--de-text-lg);
@@ -1026,8 +1026,8 @@ body:has([class*="showcaseidx"]) .site-main {
   text-shadow: 0 1px 4px rgba(0,0,0,0.8);
 }
 
-.de-city-card__tags,
-.de-city-card__sub {
+.de-card--city__tags,
+.de-card--city__sub {
   display: block;
   font-family: var(--de-font-sans);
   font-size: var(--de-text-3xs);
@@ -2681,15 +2681,16 @@ body:has([class*="showcaseidx"]) .site-main {
   border-bottom: 1px solid var(--de-gray-border);
 }
 .de-feature-list li::before { content: '✓'; position: absolute; left: 0; color: var(--de-gold); font-weight: 700; }
-.de-city-cards {
+.de-card--place-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--de-space-5);
   margin-top: var(--de-space-6);
 }
-.de-city-card__desc { font-size: var(--de-text-xs); color: var(--de-text-muted); line-height: 1.6; margin-bottom: var(--de-space-3); }
-.de-city-card__link { font-size: var(--de-text-xs); font-weight: 700; color: var(--de-gold); }
-.de-city-card__link:hover { color: var(--de-gold-light); }
+.de-card--place__name { font-family: var(--de-font-serif); font-size: var(--de-text-xl); font-weight: 700; color: var(--de-gold); margin-bottom: var(--de-space-3); }
+.de-card--place__desc { font-size: var(--de-text-xs); color: var(--de-text-muted); line-height: 1.6; margin-bottom: var(--de-space-3); }
+.de-card--place__link { font-size: var(--de-text-xs); font-weight: 700; color: var(--de-gold); }
+.de-card--place__link:hover { color: var(--de-gold-light); }
 
 /* ── Walmart: employer / timeline / relocation grids ────────────────── */
 .de-walmart-page__layout {
@@ -2804,7 +2805,7 @@ body:has([class*="showcaseidx"]) .site-main {
 @media (max-width: 768px) {
   .de-employer-grid,
   .de-relocation-grid,
-  .de-city-cards { grid-template-columns: 1fr; }
+  .de-card--place-grid { grid-template-columns: 1fr; }
   .de-walmart-page__layout,
   .de-city-page__layout,
   .de-contact-page__layout { padding-block: var(--de-space-7); padding-inline: var(--de-space-4); }

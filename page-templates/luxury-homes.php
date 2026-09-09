@@ -114,7 +114,7 @@ get_header();
 	<section class="de-section de-container" aria-labelledby="luxury-areas-heading">
 		<h2 id="luxury-areas-heading">Northwest Arkansas Luxury Markets</h2>
 
-		<div class="de-city-cards">
+		<div class="de-card--place-grid">
 			<?php
 			$luxury_cities = [
 				[
@@ -148,10 +148,10 @@ get_header();
 				] );
 				$city_url  = $city_page ? get_permalink( $city_page[0] ) : '#';
 			?>
-			<article class="de-city-card" itemscope itemtype="https://schema.org/City">
-				<h3 class="de-city-card__name" itemprop="name"><?php echo esc_html( $lc['city'] ); ?>, AR</h3>
-				<p class="de-city-card__desc"><?php echo esc_html( $lc['desc'] ); ?></p>
-				<a href="<?php echo esc_url( $city_url ); ?>" class="de-city-card__link">
+			<article class="de-card--place" itemscope itemtype="https://schema.org/City">
+				<h3 class="de-card--place__name" itemprop="name"><?php echo esc_html( $lc['city'] ); ?>, AR</h3>
+				<p class="de-card--place__desc"><?php echo esc_html( $lc['desc'] ); ?></p>
+				<a href="<?php echo esc_url( $city_url ); ?>" class="de-card--place__link">
 					Homes in <?php echo esc_html( $lc['city'] ); ?> &rarr;
 				</a>
 			</article>
