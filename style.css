@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.3.42
+Version:      2.4.0
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -16,7 +16,7 @@ Text Domain:  daliciaemerson
   /* ── Brand colors ─────────────────────────────────────────────── */
   --de-navy:         #1a2b4a;
   --de-navy-deep:    #111e35;
-  --de-navy-ink:     #1c1c1e;
+  --de-navy-ink:     var(--de-navy-ink);
   --de-black:        #0a0a0a;
 
   --de-gold:         #c9a84c;
@@ -26,7 +26,7 @@ Text Domain:  daliciaemerson
 
   --de-white:        #ffffff;
   --de-gray-light:   #f5f5f3;
-  --de-gray-warm:    #f8f7f5;
+  --de-gray-warm:    var(--de-gray-warm);
   --de-gray-mid:     #8a8a8a;
   --de-gray-border:  #e0e0dc;
   --de-border-light: #e8e8e4;
@@ -584,9 +584,9 @@ body.home .entry-content,
 .de-trust-bar {
   position: relative;
   z-index: 2;
-  background: linear-gradient(135deg, #1a2744 0%, #2c3e6b 100%);
+  background: var(--de-navy-grad);
   border-top: none;
-  border-bottom: 2px solid #C9A84C;
+  border-bottom: 2px solid var(--de-gold);
   backdrop-filter: none;
   padding: 18px 40px;
   margin-top: auto;
@@ -627,7 +627,7 @@ body.home .entry-content,
 .de-trust-item__icon { color: var(--de-gold); font-size: 1rem; flex-shrink: 0; }
 
 .de-idx-search {
-  background: #f8f7f5;
+  background: var(--de-gray-warm);
   padding: 52px 40px 44px;
   border-bottom: 1px solid #e8e4de;
 }
@@ -1015,7 +1015,7 @@ body:has([class*="showcaseidx"]) .site-main {
   font-family: var(--de-font-serif);
   font-size: 1.1rem;
   font-weight: 700;
-  color: #d4a865 !important;
+  color: var(--de-gold) !important;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1164,7 +1164,7 @@ body:has([class*="showcaseidx"]) .site-main {
 .de-thankyou {
   width: 100%;
   padding: 80px 40px;
-  background: #f8f7f5;
+  background: var(--de-gray-warm);
 }
 .de-thankyou__inner {
   max-width: 600px;
@@ -1175,7 +1175,7 @@ body:has([class*="showcaseidx"]) .site-main {
   width: 72px;
   height: 72px;
   background: var(--de-navy);
-  color: #d4af5a;
+  color: var(--de-gold);
   font-size: 2rem;
   font-weight: 700;
   border-radius: 50%;
@@ -1225,7 +1225,7 @@ body:has([class*="showcaseidx"]) .site-main {
 
 .de-footer {
   background: #071525;
-  border-top: 2px solid #c9a84c;
+  border-top: 2px solid var(--de-gold);
   position: relative;
 }
 
@@ -1281,7 +1281,7 @@ body:has([class*="showcaseidx"]) .site-main {
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #c9a84c;
+  color: var(--de-gold);
   margin: 0;
 }
 
@@ -1335,7 +1335,7 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 .de-footer__social-btn:hover {
   background: rgba(201,168,76,0.15);
-  border-color: #c9a84c;
+  border-color: var(--de-gold);
 }
 .de-footer__social-btn img {
   width: 20px;
@@ -1361,7 +1361,7 @@ body:has([class*="showcaseidx"]) .site-main {
 .de-footer__col-bar {
   width: 42px;
   height: 2px;
-  background: #c9a84c;
+  background: var(--de-gold);
   margin-bottom: 22px;
 }
 
@@ -1398,7 +1398,7 @@ body:has([class*="showcaseidx"]) .site-main {
   transition: color 0.18s ease;
 }
 .de-footer__link:hover .de-footer__chevron {
-  color: #c9a84c;
+  color: var(--de-gold);
 }
 
 /* Contact Column */
@@ -1419,7 +1419,7 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 
 .de-footer__contact-icon {
-  color: #c9a84c;
+  color: var(--de-gold);
   flex-shrink: 0;
   margin-top: 4px;
   display: flex;
@@ -1465,7 +1465,7 @@ body:has([class*="showcaseidx"]) .site-main {
 .de-footer__office-bar {
   width: 34px;
   height: 2px;
-  background: #c9a84c;
+  background: var(--de-gold);
   margin-bottom: 16px;
 }
 
@@ -1496,7 +1496,7 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 
 .de-footer__map-pin {
-  color: #c9a84c;
+  color: var(--de-gold);
   flex-shrink: 0;
   margin-top: 4px;
   display: flex;
@@ -1576,7 +1576,7 @@ body:has([class*="showcaseidx"]) .site-main {
 .de-footer__contact-link:focus-visible,
 .de-footer__office-link:focus-visible,
 .de-footer__legal a:focus-visible {
-  outline: 2px solid #c9a84c;
+  outline: 2px solid var(--de-gold);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -2125,7 +2125,7 @@ body:has([class*="showcaseidx"]) .site-main {
 
 /* ── Contact Sidebar Section (2fr copy + 1fr agent card + disclosure form) */
 .de-contact-sidebar {
-  background: linear-gradient(135deg, #1a2744 0%, #2c3e6b 100%);
+  background: var(--de-navy-grad);
   border-top: 2px solid var(--de-gold);
   border-bottom: 2px solid var(--de-gold);
   padding: 72px 24px;
@@ -2379,7 +2379,7 @@ body:has([class*="showcaseidx"]) .site-main {
 .de-hero--city .de-hero__subtitle {
   font-family: var(--de-font-sans);
   font-size: 1rem;
-  color: #d4a865;
+  color: var(--de-gold);
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
 }
 
@@ -2445,7 +2445,7 @@ body:has([class*="showcaseidx"]) .site-main {
   display: block;
   width: 60px;
   height: 3px;
-  background: #C9A84C;
+  background: var(--de-gold);
   margin-top: 10px;
 }
 #communities-heading {
@@ -2456,7 +2456,7 @@ body:has([class*="showcaseidx"]) .site-main {
   display: block;
   width: 60px;
   height: 3px;
-  background: #C9A84C;
+  background: var(--de-gold);
   margin-top: 10px;
 }
 .de-cta-section .de-section-title {
@@ -2598,7 +2598,7 @@ body:has([class*="showcaseidx"]) .site-main {
   line-height: 1.7;
   margin-bottom: 14px;
 }
-.de-section--alt { background: #1c1c1e; }
+.de-section--alt { background: var(--de-navy-ink); }
 .de-section--alt h2 {
   color: #ffffff;
 }
@@ -2613,7 +2613,7 @@ body:has([class*="showcaseidx"]) .site-main {
   border-bottom: 1px solid rgba(255,255,255,0.10);
 }
 .de-section--alt .de-feature-list li::before {
-  color: #C9A84C;
+  color: var(--de-gold);
 }
 .de-section--luxury-dark { background: var(--de-navy); }
 .de-section--luxury-dark h2 { color: var(--de-white); }
@@ -2642,7 +2642,7 @@ body:has([class*="showcaseidx"]) .site-main {
   display: block;
   width: 60px;
   height: 3px;
-  background: #C9A84C;
+  background: var(--de-gold);
   margin: 10px auto 0;
 }
 .de-luxury-idx-wrap {
@@ -2819,7 +2819,7 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 .de-reviews-section {
   padding: 72px 40px;
-  background: #f8f7f5;
+  background: var(--de-gray-warm);
 }
 .de-reviews-grid {
   display: grid;
@@ -2836,7 +2836,7 @@ body:has([class*="showcaseidx"]) .site-main {
   gap: 12px;
 }
 .de-review-card__stars {
-  color: #C9A84C;
+  color: var(--de-gold);
   font-size: 1rem;
   letter-spacing: 2px;
 }
@@ -2918,7 +2918,7 @@ body:has([class*="showcaseidx"]) .site-main {
   color: var(--de-navy);
   margin: 0 0 24px;
   padding-bottom: 16px;
-  border-bottom: 3px solid #d4af5a;
+  border-bottom: 3px solid var(--de-gold-warm);
 }
 .de-about-page__body h3 {
   font-family: var(--de-font-serif);
@@ -2938,8 +2938,8 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 .de-about-page__body ul li {
   padding: 12px 16px;
-  background: #f8f7f5;
-  border-left: 3px solid #d4af5a;
+  background: var(--de-gray-warm);
+  border-left: 3px solid var(--de-gold-warm);
   border-radius: 0 4px 4px 0;
   font-size: 0.92rem;
   color: var(--de-navy);
@@ -2954,7 +2954,7 @@ body:has([class*="showcaseidx"]) .site-main {
   line-height: 1.7;
 }
 .de-about-page__body p:last-of-type a {
-  color: #d4af5a;
+  color: var(--de-gold);
   font-weight: 700;
 }
 .de-about-page__sidebar {
@@ -2978,7 +2978,7 @@ body:has([class*="showcaseidx"]) .site-main {
 .de-about-stats {
   background: var(--de-navy);
   padding: 40px;
-  border-bottom: 2px solid #d4af5a;
+  border-bottom: 2px solid var(--de-gold-warm);
 }
 .de-about-stats__inner {
   max-width: 1200px;
@@ -2997,7 +2997,7 @@ body:has([class*="showcaseidx"]) .site-main {
   font-family: var(--de-font-serif);
   font-size: clamp(1.6rem, 3vw, 2.2rem);
   font-weight: 700;
-  color: #d4af5a;
+  color: var(--de-gold);
   margin-bottom: 6px;
 }
 .de-about-stat__label {
@@ -3019,7 +3019,7 @@ body:has([class*="showcaseidx"]) .site-main {
    ABOUT PAGE: QUOTE CALLOUT
    ══════════════════════════════════════════════════════════════════════════ */
 .de-about-quote {
-  background: #f8f7f5;
+  background: var(--de-gray-warm);
   padding: 56px 40px;
   text-align: center;
   border-bottom: 1px solid #e8e4de;
@@ -3035,7 +3035,7 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 .de-about-quote__cite {
   font-size: 0.85rem;
-  color: #d4af5a;
+  color: var(--de-gold);
   font-weight: 600;
   letter-spacing: 0.06em;
   font-style: normal;
@@ -3067,7 +3067,7 @@ body:has([class*="showcaseidx"]) .site-main {
   margin: 0 auto;
   background: #ffffff;
   color: #111827;
-  border: 1px solid #c9a84c;
+  border: 1px solid var(--de-gold);
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 14px 36px rgba(7, 21, 37, 0.16);
@@ -3122,7 +3122,7 @@ body:has([class*="showcaseidx"]) .site-main {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #c9a84c;
+  color: var(--de-gold);
   margin: 0;
 }
 
@@ -3149,16 +3149,16 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 
 a.de-agent-contact-card__row:hover {
-  color: #c9a84c;
+  color: var(--de-gold);
 }
 
 .de-agent-contact-card__row--static {
-  color: #6b7280;
+  color: var(--de-text-slate);
   font-size: 0.80rem;
 }
 
 .de-agent-contact-card__row-icon {
-  color: #c9a84c;
+  color: var(--de-gold);
   flex-shrink: 0;
   margin-top: 2px;
   display: flex;
@@ -3181,19 +3181,19 @@ a.de-agent-contact-card__row:hover {
   width: 100%;
   text-align: center;
   padding: 13px 16px;
-  border: 1px solid #c9a84c;
+  border: 1px solid var(--de-gold);
   border-radius: 6px;
   font-family: var(--de-font-sans);
   font-size: 0.85rem;
   font-weight: 600;
-  color: #c9a84c;
+  color: var(--de-gold);
   text-decoration: none;
   line-height: 1.5;
   min-height: 44px;
   transition: background 0.18s ease, color 0.18s ease;
 }
 .de-agent-contact-card__cta-btn:hover {
-  background: #c9a84c;
+  background: var(--de-gold);
   color: #071525;
 }
 .de-agent-contact-card__cta-main {
@@ -3229,8 +3229,8 @@ a.de-agent-contact-card__row:hover {
   transition: background 0.18s ease, border-color 0.18s ease;
 }
 .de-agent-contact-card__social-btn:hover {
-  background: rgba(201, 168, 76, 0.12);
-  border-color: #c9a84c;
+  background: var(--de-gold-faint);
+  border-color: var(--de-gold);
 }
 .de-agent-contact-card__social-btn img {
   width: 20px;
@@ -3247,7 +3247,7 @@ a.de-agent-contact-card__row:hover {
 .de-agent-contact-card__cta-btn:focus-visible,
 .de-agent-contact-card__social-btn:focus-visible,
 a.de-agent-contact-card__row:focus-visible {
-  outline: 2px solid #c9a84c;
+  outline: 2px solid var(--de-gold);
   outline-offset: 3px;
   border-radius: 4px;
 }

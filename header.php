@@ -43,7 +43,7 @@
       z-index: 1000;
       height: var(--de-header-h);
       background: var(--de-white);
-      border-bottom: 1px solid #e8e8e4;
+      border-bottom: 1px solid var(--de-border-light);
       transition: background 0.3s var(--de-ease),
                   border-color 0.3s var(--de-ease),
                   box-shadow 0.3s var(--de-ease);
@@ -58,7 +58,7 @@
     /* After scrolling — both states become opaque */
     .de-header--scrolled {
       background: var(--de-white) !important;
-      border-bottom-color: #e8e8e4 !important;
+      border-bottom-color: var(--de-border-light) !important;
       box-shadow: 0 2px 20px rgba(0,0,0,0.08);
     }
 
@@ -207,7 +207,7 @@
       transform: translateX(-50%);
       min-width: 200px;
       background: var(--de-white);
-      border: 1px solid #e8e8e4;
+      border: 1px solid var(--de-border-light);
       border-radius: 8px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.12);
       list-style: none;
@@ -243,8 +243,8 @@
       width: 10px;
       height: 10px;
       background: var(--de-white);
-      border-left: 1px solid #e8e8e4;
-      border-top: 1px solid #e8e8e4;
+      border-left: 1px solid var(--de-border-light);
+      border-top: 1px solid var(--de-border-light);
       rotate: 45deg;
     }
 

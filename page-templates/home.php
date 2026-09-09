@@ -39,10 +39,10 @@ get_header();
 	<!-- ── Trust Bar ─────────────────────────────────────────────────────── -->
 	<div class="de-trust-bar" role="region" aria-label="Credentials">
 		<div class="de-trust-bar__inner">
-			<span class="de-trust-item"><span style="color:#C9A84C;">&#10003;</span> Global Luxury Certified</span>
-			<span class="de-trust-item"><span style="color:#C9A84C;">&#10003;</span> Coldwell Banker</span>
-			<span class="de-trust-item"><span style="color:#C9A84C;">&#10003;</span> 30+ Years in NWA</span>
-			<span class="de-trust-item"><span style="color:#C9A84C;">&#10003;</span> Trusted NWA REALTOR®</span>
+			<span class="de-trust-item"><span style="color:var(--de-gold);">&#10003;</span> Global Luxury Certified</span>
+			<span class="de-trust-item"><span style="color:var(--de-gold);">&#10003;</span> Coldwell Banker</span>
+			<span class="de-trust-item"><span style="color:var(--de-gold);">&#10003;</span> 30+ Years in NWA</span>
+			<span class="de-trust-item"><span style="color:var(--de-gold);">&#10003;</span> Trusted NWA REALTOR®</span>
 		</div>
 	</div>
 
