@@ -64,10 +64,10 @@ get_header();
   </section>
 
   <!-- ── CTA ───────────────────────────────────────────────────────────── -->
-  <section class="de-section de-section--luxury-dark" style="text-align:center; padding: 64px 40px;">
+  <section class="de-section de-section--luxury-dark de-reviews__cta">
     <div class="de-container">
-      <h2 style="color:#fff; margin-bottom:16px;">Ready to Work Together?</h2>
-      <p style="color:rgba(255,255,255,0.75); margin-bottom:32px;">Join the hundreds of NWA families who have trusted Dalicia Emerson with their home.</p>
+      <h2>Ready to Work Together?</h2>
+      <p>Join the hundreds of NWA families who have trusted Dalicia Emerson with their home.</p>
       <a href="/contact-dalicia-emerson/" class="de-btn de-btn--gold de-btn--large">Get in Touch</a>
     </div>
   </section>

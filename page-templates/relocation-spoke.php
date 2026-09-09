@@ -25,7 +25,7 @@ $subtitle    = get_post_meta( get_the_ID(), '_de_subtitle', true ) ?: 'Fast time
       <p class="de-hero__eyebrow"><?php echo esc_html( $eyebrow ); ?></p>
       <h1 id="spoke-hero-heading" class="de-hero__title">
         Relocating to NWA<br>
-        <span style="color:var(--de-gold);">for <?php echo esc_html( $company ); ?>?</span>
+        <span class="de-hero__accent">for <?php echo esc_html( $company ); ?>?</span>
       </h1>
       <p class="de-hero__subtitle"><?php echo esc_html( $subtitle ); ?></p>
       <div class="de-hero__actions">

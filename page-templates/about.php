@@ -18,7 +18,7 @@ get_header();
       <p class="de-hero__eyebrow">About Dalicia Emerson</p>
       <h1 id="about-hero-heading" class="de-hero__title">
         NWA Native.<br>
-        <span style="color:var(--de-gold);">Your Trusted REALTOR®.</span>
+        <span class="de-hero__accent">Your Trusted REALTOR®.</span>
       </h1>
       <p class="de-hero__subtitle">30+ years in Northwest Arkansas. Local knowledge you can trust.</p>
     </div>
