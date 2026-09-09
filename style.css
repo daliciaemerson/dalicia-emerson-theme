@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.5.3
+Version:      2.6.0
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -61,13 +61,12 @@ Text Domain:  daliciaemerson
   --de-space-2:  8px;
   --de-space-3:  12px;
   --de-space-4:  16px;
-  --de-space-5:  20px;
-  --de-space-6:  24px;
-  --de-space-8:  32px;
-  --de-space-10: 40px;
-  --de-space-12: 48px;
-  --de-space-16: 64px;
-  --de-space-20: 80px;
+  --de-space-5:  24px;
+  --de-space-6:  32px;
+  --de-space-7:  48px;
+  --de-space-8:  64px;
+  --de-space-9:  96px;
+  --de-gutter:   32px;
 
   /* ── Layout ────────────────────────────────────────────────────── */
   --de-max-width: 1200px;
@@ -458,6 +457,7 @@ body.home .entry-content,
   z-index: 2;
   max-width: var(--de-max-width);
   margin: 0 auto;
+  /* hero height is set by content and viewport — not section rhythm */
   padding: 140px 40px 80px;
   width: 100%;
 }
@@ -788,7 +788,7 @@ body.home .entry-content,
    FEATURED LISTINGS
    ══════════════════════════════════════════════════════════════════════════ */
 .de-listings {
-  padding: 48px 40px 48px;
+  padding-block: var(--de-space-9); padding-inline: var(--de-gutter);
   background: var(--de-white);
 }
 
@@ -904,7 +904,7 @@ body:has([class*="showcaseidx"]) .site-main {
    VALUE PROPOSITION CARDS
    ══════════════════════════════════════════════════════════════════════════ */
 .de-value-props {
-  padding: 88px 40px;
+  padding-block: var(--de-space-9); padding-inline: var(--de-gutter);
   background: var(--de-gray-light);
 }
 
@@ -965,7 +965,7 @@ body:has([class*="showcaseidx"]) .site-main {
    CITY GRID
    ══════════════════════════════════════════════════════════════════════════ */
 .de-cities {
-  padding: 48px 40px 88px;
+  padding-block: var(--de-space-9); padding-inline: var(--de-gutter);
   background: var(--de-white);
 }
 
@@ -1048,7 +1048,7 @@ body:has([class*="showcaseidx"]) .site-main {
 /* ── Social Proof / Testimonials Section ──────────────────── */
 .de-social-proof {
   background: var(--de-navy);
-  padding: 88px 40px;
+  padding-block: var(--de-space-9); padding-inline: var(--de-gutter);
 }
 .de-social-proof__container {
   max-width: 1200px;
@@ -1753,7 +1753,7 @@ body:has([class*="showcaseidx"]) .site-main {
 
 .de-city-idx {
   background: var(--de-white);
-  padding: 48px 40px;
+  padding-block: var(--de-space-9); padding-inline: var(--de-gutter);
   width: 100%;
   max-width: 100%;
 }
@@ -1800,7 +1800,7 @@ body:has([class*="showcaseidx"]) .site-main {
 .de-trust-stats {
   background: var(--de-gray-light);
   border-top: 3px solid var(--de-gold);
-  padding: 48px 40px;
+  padding-block: var(--de-space-9); padding-inline: var(--de-gutter);
 }
 
 .de-trust-stats__grid {
@@ -1864,16 +1864,16 @@ body:has([class*="showcaseidx"]) .site-main {
   .de-agent-strip { padding: 16px 24px; }
   .de-agent-strip__inner { justify-content: flex-start; }
 
-  .de-listings { padding: 56px 24px; }
-  .de-value-props { padding: 56px 24px; }
+  .de-listings { padding-block: var(--de-space-7); padding-inline: var(--de-space-4); }
+  .de-value-props { padding-block: var(--de-space-7); padding-inline: var(--de-space-4); }
   .de-value-props__grid { grid-template-columns: 1fr; }
-  .de-cities { padding: 56px 24px; }
+  .de-cities { padding-block: var(--de-space-7); padding-inline: var(--de-space-4); }
   .de-cities__grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .de-city-layout { padding: 40px 24px; }
   .de-city-stats { padding: 20px 24px; flex-direction: column; }
   .de-city-stats__item + .de-city-stats__item::before { display: none; }
 
-  .de-trust-stats { padding: 40px 24px; }
+  .de-trust-stats { padding-block: var(--de-space-7); padding-inline: var(--de-space-4); }
   .de-trust-stats__grid { grid-template-columns: 1fr; gap: 32px; }
 
   .de-creds-bar { padding: 16px 24px; }
@@ -1882,7 +1882,7 @@ body:has([class*="showcaseidx"]) .site-main {
   .de-hero__bg { background-position: 70% 30%; }
 
   .de-container { padding: 0 20px; }
-  .de-about-page__layout { padding: 48px 20px; }
+  .de-about-page__layout { padding-block: var(--de-space-7); padding-inline: var(--de-space-4); }
   .de-article { padding: 40px 20px; }
   .de-hero--luxury .de-container,
   .de-hero--corporate .de-container,
@@ -2067,7 +2067,7 @@ body:has([class*="showcaseidx"]) .site-main {
 /* ── CTA Section (bottom of template) ─────────────────────────────────── */
 .de-cta-section {
   background: var(--de-navy);
-  padding: 80px 40px;
+  padding-block: var(--de-space-9); padding-inline: var(--de-gutter);
 }
 
 .de-cta-section__inner {
@@ -2131,7 +2131,7 @@ body:has([class*="showcaseidx"]) .site-main {
   background: var(--de-navy-grad);
   border-top: 2px solid var(--de-gold);
   border-bottom: 2px solid var(--de-gold);
-  padding: 72px 24px;
+  padding-block: var(--de-space-9); padding-inline: var(--de-gutter);
 }
 .de-contact-sidebar__inner {
   max-width: 1180px;
@@ -2415,7 +2415,7 @@ body:has([class*="showcaseidx"]) .site-main {
   .de-toc { padding: 20px 24px; }
   .de-toc__list { flex-direction: column; gap: 6px; }
   .de-stat-callouts { grid-template-columns: 1fr; gap: 14px; }
-  .de-cta-section { padding: 56px 24px; }
+  .de-cta-section { padding-block: var(--de-space-7); padding-inline: var(--de-space-4); }
   .de-cta-section__inner { grid-template-columns: 1fr; gap: 40px; }
   .de-inline-cta__actions { flex-direction: column; }
   .de-btn--lg { width: 100%; justify-content: center; }
@@ -2586,7 +2586,7 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 
 /* ── Luxury: sections and grids ─────────────────────────────────────── */
-.de-section { padding: 64px 0; }
+.de-section { padding-block: var(--de-space-9); }
 .de-section h2 {
   font-family: var(--de-font-serif);
   font-size: clamp(1.5rem, 2.5vw, 2rem);
@@ -2630,7 +2630,7 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 #luxury-listings {
   background: var(--de-white);
-  padding: 72px 40px;
+  padding-block: var(--de-space-9); padding-inline: var(--de-gutter);
   text-align: center;
 }
 #luxury-listings-heading {
@@ -2693,7 +2693,7 @@ body:has([class*="showcaseidx"]) .site-main {
   display: grid;
   grid-template-columns: 1fr 340px;
   gap: 48px;
-  padding: 64px 40px;
+  padding-block: var(--de-space-9); padding-inline: var(--de-gutter);
   max-width: var(--de-max-width);
   margin: 0 auto;
 }
@@ -2743,7 +2743,7 @@ body:has([class*="showcaseidx"]) .site-main {
   display: grid;
   grid-template-columns: 1fr 340px;
   gap: 48px;
-  padding: 56px 40px;
+  padding-block: var(--de-space-9); padding-inline: var(--de-gutter);
   max-width: var(--de-max-width);
   margin: 0 auto;
 }
@@ -2762,7 +2762,7 @@ body:has([class*="showcaseidx"]) .site-main {
   display: grid;
   grid-template-columns: 1fr 400px;
   gap: 56px;
-  padding: 64px 40px;
+  padding-block: var(--de-space-9); padding-inline: var(--de-gutter);
   max-width: var(--de-max-width);
   margin: 0 auto;
 }
@@ -2797,7 +2797,7 @@ body:has([class*="showcaseidx"]) .site-main {
   .de-city-cards { grid-template-columns: 1fr; }
   .de-walmart-page__layout,
   .de-city-page__layout,
-  .de-contact-page__layout { padding: 40px 24px; }
+  .de-contact-page__layout { padding-block: var(--de-space-7); padding-inline: var(--de-space-4); }
   .de-page-hero--compact { padding: 60px 0 36px; }
   .de-form__row { grid-template-columns: 1fr; }
 }
@@ -2821,7 +2821,7 @@ body:has([class*="showcaseidx"]) .site-main {
   font-size: var(--de-text-lg);
 }
 .de-reviews-section {
-  padding: 72px 40px;
+  padding-block: var(--de-space-9); padding-inline: var(--de-gutter);
   background: var(--de-gray-warm);
 }
 .de-reviews-grid {
@@ -2870,7 +2870,7 @@ body:has([class*="showcaseidx"]) .site-main {
   display: grid;
   grid-template-columns: 1fr 340px;
   gap: 48px;
-  padding: 64px 40px;
+  padding-block: var(--de-space-9); padding-inline: var(--de-gutter);
 }
 .de-about-page__body {
   font-size: var(--de-text-base);
@@ -3023,7 +3023,7 @@ body:has([class*="showcaseidx"]) .site-main {
    ══════════════════════════════════════════════════════════════════════════ */
 .de-about-quote {
   background: var(--de-gray-warm);
-  padding: 56px 40px;
+  padding-block: var(--de-space-9); padding-inline: var(--de-gutter);
   text-align: center;
   border-bottom: 1px solid #e8e4de;
 }
