@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.6.5
+Version:      2.6.6
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -2729,13 +2729,15 @@ body:has([class*="showcaseidx"]) .site-main {
 .de-relocation-option { background: var(--de-white); border: 1px solid var(--de-gray-border); border-radius: var(--de-radius-lg); padding: var(--de-space-5) var(--de-space-5); }
 .de-relocation-option h3 { font-family: var(--de-font-serif); font-size: var(--de-text-base); font-weight: 700; color: var(--de-navy); margin-bottom: var(--de-space-3); }
 .de-relocation-option p { font-size: var(--de-text-xs); color: var(--de-text-muted); margin-bottom: var(--de-space-2); line-height: 1.5; }
-/* ── City page: stats bar ───────────────────────────────────────────── */
+/* ── Stat block + Stats bar ─────────────────────────────────────────── */
 .de-stats-bar { background: var(--de-navy); padding: var(--de-space-5) 0; }
 .de-stats-bar__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; }
 .de-stat { display: flex; flex-direction: column; align-items: center; padding: var(--de-space-3) var(--de-space-6); position: relative; }
 .de-stat + .de-stat::before { content: ''; position: absolute; left: 0; top: 20%; bottom: 20%; width: 1px; background: rgba(255,255,255,0.18); }
 .de-stat__value { font-family: var(--de-font-serif); font-size: 1.8rem; font-weight: 700; color: var(--de-gold-light); line-height: 1; margin-bottom: var(--de-space-1); }
 .de-stat__label { font-family: var(--de-font-sans); font-size: var(--de-text-3xs); font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: rgba(255,255,255,0.62); }
+.de-stat--sm .de-stat__value { font-size: 1.5rem; }
+.de-stat--lg .de-stat__value { font-size: 2.8rem; }
 
 /* ── City page: layout + content ────────────────────────────────────── */
 .de-city-page__layout {

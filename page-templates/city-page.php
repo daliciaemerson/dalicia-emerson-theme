@@ -44,40 +44,27 @@ $page_content  = get_the_content();
 	</section>
 
 	<!-- ── Stats Bar ─────────────────────────────────────────────────────── -->
-	<?php if ( $population || $median_price ) : ?>
-	<div class="de-stats-bar" role="region" aria-label="<?php echo esc_attr( $city ); ?> market snapshot">
-		<div class="de-container de-stats-bar__inner">
-			<?php if ( $population ) : ?>
-			<div class="de-stat">
-				<span class="de-stat__value"><?php echo esc_html( $population ); ?></span>
-				<span class="de-stat__label">Population</span>
-			</div>
-			<?php endif; ?>
-			<?php if ( $median_price ) : ?>
-			<div class="de-stat">
-				<span class="de-stat__value"><?php echo esc_html( $median_price ); ?></span>
-				<span class="de-stat__label">Median Home Price</span>
-			</div>
-			<?php endif; ?>
-			<?php
-			$city_dom = [
-				'Bentonville'    => '59',
-				'Rogers'         => '57',
-				'Fayetteville'   => '57',
-				'Springdale'     => '58',
-				'Bella Vista'    => '49',
-				'Lowell'         => '42',
-				'Siloam Springs' => '67',
-			];
-			if ( isset( $city_dom[ $city ] ) ) : ?>
-			<div class="de-stat">
-				<span class="de-stat__value"><?php echo esc_html( $city_dom[ $city ] ); ?></span>
-				<span class="de-stat__label">Avg Days on Market</span>
-			</div>
-			<?php endif; ?>
-		</div>
-	</div>
-	<?php endif; ?>
+	<?php
+	$city_dom = [
+		'Bentonville'    => '59',
+		'Rogers'         => '57',
+		'Fayetteville'   => '57',
+		'Springdale'     => '58',
+		'Bella Vista'    => '49',
+		'Lowell'         => '42',
+		'Siloam Springs' => '67',
+	];
+	$de_stats = [];
+	if ( $population )               $de_stats[] = [ 'value' => $population,       'label' => 'Population' ];
+	if ( $median_price )             $de_stats[] = [ 'value' => $median_price,      'label' => 'Median Home Price' ];
+	if ( isset( $city_dom[$city] ) ) $de_stats[] = [ 'value' => $city_dom[$city],   'label' => 'Avg Days on Market' ];
+	if ( $de_stats ) :
+		get_template_part( 'template-parts/stats-bar', null, [
+			'aria_label' => $city . ' market snapshot',
+			'items'      => $de_stats,
+		] );
+	endif;
+	?>
 
 	<!-- ── IDX Listings ──────────────────────────────────────────────────── -->
 	<section class="de-city-idx">
