@@ -17,17 +17,6 @@
   <style>
     /* ── Critical header CSS — inlined to prevent flash of unstyled nav ── */
 
-    :root {
-      --de-black:      #0a0a0a;
-      --de-white:      #ffffff;
-      --de-gold:       #c9a84c;
-      --de-gold-light: #e8c97a;
-      --de-header-h:   110px;
-      --de-font-sans:  'Inter', 'Helvetica Neue', Arial, sans-serif;
-      --de-font-serif: 'Playfair Display', Georgia, serif;
-      --de-ease:       cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
     /* ── Skip link ────────────────────────────────────────────────────── */
     .de-skip-link {
       position: absolute;
