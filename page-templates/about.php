@@ -25,29 +25,15 @@ get_header();
   </section>
 
   <!-- ── Stats Bar ────────────────────────────────────────────────────── -->
-  <div class="de-about-stats">
-    <div class="de-about-stats__inner">
-      <div class="de-about-stat">
-        <span class="de-about-stat__number">30+</span>
-        <span class="de-about-stat__label">Years in NWA</span>
-      </div>
-      <div class="de-about-stat__divider"></div>
-      <div class="de-about-stat">
-        <span class="de-about-stat__number">$500K–$3M</span>
-        <span class="de-about-stat__label">Luxury Specialty</span>
-      </div>
-      <div class="de-about-stat__divider"></div>
-      <div class="de-about-stat">
-        <span class="de-about-stat__number">8</span>
-        <span class="de-about-stat__label">NWA Communities Served</span>
-      </div>
-      <div class="de-about-stat__divider"></div>
-      <div class="de-about-stat">
-        <span class="de-about-stat__number">28</span>
-        <span class="de-about-stat__label">5-Star Reviews</span>
-      </div>
-    </div>
-  </div>
+  <?php get_template_part( 'template-parts/stats-bar', null, [
+    'dividers' => true,
+    'items'    => [
+      [ 'value' => '30+',       'label' => 'Years in NWA' ],
+      [ 'value' => '$500K–$3M', 'label' => 'Luxury Specialty' ],
+      [ 'value' => '8',         'label' => 'NWA Communities Served' ],
+      [ 'value' => '28',        'label' => '5-Star Reviews' ],
+    ],
+  ] ); ?>
 
   <!-- ── Quote Callout ─────────────────────────────────────────────────── -->
   <div class="de-about-quote">

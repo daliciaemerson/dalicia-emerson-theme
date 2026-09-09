@@ -96,20 +96,16 @@
 		shopping for homes.
 	</p>
 
-	<div class="de-stat-callouts">
-		<div class="de-stat-callout">
-			<span class="de-stat-callout__number">11%</span>
-			<span class="de-stat-callout__label">Below national avg. cost of living</span>
-		</div>
-		<div class="de-stat-callout">
-			<span class="de-stat-callout__number">$485K</span>
-			<span class="de-stat-callout__label">Approx. median home price, Bentonville area</span>
-		</div>
-		<div class="de-stat-callout">
-			<span class="de-stat-callout__number">4.4%</span>
-			<span class="de-stat-callout__label">Arkansas top income tax rate (vs. CA at 13.3%)</span>
-		</div>
-	</div>
+	<?php get_template_part( 'template-parts/stats-bar', null, [
+		'contained' => true,
+		'boxed'     => true,
+		'tone'      => 'light',
+		'items'     => [
+			[ 'value' => '11%',   'label' => 'Below national avg. cost of living' ],
+			[ 'value' => '$485K', 'label' => 'Approx. median home price, Bentonville area' ],
+			[ 'value' => '4.4%',  'label' => 'Arkansas top income tax rate (vs. CA at 13.3%)' ],
+		],
+	] ); ?>
 
 	<h3>Housing</h3>
 	<p>
