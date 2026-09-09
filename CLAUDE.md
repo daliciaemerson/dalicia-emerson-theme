@@ -43,15 +43,17 @@ No other file may declare a `:root` block or a `--de-*` custom property.
   --de-font-sans:  'Inter', 'Helvetica Neue', Arial, sans-serif;
 
   /* ── §2 Type scale ─────────────────────────────────────────────── */
-  --de-text-2xs:  0.72rem;    /* ~11.5px — micro labels, stat sub-text */
-  --de-text-xs:   0.82rem;    /* ~13px   — secondary labels, trust items */
-  --de-text-sm:   0.875rem;   /* 14px    — small body, captions */
+  --de-text-3xs:  0.72rem;    /* ~11.5px — micro labels, sub-text, legal */
+  --de-text-2xs:  0.78rem;    /* 12.5px  — credentials, bottom bar */
+  --de-text-xs:   0.85rem;    /* 13.5px  — secondary labels, small body */
+  --de-text-sm:   0.92rem;    /* ~15px   — nav, body-small, links */
   --de-text-base: 1rem;       /* 16px    — body copy */
-  --de-text-lg:   1.125rem;   /* 18px    — lead text, intro paragraphs */
-  --de-text-xl:   1.5rem;     /* 24px    — section sub-headings */
-  --de-text-2xl:  2.2rem;     /* 35px    — feature stat numbers */
-  --de-text-3xl:  2.8rem;     /* 45px    — large stat numbers */
-  --de-text-hero: clamp(2.5rem, 5vw, 4rem);  /* responsive hero headline */
+  --de-text-lg:   1.1rem;     /* ~18px   — lead text, larger body */
+  --de-text-xl:   1.35rem;    /* ~22px   — sub-headings, card titles */
+  --de-h3:        1.6rem;     /* 25.6px  — section sub-heads */
+  --de-h2:        clamp(1.9rem, 3vw, 2.4rem);   /* responsive section heads */
+  --de-h1:        clamp(2.4rem, 5vw, 3.6rem);   /* responsive page heads */
+  --de-display:   clamp(2.8rem, 6vw, 4.4rem);   /* hero/stat numbers */
 
   /* ── §3 Spacing scale ──────────────────────────────────────────── */
   --de-space-1:  4px;

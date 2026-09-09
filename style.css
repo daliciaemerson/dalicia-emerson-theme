@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.4.0
+Version:      2.5.0
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -44,15 +44,17 @@ Text Domain:  daliciaemerson
   --de-font-sans:  'Inter', 'Helvetica Neue', Arial, sans-serif;
 
   /* ── Type scale ─────────────────────────────────────────────────── */
-  --de-text-2xs:  0.72rem;
-  --de-text-xs:   0.82rem;
-  --de-text-sm:   0.875rem;
+  --de-text-3xs:  0.72rem;
+  --de-text-2xs:  0.78rem;
+  --de-text-xs:   0.85rem;
+  --de-text-sm:   0.92rem;
   --de-text-base: 1rem;
-  --de-text-lg:   1.125rem;
-  --de-text-xl:   1.5rem;
-  --de-text-2xl:  2.2rem;
-  --de-text-3xl:  2.8rem;
-  --de-text-hero: clamp(2.5rem, 5vw, 4rem);
+  --de-text-lg:   1.1rem;
+  --de-text-xl:   1.35rem;
+  --de-h3:        1.6rem;
+  --de-h2:        clamp(1.9rem, 3vw, 2.4rem);
+  --de-h1:        clamp(2.4rem, 5vw, 3.6rem);
+  --de-display:   clamp(2.8rem, 6vw, 4.4rem);
 
   /* ── Spacing scale ───────────────────────────────────────────────── */
   --de-space-1:  4px;
@@ -1269,7 +1271,7 @@ body:has([class*="showcaseidx"]) .site-main {
 
 .de-footer__brand-name {
   font-family: var(--de-font-serif);
-  font-size: 23px;
+  font-size: var(--de-text-xl);
   font-weight: 700;
   color: #ffffff;
   margin: 0 0 4px;
@@ -1277,7 +1279,7 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 
 .de-footer__brand-tagline {
-  font-size: 11.5px;
+  font-size: var(--de-text-3xs);
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1286,7 +1288,7 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 
 .de-footer__brand-copy {
-  font-size: 15px;
+  font-size: var(--de-text-sm);
   line-height: 1.65;
   color: rgba(255,255,255,0.58);
   margin: 0 0 20px;
@@ -1309,7 +1311,7 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 
 .de-footer__credentials li {
-  font-size: 12.5px;
+  font-size: var(--de-text-2xs);
   color: rgba(255,255,255,0.58);
   line-height: 1.6;
 }
@@ -1350,7 +1352,7 @@ body:has([class*="showcaseidx"]) .site-main {
 
 /* Column Headings */
 .de-footer__col-heading {
-  font-size: 14px;
+  font-size: var(--de-text-xs);
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1378,7 +1380,7 @@ body:has([class*="showcaseidx"]) .site-main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 15px;
+  font-size: var(--de-text-sm);
   line-height: 1.65;
   color: rgba(255,255,255,0.78);
   text-decoration: none;
@@ -1391,7 +1393,7 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 
 .de-footer__chevron {
-  font-size: 18px;
+  font-size: var(--de-text-lg);
   color: rgba(201,168,76,0.55);
   line-height: 1;
   flex-shrink: 0;
@@ -1426,7 +1428,7 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 
 .de-footer__contact-link {
-  font-size: 15px;
+  font-size: var(--de-text-sm);
   line-height: 1.65;
   color: rgba(255,255,255,0.78);
   text-decoration: none;
@@ -1454,7 +1456,7 @@ body:has([class*="showcaseidx"]) .site-main {
 
 /* Office Sub-section */
 .de-footer__office-heading {
-  font-size: 12px;
+  font-size: var(--de-text-3xs);
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -1470,7 +1472,7 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 
 .de-footer__office-brokerage {
-  font-size: 15px;
+  font-size: var(--de-text-sm);
   line-height: 1.65;
   color: rgba(255,255,255,0.78);
   margin: 0 0 12px;
@@ -1486,7 +1488,7 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 
 .de-footer__office-address {
-  font-size: 15px;
+  font-size: var(--de-text-sm);
   line-height: 1.65;
   color: rgba(255,255,255,0.58);
   margin: 0 0 18px;
@@ -1522,7 +1524,7 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 
 .de-footer__copyright {
-  font-size: 12px;
+  font-size: var(--de-text-3xs);
   color: rgba(255,255,255,0.58);
   margin: 0;
 }
@@ -1550,7 +1552,7 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 
 .de-footer__legal a {
-  font-size: 12px;
+  font-size: var(--de-text-3xs);
   color: rgba(255,255,255,0.58);
   text-decoration: none;
   transition: color 0.18s ease;
@@ -1564,7 +1566,7 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 
 .de-footer__brokerage-credit {
-  font-size: 12px;
+  font-size: var(--de-text-3xs);
   color: rgba(255,255,255,0.58);
   margin: 0;
   text-align: right;
@@ -3198,12 +3200,12 @@ a.de-agent-contact-card__row:hover {
 }
 .de-agent-contact-card__cta-main {
   display: block;
-  font-size: 14px;
+  font-size: var(--de-text-xs);
   font-weight: 700;
 }
 .de-agent-contact-card__cta-sub {
   display: block;
-  font-size: 11px;
+  font-size: var(--de-text-3xs);
   font-weight: 400;
   margin-top: 3px;
 }
