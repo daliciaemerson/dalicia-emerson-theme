@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.8.1
+Version:      2.8.2
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -524,6 +524,9 @@ body.home .entry-content,
   margin-bottom: var(--de-space-3);
 }
 
+/* IDX vendor overrides — our !important rules own
+   the same contrast bar as native CSS. Text must pass
+   4.5:1 against its background. */
 /* Showcase IDX widget overrides inside hero */
 .de-hero__search .showcaseidx-search-widget input,
 .de-hero__search .showcaseidx-search-widget select {
@@ -535,7 +538,7 @@ body.home .entry-content,
 .de-hero__search .showcaseidx-search-widget button,
 .de-hero__search .showcaseidx-search-widget [type="submit"] {
   background: var(--de-gold) !important;
-  color: var(--de-white) !important;
+  color: var(--de-navy) !important;
   border-color: var(--de-gold) !important;
   border-radius: var(--de-radius) !important;
 }
@@ -849,11 +852,14 @@ body:has([class*="showcaseidx"]) .site-main {
   font-family: var(--de-font-serif) !important;
   font-weight: 700 !important;
 }
+/* IDX vendor overrides — our !important rules own
+   the same contrast bar as native CSS. Text must pass
+   4.5:1 against its background. */
 .de-listings .showcaseidx-listing-card .btn,
 .de-listings .showcaseidx-listing-card [class*="btn-"] {
   background: var(--de-gold) !important;
   border-color: var(--de-gold) !important;
-  color: var(--de-white) !important;
+  color: var(--de-navy) !important;
   border-radius: var(--de-radius) !important;
 }
 .de-listings .showcaseidx-listing-card .btn:hover,
@@ -2625,7 +2631,7 @@ body:has([class*="showcaseidx"]) .site-main {
   width: 36px; height: 36px;
   border-radius: 50%;
   background: var(--de-gold);
-  color: var(--de-white);
+  color: var(--de-navy);
   font-weight: 700;
   font-size: var(--de-text-sm);
   display: flex;
