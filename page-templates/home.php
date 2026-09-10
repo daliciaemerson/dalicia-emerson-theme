@@ -97,35 +97,39 @@ get_header();
 	<section class="de-social-proof" aria-labelledby="testimonials-heading">
 		<div class="de-social-proof__container">
 
-			<h2 id="testimonials-heading" class="de-social-proof__heading">What Clients Say</h2>
+			<div class="de-social-proof__testimonials">
 
-			<div class="de-social-proof__grid">
+				<h2 id="testimonials-heading" class="de-social-proof__heading">What Clients Say</h2>
 
-				<div class="de-testimonial-card">
-					<div class="de-testimonial-card__stars">★★★★★</div>
-					<p class="de-testimonial-card__quote">"Dalicia has been keeping an eye on the market for a while for us. We knew we were relocating to the area but were not sure exactly when, where, and what our situation would be. When we found the place, she made quick work of the offer, negotiations, and everything needed to get the ball rolling!"</p>
-					<div class="de-testimonial-card__author">
-						<span class="de-testimonial-card__name">Jason L.</span>
-						<span class="de-testimonial-card__label">Relocating Family</span>
+				<div class="de-social-proof__grid">
+
+					<div class="de-testimonial-card">
+						<div class="de-testimonial-card__stars">★★★★★</div>
+						<p class="de-testimonial-card__quote">"Dalicia has been keeping an eye on the market for a while for us. We knew we were relocating to the area but were not sure exactly when, where, and what our situation would be. When we found the place, she made quick work of the offer, negotiations, and everything needed to get the ball rolling!"</p>
+						<div class="de-testimonial-card__author">
+							<span class="de-testimonial-card__name">Jason L.</span>
+							<span class="de-testimonial-card__label">Relocating Family</span>
+						</div>
 					</div>
-				</div>
 
-				<div class="de-testimonial-card">
-					<div class="de-testimonial-card__stars">★★★★★</div>
-					<p class="de-testimonial-card__quote">"Dalicia sold my house in less than two weeks and that is huge for me. She communicates daily and does not leave me hanging. She made the process as stress free as possible."</p>
-					<div class="de-testimonial-card__author">
-						<span class="de-testimonial-card__name">Linda S.</span>
-						<span class="de-testimonial-card__label">Home Seller</span>
+					<div class="de-testimonial-card">
+						<div class="de-testimonial-card__stars">★★★★★</div>
+						<p class="de-testimonial-card__quote">"Dalicia sold my house in less than two weeks and that is huge for me. She communicates daily and does not leave me hanging. She made the process as stress free as possible."</p>
+						<div class="de-testimonial-card__author">
+							<span class="de-testimonial-card__name">Linda S.</span>
+							<span class="de-testimonial-card__label">Home Seller</span>
+						</div>
 					</div>
-				</div>
 
-				<div class="de-testimonial-card">
-					<div class="de-testimonial-card__stars">★★★★★</div>
-					<p class="de-testimonial-card__quote">"Dalicia is deeply knowledgeable, diligent, and supportive. She had our best interest in mind from beginning to end. Thank you for helping us secure the home of our dreams!"</p>
-					<div class="de-testimonial-card__author">
-						<span class="de-testimonial-card__name">Madison S.</span>
-						<span class="de-testimonial-card__label">First-Time Buyer</span>
+					<div class="de-testimonial-card">
+						<div class="de-testimonial-card__stars">★★★★★</div>
+						<p class="de-testimonial-card__quote">"Dalicia is deeply knowledgeable, diligent, and supportive. She had our best interest in mind from beginning to end. Thank you for helping us secure the home of our dreams!"</p>
+						<div class="de-testimonial-card__author">
+							<span class="de-testimonial-card__name">Madison S.</span>
+							<span class="de-testimonial-card__label">First-Time Buyer</span>
+						</div>
 					</div>
+
 				</div>
 
 			</div>
