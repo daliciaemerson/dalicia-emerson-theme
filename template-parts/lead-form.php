@@ -51,6 +51,7 @@ $nonce_val  = wp_create_nonce( 'de_lead_nonce' );
 			id="<?php echo esc_attr( $form_id ); ?>-email"
 			name="email"
 			class="de-form__input"
+			inputmode="email"
 			autocomplete="email"
 			required
 			aria-required="true"
@@ -66,6 +67,7 @@ $nonce_val  = wp_create_nonce( 'de_lead_nonce' );
 			id="<?php echo esc_attr( $form_id ); ?>-phone"
 			name="phone"
 			class="de-form__input"
+			inputmode="tel"
 			autocomplete="tel"
 		>
 	</div>
