@@ -13,7 +13,7 @@ get_header();
       <p class="de-thankyou__sub">I'll be in touch with you shortly — usually within one business day.</p>
       <div class="de-thankyou__urgent">
         <p>Need to talk sooner?</p>
-        <a href="tel:<?php echo esc_attr( DE_PHONE ); ?>" class="de-btn de-btn--gold de-btn--large">
+        <a href="tel:<?php echo esc_attr( DE_PHONE ); ?>" class="de-btn de-btn--primary de-btn--large">
           Call <?php echo esc_html( DE_PHONE_DISPLAY ); ?>
         </a>
       </div>

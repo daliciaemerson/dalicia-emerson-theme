@@ -29,10 +29,10 @@ get_header();
 				Bentonville &bull; Rogers &bull; Fayetteville &bull; Springdale
 			</p>
 			<div class="de-hero__actions">
-				<a href="#luxury-listings" class="de-btn de-btn--gold de-btn--large">
+				<a href="#luxury-listings" class="de-btn de-btn--primary de-btn--large">
 					Browse Luxury Listings
 				</a>
-				<a href="#luxury-contact" class="de-btn de-btn--outline-white de-btn--large">
+				<a href="#luxury-contact" class="de-btn de-btn--secondary--on-dark de-btn--large">
 					Private Showing
 				</a>
 			</div>
@@ -169,7 +169,7 @@ get_header();
 				and an MLS entry. Let&rsquo;s talk about what your home is worth and how I&rsquo;d
 				position it in the current market.
 			</p>
-			<a href="#luxury-contact" class="de-btn de-btn--gold de-btn--large">
+			<a href="#luxury-contact" class="de-btn de-btn--primary de-btn--large">
 				Request a Private Valuation
 			</a>
 		</div>

@@ -29,10 +29,10 @@ $subtitle    = get_post_meta( get_the_ID(), '_de_subtitle', true ) ?: 'Fast time
       </h1>
       <p class="de-hero__subtitle"><?php echo esc_html( $subtitle ); ?></p>
       <div class="de-hero__actions">
-        <a href="#spoke-contact" class="de-btn de-btn--gold de-btn--large">
+        <a href="#spoke-contact" class="de-btn de-btn--primary de-btn--large">
           Start Your Relocation
         </a>
-        <a href="tel:<?php echo esc_attr( DE_PHONE ); ?>" class="de-btn de-btn--outline-white de-btn--large">
+        <a href="tel:<?php echo esc_attr( DE_PHONE ); ?>" class="de-btn de-btn--secondary--on-dark de-btn--large">
           Call <?php echo esc_html( DE_PHONE_DISPLAY ); ?>
         </a>
       </div>

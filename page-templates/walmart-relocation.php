@@ -34,7 +34,7 @@ get_header();
 				<a href="tel:<?php echo esc_attr( DE_PHONE ); ?>" class="de-btn de-btn--primary de-btn--large">
 					Call <?php echo esc_html( DE_PHONE_DISPLAY ); ?>
 				</a>
-				<a href="#walmart-contact" class="de-btn de-btn--outline-white de-btn--large">
+				<a href="#walmart-contact" class="de-btn de-btn--secondary--on-dark de-btn--large">
 					Free Relocation Consult
 				</a>
 			</div>

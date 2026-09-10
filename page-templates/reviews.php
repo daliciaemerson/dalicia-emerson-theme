@@ -68,7 +68,7 @@ get_header();
     <div class="de-container">
       <h2>Ready to Work Together?</h2>
       <p>Join the hundreds of NWA families who have trusted Dalicia Emerson with their home.</p>
-      <a href="/contact-dalicia-emerson/" class="de-btn de-btn--gold de-btn--large">Get in Touch</a>
+      <a href="/contact-dalicia-emerson/" class="de-btn de-btn--primary de-btn--large">Get in Touch</a>
     </div>
   </section>
 

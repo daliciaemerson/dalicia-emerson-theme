@@ -29,7 +29,7 @@ get_header();
 				<a href="/properties/" class="de-btn de-btn--primary de-btn--lg">
 					Search Homes
 				</a>
-				<a href="/moving-to-northwest-arkansas/" class="de-btn-hero de-btn-hero--outline">
+				<a href="/moving-to-northwest-arkansas/" class="de-btn de-btn--secondary--on-dark de-btn--lg">
 					Free Relocation Guide
 				</a>
 			</div>
@@ -135,7 +135,7 @@ get_header();
 			</div>
 
 			<div class="de-social-proof__cta">
-				<a href="/reviews/" class="de-social-proof__reviews-link">Read All 28 Reviews →</a>
+				<a href="/reviews/" class="de-btn--text">Read All 28 Reviews →</a>
 			</div>
 
 		</div>

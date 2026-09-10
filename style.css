@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.7.8
+Version:      2.7.9
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -503,45 +503,6 @@ body.home .entry-content,
   margin-bottom: var(--de-space-6);
 }
 
-.de-btn-hero {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--de-space-4) var(--de-space-6);
-  border-radius: var(--de-radius);
-  font-family: var(--de-font-sans);
-  font-size: var(--de-text-sm);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  cursor: pointer;
-  transition: background var(--de-transition), transform 0.15s ease, box-shadow var(--de-transition);
-  white-space: nowrap;
-}
-.de-btn-hero:hover { transform: translateY(-2px); }
-
-.de-btn-hero--primary {
-  background: var(--de-gold);
-  color: var(--de-white);
-  border: 2px solid var(--de-gold);
-  box-shadow: 0 4px 20px rgba(184, 146, 74, 0.40);
-}
-.de-btn-hero--primary:hover {
-  background: var(--de-gold-light);
-  border-color: var(--de-gold-light);
-  box-shadow: 0 6px 28px rgba(184, 146, 74, 0.55);
-  color: var(--de-white);
-}
-
-.de-btn-hero--outline {
-  background: transparent;
-  color: var(--de-white);
-  border: 2px solid rgba(255, 255, 255, 0.72);
-}
-.de-btn-hero--outline:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: var(--de-white);
-  color: var(--de-white);
-}
 
 /* ── IDX Search Box ────────────────────────────────────────────────────── */
 .de-hero__search {
@@ -761,25 +722,22 @@ body.home .entry-content,
 }
 .de-btn:hover { transform: translateY(-1px); }
 
-.de-btn--primary { background: var(--de-gold); color: var(--de-white); }
-.de-btn--primary:hover { background: var(--de-gold-light); color: var(--de-white); }
+/* ── Three canonical button variants ─────────────────────────────────── */
+/* Primary — gold fill, navy text */
+.de-btn--primary { background: var(--de-gold); color: var(--de-navy); }
+.de-btn--primary:hover { background: var(--de-gold-light); color: var(--de-navy); }
 
-.de-btn--navy { background: var(--de-navy); color: var(--de-white); }
-.de-btn--navy:hover { background: var(--de-navy-deep); color: var(--de-white); }
+/* Secondary — navy outline, transparent fill, navy text */
+.de-btn--secondary { background: transparent; color: var(--de-navy); border: 2px solid var(--de-navy); }
+.de-btn--secondary:hover { background: var(--de-navy); color: var(--de-white); }
 
-.de-btn--outline-dark {
-  background: transparent;
-  color: var(--de-navy);
-  border: 2px solid var(--de-navy);
-}
-.de-btn--outline-dark:hover { background: var(--de-navy); color: var(--de-white); }
+/* Secondary on dark — white outline, transparent fill, white text */
+.de-btn--secondary--on-dark { background: transparent; color: var(--de-white); border: 2px solid rgba(255, 255, 255, 0.72); }
+.de-btn--secondary--on-dark:hover { background: rgba(255, 255, 255, 0.12); border-color: var(--de-white); color: var(--de-white); }
 
-.de-btn--gold-outline {
-  background: transparent;
-  color: var(--de-gold);
-  border: 2px solid var(--de-gold);
-}
-.de-btn--gold-outline:hover { background: var(--de-gold); color: var(--de-white); }
+/* Text — no fill or border, gold text, underline on hover */
+.de-btn--text { background: none; border: none; color: var(--de-gold); text-decoration: none; padding: 0; font-family: var(--de-font-sans); font-size: inherit; font-weight: 600; cursor: pointer; transition: color var(--de-transition); }
+.de-btn--text:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 .de-btn--full {
   display: flex;
@@ -1119,18 +1077,7 @@ body:has([class*="showcaseidx"]) .site-main {
 .de-social-proof__cta {
   text-align: center;
 }
-.de-social-proof__reviews-link {
-  color: rgba(255,255,255,0.70);
-  font-size: var(--de-text-sm);
-  font-weight: 600;
-  font-style: italic;
-  text-decoration: none;
-  letter-spacing: 0.02em;
-  transition: color 0.2s ease;
-}
-.de-social-proof__reviews-link:hover {
-  color: var(--de-gold);
-}
+.de-social-proof__cta .de-btn--text { font-style: italic; }
 
 @media (max-width: 640px) {
   .de-social-proof__grid {
@@ -1450,10 +1397,7 @@ body:has([class*="showcaseidx"]) .site-main {
   font-weight: 600;
 }
 
-.de-footer__cta-link {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
+.de-footer__contact-item .de-btn--text { align-self: stretch; display: flex; align-items: center; font-size: var(--de-text-sm); }
 
 .de-footer__col-divider {
   border: none;
@@ -1863,7 +1807,7 @@ body:has([class*="showcaseidx"]) .site-main {
   .de-hero__inner { padding: 100px 24px 64px; }
   .de-hero__search { padding: var(--de-space-4) var(--de-space-5) var(--de-space-4); max-width: 100%; }
 
-  .de-btn-hero { padding: var(--de-space-4) var(--de-space-6); width: 100%; }
+  .de-hero__actions .de-btn { width: 100%; }
 
   .de-credential-bar { padding: var(--de-space-4) var(--de-space-5); text-align: center; }
   .de-credential-bar__inner { flex-direction: column; gap: var(--de-space-1); align-items: center; }
@@ -2515,19 +2459,6 @@ body:has([class*="showcaseidx"]) .site-main {
   z-index: 1;
 }
 
-/* ── Missing button variants ────────────────────────────────────────── */
-.de-btn--gold {
-  background: var(--de-gold);
-  color: var(--de-white);
-  border: 2px solid var(--de-gold);
-}
-.de-btn--gold:hover { background: var(--de-gold-light); border-color: var(--de-gold-light); color: var(--de-white); }
-.de-btn--outline-white {
-  background: transparent;
-  color: var(--de-white);
-  border: 2px solid rgba(255, 255, 255, 0.72);
-}
-.de-btn--outline-white:hover { background: rgba(255,255,255,0.12); border-color: var(--de-white); color: var(--de-white); }
 .de-btn--large { padding: var(--de-space-4) var(--de-space-7); font-size: var(--de-text-base); }
 
 /* ── Luxury: credentials bar ────────────────────────────────────────── */
