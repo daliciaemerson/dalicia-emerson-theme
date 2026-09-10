@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.8.3
+Version:      2.8.4
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -23,6 +23,7 @@ Text Domain:  daliciaemerson
   --de-gold-light:   #e8c97a;
   --de-gold-warm:    #d4af5a;
   --de-gold-faint:   rgba(201, 168, 76, 0.12);
+  --de-accent-hover: var(--de-gold-light);
 
   --de-white:        #ffffff;
   --de-gray-light:   #f5f5f3;
@@ -412,7 +413,7 @@ body.home .entry-content,
   white-space: nowrap;
   transition: background var(--de-transition), transform 0.15s ease;
 }
-.de-header__btn:hover { background: var(--de-gold-light); transform: translateY(-1px); color: var(--de-navy); }
+.de-header__btn:hover { background: var(--de-accent-hover); transform: translateY(-1px); color: var(--de-navy); }
 
 /* ── Hamburger ─────────────────────────────────────────────────────────── */
 /* Mobile nav styles live in header.php <style> block — class names are
@@ -544,8 +545,8 @@ body.home .entry-content,
 }
 .de-hero__search .showcaseidx-search-widget button:hover,
 .de-hero__search .showcaseidx-search-widget [type="submit"]:hover {
-  background: var(--de-gold-light) !important;
-  border-color: var(--de-gold-light) !important;
+  background: var(--de-accent-hover) !important;
+  border-color: var(--de-accent-hover) !important;
 }
 
 /* ── Credential Bar ─────────────────────────────────────────────────────── */
@@ -670,7 +671,7 @@ body.home .entry-content,
   letter-spacing: 0.04em;
   transition: background var(--de-transition);
 }
-.de-agent-strip__cta:hover { background: var(--de-gold-light); color: var(--de-navy); }
+.de-agent-strip__cta:hover { background: var(--de-accent-hover); color: var(--de-navy); }
 
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -727,7 +728,7 @@ body.home .entry-content,
 /* ── Three canonical button variants ─────────────────────────────────── */
 /* Primary — gold fill, navy text */
 .de-btn--primary { background: var(--de-gold); color: var(--de-navy); }
-.de-btn--primary:hover { background: color-mix(in srgb, var(--de-gold) 85%, black); color: var(--de-navy); }
+.de-btn--primary:hover { background: var(--de-accent-hover); color: var(--de-navy); }
 .de-btn--primary:focus-visible { outline: 2px solid var(--de-gold); outline-offset: 2px; }
 .de-btn--primary:active { opacity: 0.9; }
 .de-btn--primary:disabled,
@@ -879,8 +880,8 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 .de-listings .showcaseidx-listing-card .btn:hover,
 .de-listings .showcaseidx-listing-card [class*="btn-"]:hover {
-  background: var(--de-gold-light) !important;
-  border-color: var(--de-gold-light) !important;
+  background: var(--de-accent-hover) !important;
+  border-color: var(--de-accent-hover) !important;
 }
 
 
