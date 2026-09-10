@@ -28,6 +28,7 @@ get_header();
 			<p class="de-hero__subtitle">
 				Bentonville &bull; Rogers &bull; Fayetteville &bull; Springdale
 			</p>
+			<!-- Checked exemption: two Primary CTAs in separate viewport sections, never visually simultaneous. Browse-side (hero) and sell-side (seller CTA). -->
 			<div class="de-hero__actions">
 				<a href="#luxury-listings" class="de-btn de-btn--primary de-btn--large">
 					Browse Luxury Listings

@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.8.0
+Version:      2.8.1
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -403,7 +403,7 @@ body.home .entry-content,
 .de-header__btn {
   padding: var(--de-space-3) var(--de-space-5);
   background: var(--de-gold);
-  color: var(--de-white);
+  color: var(--de-navy);
   border-radius: var(--de-radius);
   font-family: var(--de-font-sans);
   font-size: var(--de-text-xs);
@@ -412,7 +412,7 @@ body.home .entry-content,
   white-space: nowrap;
   transition: background var(--de-transition), transform 0.15s ease;
 }
-.de-header__btn:hover { background: var(--de-gold-light); transform: translateY(-1px); color: var(--de-white); }
+.de-header__btn:hover { background: var(--de-gold-light); transform: translateY(-1px); color: var(--de-navy); }
 
 /* ── Hamburger ─────────────────────────────────────────────────────────── */
 /* Mobile nav styles live in header.php <style> block — class names are
@@ -657,8 +657,8 @@ body.home .entry-content,
 .de-agent-strip__phone:hover { color: var(--de-gold); }
 
 .de-agent-strip__cta {
-  background: var(--de-navy);
-  color: var(--de-white);
+  background: var(--de-gold);
+  color: var(--de-navy);
   padding: var(--de-space-4) var(--de-space-5);
   border-radius: var(--de-radius);
   font-family: var(--de-font-sans);
@@ -667,7 +667,7 @@ body.home .entry-content,
   letter-spacing: 0.04em;
   transition: background var(--de-transition);
 }
-.de-agent-strip__cta:hover { background: var(--de-gold); color: var(--de-white); }
+.de-agent-strip__cta:hover { background: var(--de-gold-light); color: var(--de-navy); }
 
 
 /* ══════════════════════════════════════════════════════════════════════════
