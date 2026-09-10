@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.8.2
+Version:      2.8.3
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -721,26 +721,41 @@ body.home .entry-content,
   text-decoration: none;
   cursor: pointer;
   border: none;
-  transition: background var(--de-transition), transform 0.15s ease, color var(--de-transition);
+  transition: background 150ms ease, color 150ms ease, opacity 150ms ease;
 }
-.de-btn:hover { transform: translateY(-1px); }
 
 /* ── Three canonical button variants ─────────────────────────────────── */
 /* Primary — gold fill, navy text */
 .de-btn--primary { background: var(--de-gold); color: var(--de-navy); }
-.de-btn--primary:hover { background: var(--de-gold-light); color: var(--de-navy); }
+.de-btn--primary:hover { background: color-mix(in srgb, var(--de-gold) 85%, black); color: var(--de-navy); }
+.de-btn--primary:focus-visible { outline: 2px solid var(--de-gold); outline-offset: 2px; }
+.de-btn--primary:active { opacity: 0.9; }
+.de-btn--primary:disabled,
+.de-btn--primary[aria-disabled="true"] { opacity: 0.45; cursor: not-allowed; pointer-events: none; }
 
 /* Secondary — navy outline, transparent fill, navy text */
 .de-btn--secondary { background: transparent; color: var(--de-navy); border: 2px solid var(--de-navy); }
 .de-btn--secondary:hover { background: var(--de-navy); color: var(--de-white); }
+.de-btn--secondary:focus-visible { outline: 2px solid var(--de-gold); outline-offset: 2px; }
+.de-btn--secondary:active { opacity: 0.9; }
+.de-btn--secondary:disabled,
+.de-btn--secondary[aria-disabled="true"] { opacity: 0.45; cursor: not-allowed; pointer-events: none; }
 
 /* Secondary on dark — white outline, transparent fill, white text */
 .de-btn--secondary--on-dark { background: transparent; color: var(--de-white); border: 2px solid rgba(255, 255, 255, 0.72); }
-.de-btn--secondary--on-dark:hover { background: rgba(255, 255, 255, 0.12); border-color: var(--de-white); color: var(--de-white); }
+.de-btn--secondary--on-dark:hover { background: var(--de-white); border-color: var(--de-white); color: var(--de-navy); }
+.de-btn--secondary--on-dark:focus-visible { outline: 2px solid var(--de-white); outline-offset: 2px; }
+.de-btn--secondary--on-dark:active { opacity: 0.9; }
+.de-btn--secondary--on-dark:disabled,
+.de-btn--secondary--on-dark[aria-disabled="true"] { opacity: 0.45; cursor: not-allowed; pointer-events: none; }
 
 /* Text — no fill or border, gold text, underline on hover */
-.de-btn--text { background: none; border: none; color: var(--de-gold); text-decoration: none; padding: 0; font-family: var(--de-font-sans); font-size: inherit; font-weight: 600; cursor: pointer; transition: color var(--de-transition); }
+.de-btn--text { background: none; border: none; color: var(--de-gold); text-decoration: none; padding: 0; font-family: var(--de-font-sans); font-size: inherit; font-weight: 600; cursor: pointer; transition: color 150ms ease, opacity 150ms ease; }
 .de-btn--text:hover { text-decoration: underline; text-underline-offset: 3px; }
+.de-btn--text:focus-visible { outline: 2px solid var(--de-gold); outline-offset: 2px; }
+.de-btn--text:active { opacity: 0.9; }
+.de-btn--text:disabled,
+.de-btn--text[aria-disabled="true"] { opacity: 0.45; cursor: not-allowed; pointer-events: none; }
 
 .de-btn--full {
   display: flex;
