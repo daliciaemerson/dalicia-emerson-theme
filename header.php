@@ -646,6 +646,8 @@ $de_has_hero = apply_filters( 'de_header_transparent', $de_has_hero );
   var dropdown    = document.getElementById('cities-dropdown');
   var accordionBtn = document.querySelector('.de-mobile-nav__accordion-trigger');
   var submenu     = document.getElementById('mobile-cities-list');
+  var scrollLockY = 0;
+  var opener      = null;
 
   // ── Scroll: transparent → solid ─────────────────────────────────────────
   if (header) {
@@ -662,27 +664,34 @@ $de_has_hero = apply_filters( 'de_header_transparent', $de_has_hero );
 
   // ── Mobile menu open / close ─────────────────────────────────────────────
   function openMobileNav() {
+    opener      = document.activeElement;
+    scrollLockY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top      = '-' + scrollLockY + 'px';
+    document.body.style.width    = '100%';
     mobileNav.classList.add('de-mobile-nav--open');
     mobileNav.setAttribute('aria-hidden', 'false');
     overlay.classList.add('de-mobile-nav-overlay--visible');
     overlay.setAttribute('aria-hidden', 'false');
     hamburger.setAttribute('aria-expanded', 'true');
     hamburger.setAttribute('aria-label', 'Close navigation menu');
-    document.body.style.overflow = 'hidden';
-    // Move focus to first link
-    var firstLink = mobileNav.querySelector('a, button');
+    var firstLink = mobileNav.querySelector('a[href], button');
     if (firstLink) firstLink.focus();
   }
 
   function closeMobileNav() {
+    document.body.style.position = '';
+    document.body.style.top      = '';
+    document.body.style.width    = '';
+    window.scrollTo(0, scrollLockY);
     mobileNav.classList.remove('de-mobile-nav--open');
     mobileNav.setAttribute('aria-hidden', 'true');
     overlay.classList.remove('de-mobile-nav-overlay--visible');
     overlay.setAttribute('aria-hidden', 'true');
     hamburger.setAttribute('aria-expanded', 'false');
     hamburger.setAttribute('aria-label', 'Open navigation menu');
-    document.body.style.overflow = '';
-    hamburger.focus();
+    if (opener) opener.focus();
+    opener = null;
   }
 
   if (hamburger) {
@@ -696,6 +705,31 @@ $de_has_hero = apply_filters( 'de_header_transparent', $de_has_hero );
   }
 
   if (overlay) overlay.addEventListener('click', closeMobileNav);
+
+  // ── Focus trap: Tab at drawer boundaries closes drawer ───────────────────
+  if (mobileNav) {
+    mobileNav.addEventListener('keydown', function (e) {
+      if (e.key !== 'Tab') return;
+      if (!mobileNav.classList.contains('de-mobile-nav--open')) return;
+
+      var focusable = Array.from(mobileNav.querySelectorAll(
+        'a[href], button, input, [tabindex]:not([tabindex="-1"])'
+      )).filter(function (el) { return !el.disabled; });
+
+      if (focusable.length === 0) return;
+
+      var first = focusable[0];
+      var last  = focusable[focusable.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        closeMobileNav();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        closeMobileNav();
+      }
+    });
+  }
 
   // ── Mobile cities accordion ──────────────────────────────────────────────
   if (accordionBtn && submenu) {
