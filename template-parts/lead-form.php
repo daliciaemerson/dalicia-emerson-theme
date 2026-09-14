@@ -39,7 +39,9 @@ $nonce_val  = wp_create_nonce( 'de_lead_nonce' );
 			autocomplete="name"
 			required
 			aria-required="true"
+			aria-describedby="<?php echo esc_attr( $form_id ); ?>-name-error"
 		>
+		<span id="<?php echo esc_attr( $form_id ); ?>-name-error" class="de-form__field-error" role="alert" aria-live="polite"></span>
 	</div>
 
 	<div class="de-form__group">
@@ -55,7 +57,9 @@ $nonce_val  = wp_create_nonce( 'de_lead_nonce' );
 			autocomplete="email"
 			required
 			aria-required="true"
+			aria-describedby="<?php echo esc_attr( $form_id ); ?>-email-error"
 		>
+		<span id="<?php echo esc_attr( $form_id ); ?>-email-error" class="de-form__field-error" role="alert" aria-live="polite"></span>
 	</div>
 
 	<div class="de-form__group">
