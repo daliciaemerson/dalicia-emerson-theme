@@ -4,6 +4,22 @@
  * daliciaemerson.com | Coldwell Banker Harris McHaney & Faucette
  */
 
+// ─── Google Analytics 4 ──────────────────────────────────────────────────────
+
+add_action( 'wp_head', function () {
+	?>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WQY10FZ1ZX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WQY10FZ1ZX');
+</script>
+	<?php
+}, 1 );
+
+
 // ─── Enqueue parent + child stylesheets ──────────────────────────────────────
 
 add_action( 'wp_enqueue_scripts', function () {
