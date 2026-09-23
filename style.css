@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.8.5
+Version:      2.8.6
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -24,6 +24,17 @@ Text Domain:  daliciaemerson
   --de-gold-warm:    #d4af5a;
   --de-gold-faint:   rgba(201, 168, 76, 0.12);
   --de-accent-hover: var(--de-gold-light);
+
+  /* ── Status ─────────────────────────────────────────────── */
+  --de-success-bg:     #edfaf0;
+  --de-success-text:   #1a6630;
+  --de-success-border: #9ddcaa;
+  --de-error-bg:       #fef2f2;
+  --de-error-text:     #991b1b;
+  --de-error-border:   #f5a5a5;
+
+  /* ── Focus ──────────────────────────────────────────────── */
+  --de-focus-ring: 2px solid var(--de-gold);
 
   --de-white:        #ffffff;
   --de-gray-light:   #f5f5f3;
@@ -1663,9 +1674,9 @@ body:has([class*="showcaseidx"]) .site-main {
 .de-form__input:focus,
 .de-form__textarea:focus,
 .de-form__select:focus {
-  outline: none;
+  outline: var(--de-focus-ring);
+  outline-offset: 0;
   border-color: var(--de-gold);
-  box-shadow: 0 0 0 3px rgba(184, 146, 74, 0.18);
 }
 
 .de-form__textarea { resize: vertical; min-height: 110px; }
@@ -1678,10 +1689,10 @@ body:has([class*="showcaseidx"]) .site-main {
   font-weight: 600;
   font-family: var(--de-font-sans);
 }
-.de-form__status--success { background: #edfaf0; color: #1a6630; border: 1px solid #9ddcaa; }
-.de-form__status--error   { background: #fef2f2; color: #991b1b; border: 1px solid #f5a5a5; }
+.de-form__status--success { background: var(--de-success-bg); color: var(--de-success-text); border: 1px solid var(--de-success-border); }
+.de-form__status--error   { background: var(--de-error-bg);   color: var(--de-error-text);   border: 1px solid var(--de-error-border); }
 
-.de-form__field-error { display: none; font-size: var(--de-text-xs); color: #991b1b; margin-top: var(--de-space-1); }
+.de-form__field-error { display: none; font-size: var(--de-text-xs); color: var(--de-error-text); margin-top: var(--de-space-1); }
 .de-form__field-error:not(:empty) { display: block; }
 
 
