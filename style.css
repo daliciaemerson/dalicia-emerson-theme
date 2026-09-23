@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.8.6
+Version:      2.8.7
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -34,7 +34,9 @@ Text Domain:  daliciaemerson
   --de-error-border:   #f5a5a5;
 
   /* ── Focus ──────────────────────────────────────────────── */
-  --de-focus-ring: 2px solid var(--de-gold);
+  --de-focus-ring-color:         var(--de-navy);
+  --de-focus-ring-color-on-dark: var(--de-gold-light);
+  --de-focus-ring: 0 0 0 2px var(--de-white), 0 0 0 4px var(--de-focus-ring-color);
 
   --de-white:        #ffffff;
   --de-gray-light:   #f5f5f3;
@@ -109,6 +111,14 @@ Text Domain:  daliciaemerson
 
   /* ── Composites ────────────────────────────────────────────────── */
   --de-border-gold: 1px solid var(--de-gold);
+}
+
+/* Dark-section focus ring override — switches ring color to gold-light */
+.de-social-proof,
+.de-footer,
+.de-hero,
+.de-trust-bar {
+  --de-focus-ring-color: var(--de-focus-ring-color-on-dark);
 }
 
 
@@ -740,7 +750,7 @@ body.home .entry-content,
 /* Primary — gold fill, navy text */
 .de-btn--primary { background: var(--de-gold); color: var(--de-navy); }
 .de-btn--primary:hover { background: var(--de-accent-hover); color: var(--de-navy); }
-.de-btn--primary:focus-visible { outline: 2px solid var(--de-gold); outline-offset: 2px; }
+.de-btn--primary:focus-visible { outline: none; box-shadow: var(--de-focus-ring); }
 .de-btn--primary:active { opacity: 0.9; }
 .de-btn--primary:disabled,
 .de-btn--primary[aria-disabled="true"] { opacity: 0.45; cursor: not-allowed; pointer-events: none; }
@@ -748,7 +758,7 @@ body.home .entry-content,
 /* Secondary — navy outline, transparent fill, navy text */
 .de-btn--secondary { background: transparent; color: var(--de-navy); border: 2px solid var(--de-navy); }
 .de-btn--secondary:hover { background: var(--de-navy); color: var(--de-white); }
-.de-btn--secondary:focus-visible { outline: 2px solid var(--de-gold); outline-offset: 2px; }
+.de-btn--secondary:focus-visible { outline: none; box-shadow: var(--de-focus-ring); }
 .de-btn--secondary:active { opacity: 0.9; }
 .de-btn--secondary:disabled,
 .de-btn--secondary[aria-disabled="true"] { opacity: 0.45; cursor: not-allowed; pointer-events: none; }
@@ -761,13 +771,16 @@ body.home .entry-content,
 .de-btn--secondary--on-dark:disabled,
 .de-btn--secondary--on-dark[aria-disabled="true"] { opacity: 0.45; cursor: not-allowed; pointer-events: none; }
 
-/* Text — no fill or border, gold text, underline on hover */
-.de-btn--text { background: none; border: none; color: var(--de-gold); text-decoration: none; padding: 0; font-family: var(--de-font-sans); font-size: inherit; font-weight: 600; cursor: pointer; transition: color 150ms ease, opacity 150ms ease; }
-.de-btn--text:hover { text-decoration: underline; text-underline-offset: 3px; }
-.de-btn--text:focus-visible { outline: 2px solid var(--de-gold); outline-offset: 2px; }
+/* Text — no fill or border; navy text with gold underline on light bg */
+.de-btn--text { background: none; border: none; color: var(--de-navy); text-decoration: underline; text-decoration-color: var(--de-gold); text-underline-offset: 3px; padding: 0; font-family: var(--de-font-sans); font-size: inherit; font-weight: 600; cursor: pointer; transition: color 150ms ease, text-decoration-color 150ms ease, opacity 150ms ease; }
+.de-btn--text:hover { text-decoration-color: var(--de-navy); }
+.de-btn--text:focus-visible { outline: none; box-shadow: var(--de-focus-ring); }
 .de-btn--text:active { opacity: 0.9; }
 .de-btn--text:disabled,
 .de-btn--text[aria-disabled="true"] { opacity: 0.45; cursor: not-allowed; pointer-events: none; }
+
+.de-social-proof .de-btn--text,
+.de-footer .de-btn--text { color: var(--de-gold-light); }
 
 .de-btn--full {
   display: flex;
@@ -1564,8 +1577,8 @@ body:has([class*="showcaseidx"]) .site-main {
 .de-footer__contact-link:focus-visible,
 .de-footer__office-link:focus-visible,
 .de-footer__legal a:focus-visible {
-  outline: 2px solid var(--de-gold);
-  outline-offset: 3px;
+  outline: none;
+  box-shadow: var(--de-focus-ring);
   border-radius: 2px;
 }
 
@@ -1674,8 +1687,8 @@ body:has([class*="showcaseidx"]) .site-main {
 .de-form__input:focus,
 .de-form__textarea:focus,
 .de-form__select:focus {
-  outline: var(--de-focus-ring);
-  outline-offset: 0;
+  outline: none;
+  box-shadow: var(--de-focus-ring);
   border-color: var(--de-gold);
 }
 
@@ -3159,8 +3172,8 @@ a.de-agent-contact-card__row:hover {
 .de-agent-contact-card__cta-btn:focus-visible,
 .de-agent-contact-card__social-btn:focus-visible,
 a.de-agent-contact-card__row:focus-visible {
-  outline: 2px solid var(--de-gold);
-  outline-offset: 3px;
+  outline: none;
+  box-shadow: var(--de-focus-ring);
   border-radius: 4px;
 }
 
