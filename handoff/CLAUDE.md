@@ -27,7 +27,8 @@ All tokens live in a single `:root` block in `style.css`. No other file declares
 |---|---|---|
 | `--de-navy` | `#1a2b4a` | Primary brand navy |
 | `--de-navy-deep` | `#111e35` | Hero bg fallback |
-| `--de-navy-ink` | `#1c1c1e` | ⚠ Currently self-referencing bug in style.css — correct value shown here |
+| `--de-navy-ink` | `#071525` | Deepest ink navy — footer bg, agent card name |
+| `--de-charcoal` | `#1c1c1e` | Near-black charcoal — `.de-section--alt` background |
 | `--de-black` | `#0a0a0a` | Near-black, rarely used |
 | `--de-gold` | `#c9a84c` | Primary gold |
 | `--de-gold-light` | `#e8c97a` | Stat values on dark; `.de-btn--text` on dark sections; city card hover |
@@ -36,10 +37,11 @@ All tokens live in a single `:root` block in `style.css`. No other file declares
 | `--de-accent-hover` | `var(--de-gold-light)` | Button hover alias |
 | `--de-white` | `#ffffff` | — |
 | `--de-gray-light` | `#f5f5f3` | — |
-| `--de-gray-warm` | `#f8f7f5` | ⚠ Currently self-referencing bug in style.css — correct value shown here |
+| `--de-gray-warm` | `#f8f7f5` | — |
 | `--de-gray-mid` | `#8a8a8a` | — |
 | `--de-gray-border` | `#e0e0dc` | Form field borders, dividers |
 | `--de-border-light` | `#e8e8e4` | Footer dividers, card borders |
+| `--de-border-cream` | `#e8e4de` | Warm cream border — idx-search, about quote section |
 
 ### Semantic aliases
 | Token | Value |

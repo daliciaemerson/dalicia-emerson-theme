@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.8.8
+Version:      2.8.9
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -16,7 +16,8 @@ Text Domain:  daliciaemerson
   /* ── Brand colors ─────────────────────────────────────────────── */
   --de-navy:         #1a2b4a;
   --de-navy-deep:    #111e35;
-  --de-navy-ink:     var(--de-navy-ink);
+  --de-navy-ink:     #071525;
+  --de-charcoal:     #1c1c1e;
   --de-black:        #0a0a0a;
 
   --de-gold:         #c9a84c;
@@ -40,10 +41,11 @@ Text Domain:  daliciaemerson
 
   --de-white:        #ffffff;
   --de-gray-light:   #f5f5f3;
-  --de-gray-warm:    var(--de-gray-warm);
+  --de-gray-warm:    #f8f7f5;
   --de-gray-mid:     #8a8a8a;
   --de-gray-border:  #e0e0dc;
   --de-border-light: #e8e8e4;
+  --de-border-cream: #e8e4de;
 
   /* ── Semantic aliases ──────────────────────────────────────────── */
   --de-text:          #1a2b4a;
@@ -619,7 +621,7 @@ body.home .entry-content,
 .de-idx-search {
   background: var(--de-gray-warm);
   padding: 52px 40px 44px;
-  border-bottom: 1px solid #e8e4de;
+  border-bottom: 1px solid var(--de-border-cream);
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -1225,7 +1227,7 @@ body:has([class*="showcaseidx"]) .site-main {
    ══════════════════════════════════════════════════════════════════════════ */
 
 .de-footer {
-  background: #071525;
+  background: var(--de-navy-ink);
   border-top: 2px solid var(--de-gold);
   position: relative;
 }
@@ -2561,7 +2563,7 @@ body:has([class*="showcaseidx"]) .site-main {
   line-height: 1.7;
   margin-bottom: var(--de-space-4);
 }
-.de-section--alt { background: var(--de-navy-ink); }
+.de-section--alt { background: var(--de-charcoal); }
 .de-section--alt h2 {
   color: #ffffff;
 }
@@ -2958,7 +2960,7 @@ body:has([class*="showcaseidx"]) .site-main {
   background: var(--de-gray-warm);
   padding-block: var(--de-space-9); padding-inline: var(--de-gutter);
   text-align: center;
-  border-bottom: 1px solid #e8e4de;
+  border-bottom: 1px solid var(--de-border-cream);
 }
 .de-about-quote__text {
   font-family: var(--de-font-serif);
@@ -3037,7 +3039,7 @@ body:has([class*="showcaseidx"]) .site-main {
   font-family: var(--de-font-serif);
   font-size: var(--de-text-xl);
   font-weight: 700;
-  color: #071525;
+  color: var(--de-navy-ink);
   margin: 0 0 var(--de-space-1);
   line-height: 1.2;
 }

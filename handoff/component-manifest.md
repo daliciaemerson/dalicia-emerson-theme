@@ -104,7 +104,8 @@ Row of stat blocks in a band. Delegates each item to `stat-block`.
 |---|---|---|
 | `--de-navy` | `#1a2b4a` | Primary brand navy — text, backgrounds, buttons |
 | `--de-navy-deep` | `#111e35` | Deeper navy — hero fallback background |
-| `--de-navy-ink` | `var(--de-navy-ink)` | ⚠ Self-referencing — resolves to empty. Should be `#1c1c1e`. See CLAUDE.md |
+| `--de-navy-ink` | `#071525` | Deepest ink navy — footer bg, agent card name |
+| `--de-charcoal` | `#1c1c1e` | Near-black charcoal — `.de-section--alt` background |
 | `--de-black` | `#0a0a0a` | Near-black — rarely used |
 | `--de-gold` | `#c9a84c` | Primary gold — buttons, icons, borders, accents |
 | `--de-gold-light` | `#e8c97a` | Lighter gold — stat numbers on dark, hover on city cards, `.de-btn--text` on dark |
@@ -117,10 +118,11 @@ Row of stat blocks in a band. Delegates each item to `stat-block`.
 |---|---|
 | `--de-white` | `#ffffff` |
 | `--de-gray-light` | `#f5f5f3` |
-| `--de-gray-warm` | `var(--de-gray-warm)` ⚠ Self-referencing — should be `#f8f7f5` |
+| `--de-gray-warm` | `#f8f7f5` |
 | `--de-gray-mid` | `#8a8a8a` |
 | `--de-gray-border` | `#e0e0dc` |
 | `--de-border-light` | `#e8e8e4` |
+| `--de-border-cream` | `#e8e4de` | Warm cream border — idx-search, about quote |
 
 ### Semantic Aliases
 | Token | Value |
@@ -360,6 +362,5 @@ Dark sections (`.de-social-proof`, `.de-footer`, `.de-hero`, `.de-trust-bar`) ov
 
 ## Known Technical Debt
 
-- **`--de-navy-ink: var(--de-navy-ink)`** — self-referencing circular property. Resolves to empty. Correct value is `#1c1c1e`. Fix in next token pass.
-- **`--de-gray-warm: var(--de-gray-warm)`** — self-referencing circular property. Resolves to empty. Correct value is `#f8f7f5`. Fix in next token pass.
+- **`--de-shadow-agent` uses `rgba(7,21,37,0.16)`** — this is `--de-navy-ink` (`#071525`) at 16% opacity. CSS cannot reference a hex token inside `rgba()` without relative color syntax (`rgb(from var(--de-navy-ink) r g b / 0.16)`), which has limited browser support. Leave as-is until relative color syntax is safe to use.
 - **iframe height collapse** — `img/video/iframe/embed` have `height: auto`. Any fixed-ratio embed (YouTube, Vimeo) without an aspect-ratio wrapper collapses to 0px. Fix at first embed addition with `aspect-ratio: 16/9` or `.de-embed-wrapper { position: relative; padding-bottom: 56.25% }`. Do not add preemptively.
