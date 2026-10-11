@@ -4,7 +4,7 @@ Theme URI:    https://daliciaemerson.com
 Description:  Kadence child theme for Dalicia Emerson — NWA Luxury REALTOR®, Coldwell Banker Harris McHaney & Faucette.
 Author:       Dalicia Emerson
 Template:     kadence
-Version:      2.8.9
+Version:      2.9.0
 License:      Private
 Text Domain:  daliciaemerson
 */
@@ -2719,6 +2719,21 @@ body:has([class*="showcaseidx"]) .site-main {
 }
 .de-city-page__content h2 { font-family: var(--de-font-serif); font-size: var(--de-text-xl); font-weight: 700; color: var(--de-navy); margin-bottom: var(--de-space-3); }
 .de-city-page__content p { font-family: var(--de-font-sans); font-size: var(--de-text-sm); color: var(--de-text-muted); line-height: 1.7; margin-bottom: var(--de-space-4); }
+
+/* City page body (editor content) — scoped so the neighborhood intro is unaffected */
+.de-city-page__body > h2:first-child { margin-top: 0; }
+.de-city-page__body h3 { font-family: var(--de-font-serif); font-size: var(--de-text-lg); font-weight: var(--de-weight-bold); color: var(--de-navy); margin-top: var(--de-space-6); margin-bottom: var(--de-space-2); }
+.de-city-page__body p { margin-bottom: var(--de-space-4); }
+.de-city-page__body ul { list-style: disc; padding-left: var(--de-space-5); margin: 0 0 var(--de-space-4); }
+.de-city-page__body li { font-family: var(--de-font-sans); font-size: var(--de-text-sm); color: var(--de-text-muted); line-height: 1.7; margin-bottom: var(--de-space-2); }
+.de-city-page__body li::marker { color: var(--de-gold); }
+.de-city-page__body strong { color: var(--de-navy); font-weight: 600; }
+.de-city-page__body a { color: var(--de-navy); text-decoration: underline; text-decoration-color: var(--de-gold); text-underline-offset: 3px; font-weight: 600; transition: text-decoration-color var(--de-transition); }
+.de-city-page__body a:hover { text-decoration-color: var(--de-navy); }
+.de-city-page__body a:focus-visible { outline: none; box-shadow: var(--de-focus-ring); }
+@media (max-width: 768px) {
+  .de-city-page__body h3 { margin-top: var(--de-space-5); }
+}
 .de-sidebar-form { background: var(--de-white); border: 1px solid var(--de-gray-border); border-radius: var(--de-radius-lg); padding: var(--de-space-6); margin-top: var(--de-space-5); }
 .de-sidebar-form h3 { font-family: var(--de-font-serif); font-size: var(--de-text-lg); font-weight: 700; color: var(--de-navy); margin-bottom: var(--de-space-4); }
 
