@@ -60,13 +60,12 @@ No other file may declare a `:root` block or a `--de-*` custom property.
   --de-space-2:  8px;
   --de-space-3:  12px;
   --de-space-4:  16px;
-  --de-space-5:  20px;
-  --de-space-6:  24px;
-  --de-space-8:  32px;
-  --de-space-10: 40px;
-  --de-space-12: 48px;
-  --de-space-16: 64px;
-  --de-space-20: 80px;
+  --de-space-5:  24px;
+  --de-space-6:  32px;
+  --de-space-7:  48px;
+  --de-space-8:  64px;
+  --de-space-9:  96px;
+  --de-gutter:   32px;
 
   /* ── Layout ────────────────────────────────────────────────────── */
   --de-max-width: 1200px;
