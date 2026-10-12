@@ -10,8 +10,14 @@
  */
 
 $source     = $args['source'] ?? 'generic';
-$form_id    = 'de-lead-form-' . sanitize_html_class( $source );
-$status_id  = 'de-status-' . sanitize_html_class( $source );
+
+// Count instances per source so a page can include the same form twice with unique IDs
+$GLOBALS['de_lead_form_count'][ $source ] = ( $GLOBALS['de_lead_form_count'][ $source ] ?? 0 ) + 1;
+$instance   = $GLOBALS['de_lead_form_count'][ $source ];
+$id_suffix  = sanitize_html_class( $source ) . ( $instance > 1 ? '-' . $instance : '' );
+
+$form_id    = 'de-lead-form-' . $id_suffix;
+$status_id  = 'de-status-' . $id_suffix;
 $nonce_val  = wp_create_nonce( 'de_lead_nonce' );
 ?>
 

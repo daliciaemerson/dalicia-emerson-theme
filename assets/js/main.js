@@ -3,7 +3,9 @@
 /* ── Lead forms ───────────────────────────────────────────────────────────
    One handler for every form.de-lead-form (template-parts/lead-form.php and
    the Contact page). Posts to de_submit_lead; on success redirects to the
-   Thank You page, on failure shows a message with the phone number. */
+   Thank You page, on failure shows a message with the phone number.
+   A cached page can carry an expired nonce (403 / "-1"): fetch a fresh one
+   from de_fresh_nonce and retry once. */
 (function () {
 	if ( typeof DE === 'undefined' ) return;
 
@@ -15,6 +17,28 @@
 		status.className   = 'de-form__status de-form__status--error';
 		status.textContent = ( message || 'Something went wrong sending your message.' ) +
 			' You can also call or text me at ' + DE.phone + '.';
+	}
+
+	// Resolves { nonceFailed: true } or the parsed JSON response
+	function post( form ) {
+		return fetch( DE.ajaxUrl, { method: 'POST', body: new FormData( form ), credentials: 'same-origin' } )
+			.then( function (r) {
+				return r.text().then( function (text) {
+					if ( r.status === 403 || text.trim() === '-1' ) return { nonceFailed: true };
+					return JSON.parse( text );
+				} );
+			} );
+	}
+
+	function refreshNonce( form ) {
+		var body = new FormData();
+		body.append( 'action', 'de_fresh_nonce' );
+		return fetch( DE.ajaxUrl, { method: 'POST', body: body, credentials: 'same-origin', cache: 'no-store' } )
+			.then( function (r) { return r.json(); } )
+			.then( function (json) {
+				if ( ! json || ! json.success || ! json.data || ! json.data.nonce ) throw new Error( 'nonce' );
+				form.querySelector( '[name="nonce"]' ).value = json.data.nonce;
+			} );
 	}
 
 	document.addEventListener( 'submit', function (e) {
@@ -36,8 +60,11 @@
 			status.textContent = '';
 		}
 
-		fetch( DE.ajaxUrl, { method: 'POST', body: new FormData( form ) } )
-			.then( function (r) { return r.json(); } )
+		post( form )
+			.then( function (json) {
+				if ( ! json.nonceFailed ) return json;
+				return refreshNonce( form ).then( function () { return post( form ); } );
+			} )
 			.then( function (json) {
 				if ( json && json.success ) {
 					window.location.href = DE.thankYouUrl;

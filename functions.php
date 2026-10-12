@@ -303,20 +303,44 @@ function de_handle_lead_submission(): void {
 		wp_send_json_error( [] );
 	}
 
-	$name    = sanitize_text_field( $_POST['name']    ?? '' );
-	$email   = sanitize_email( $_POST['email']        ?? '' );
-	$phone   = sanitize_text_field( $_POST['phone']   ?? '' );
-	$message = sanitize_textarea_field( $_POST['message'] ?? '' );
-	$source  = sanitize_text_field( $_POST['source']  ?? 'contact-form' );
+	$name     = sanitize_text_field( $_POST['name']    ?? '' );
+	$email    = sanitize_email( $_POST['email']        ?? '' );
+	$phone    = sanitize_text_field( $_POST['phone']   ?? '' );
+	$interest = sanitize_text_field( $_POST['interest'] ?? '' );
+	$timeline = sanitize_text_field( $_POST['timeline'] ?? '' );
+	$message  = sanitize_textarea_field( $_POST['message'] ?? '' );
+	$source   = sanitize_text_field( $_POST['source']  ?? 'contact-form' );
 
 	if ( ! $name || ! $email || ! is_email( $email ) ) {
 		wp_send_json_error( [ 'message' => 'Please provide your name and a valid email address.' ] );
 	}
 
+	// Safety net: keep a copy of every lead in case the email never arrives
+	$lead_id = wp_insert_post( [
+		'post_type'   => 'de_lead',
+		'post_status' => 'private',
+		'post_title'  => $name . ' - ' . wp_date( 'Y-m-d' ),
+		'meta_input'  => [
+			'_de_lead_name'       => $name,
+			'_de_lead_email'      => $email,
+			'_de_lead_phone'      => $phone,
+			'_de_lead_interest'   => $interest,
+			'_de_lead_timeline'   => $timeline,
+			'_de_lead_message'    => $message,
+			'_de_lead_source'     => $source,
+			'_de_lead_source_url' => esc_url_raw( wp_get_raw_referer() ?: '' ),
+			'_de_lead_email_sent' => '0',
+		],
+	] );
+
+	$details = sprintf( "Name: %s\nEmail: %s\nPhone: %s\n", $name, $email, $phone );
+	if ( $interest ) $details .= sprintf( "Interested in: %s\n", $interest );
+	if ( $timeline ) $details .= sprintf( "Timeline: %s\n", $timeline );
+
 	$subject = sprintf( '[New Lead] %s — %s', $source, $name );
 	$body    = sprintf(
-		"Name: %s\nEmail: %s\nPhone: %s\nSource: %s\n\nMessage:\n%s",
-		$name, $email, $phone, $source, $message
+		"%sSource: %s\n\nMessage:\n%s",
+		$details, $source, $message
 	);
 
 	$sent = wp_mail(
@@ -329,12 +353,120 @@ function de_handle_lead_submission(): void {
 		]
 	);
 
+	if ( $lead_id && ! is_wp_error( $lead_id ) ) {
+		update_post_meta( $lead_id, '_de_lead_email_sent', $sent ? '1' : '0' );
+	}
+
 	if ( $sent ) {
 		wp_send_json_success( [ 'redirect' => home_url( '/thank-you/' ) ] );
 	} else {
 		wp_send_json_error( [ 'message' => 'Something went wrong. Please email me directly at ' . DE_EMAIL ] );
 	}
 }
+
+// Fresh nonce for lead forms on cached pages whose embedded nonce has expired
+add_action( 'wp_ajax_de_fresh_nonce',        'de_fresh_lead_nonce' );
+add_action( 'wp_ajax_nopriv_de_fresh_nonce', 'de_fresh_lead_nonce' );
+
+function de_fresh_lead_nonce(): void {
+	nocache_headers();
+	wp_send_json_success( [ 'nonce' => wp_create_nonce( 'de_lead_nonce' ) ] );
+}
+
+
+// ─── Leads (private post type) ────────────────────────────────────────────────
+
+add_action( 'init', function () {
+	register_post_type( 'de_lead', [
+		'labels'              => [
+			'name'          => 'Leads',
+			'singular_name' => 'Lead',
+			'all_items'     => 'All Leads',
+			'edit_item'     => 'View Lead',
+			'search_items'  => 'Search Leads',
+			'not_found'     => 'No leads found.',
+		],
+		'public'              => false,
+		'publicly_queryable'  => false,
+		'exclude_from_search' => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => false,
+		'show_in_admin_bar'   => false,
+		'show_in_rest'        => false,
+		'has_archive'         => false,
+		'rewrite'             => false,
+		'query_var'           => false,
+		'menu_icon'           => 'dashicons-email-alt',
+		'supports'            => [ 'title' ],
+		// Admin-only: every primitive and meta capability maps to manage_options
+		'map_meta_cap'        => false,
+		'capabilities'        => array_fill_keys( [
+			'edit_post', 'read_post', 'delete_post',
+			'edit_posts', 'edit_others_posts', 'edit_private_posts', 'edit_published_posts',
+			'publish_posts', 'read_private_posts', 'create_posts',
+			'delete_posts', 'delete_others_posts', 'delete_private_posts', 'delete_published_posts',
+		], 'manage_options' ),
+	] );
+} );
+
+add_filter( 'rank_math/sitemap/exclude_post_type', function ( $exclude, $type ) {
+	return 'de_lead' === $type ? true : $exclude;
+}, 10, 2 );
+
+add_filter( 'rank_math/excluded_post_types', function ( $types ) {
+	unset( $types['de_lead'] );
+	return $types;
+} );
+
+function de_lead_fields(): array {
+	return [
+		'_de_lead_name'       => 'Name',
+		'_de_lead_email'      => 'Email',
+		'_de_lead_phone'      => 'Phone',
+		'_de_lead_interest'   => 'Interested in',
+		'_de_lead_timeline'   => 'Timeline',
+		'_de_lead_message'    => 'Message',
+		'_de_lead_source'     => 'Form',
+		'_de_lead_source_url' => 'Page',
+		'_de_lead_email_sent' => 'Email sent',
+	];
+}
+
+// Read-only details box (the post type supports title only)
+add_action( 'add_meta_boxes_de_lead', function () {
+	add_meta_box( 'de_lead_details', 'Lead Details', function ( WP_Post $post ) {
+		echo '<table class="form-table" role="presentation"><tbody>';
+		foreach ( de_lead_fields() as $key => $label ) {
+			$value = get_post_meta( $post->ID, $key, true );
+			if ( '_de_lead_email_sent' === $key ) {
+				$value = '1' === $value ? 'Yes' : 'No';
+			}
+			echo '<tr><th scope="row">' . esc_html( $label ) . '</th><td>' . nl2br( esc_html( $value ) ) . '</td></tr>';
+		}
+		echo '</tbody></table>';
+	}, 'de_lead', 'normal', 'high' );
+} );
+
+add_filter( 'manage_de_lead_posts_columns', function ( array $cols ): array {
+	return [
+		'cb'                  => $cols['cb'],
+		'title'               => 'Lead',
+		'_de_lead_email'      => 'Email',
+		'_de_lead_phone'      => 'Phone',
+		'_de_lead_source'     => 'Form',
+		'_de_lead_email_sent' => 'Email sent',
+		'date'                => $cols['date'],
+	];
+} );
+
+add_action( 'manage_de_lead_posts_custom_column', function ( string $col, int $post_id ) {
+	$value = get_post_meta( $post_id, $col, true );
+	if ( '_de_lead_email_sent' === $col ) {
+		$value = '1' === $value ? 'Yes' : 'No';
+	}
+	echo esc_html( $value );
+}, 10, 2 );
 
 
 // ─── City page meta box ───────────────────────────────────────────────────────
