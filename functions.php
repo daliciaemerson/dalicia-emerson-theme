@@ -661,6 +661,30 @@ $slug = get_post_field( 'post_name', get_the_ID() );
 } );
 
 
+// ─── 301s for old MoxiWorks URLs (404s only) ──────────────────────────────────
+//
+// Priority 5 runs before redirect_canonical's 404 guessing (priority 10).
+
+add_action( 'template_redirect', function () {
+	if ( ! is_404() ) {
+		return;
+	}
+
+	$path = strtolower( (string) wp_parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH ) );
+	$path = '/' . trim( $path, '/' );
+
+	if ( preg_match( '#^/listings?(/|$)#', $path ) ) {
+		wp_safe_redirect( home_url( '/properties/' ), 301 );
+		exit;
+	}
+
+	if ( '/service' === $path || '/services' === $path ) {
+		wp_safe_redirect( home_url( '/contact/' ), 301 );
+		exit;
+	}
+}, 5 );
+
+
 // ─── Remove Kadence built-in header (header.php overrides it entirely) ────────
 
 remove_action( 'kadence_header', 'kadence_display_header' );
