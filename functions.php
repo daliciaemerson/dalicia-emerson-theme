@@ -324,7 +324,7 @@ function de_handle_lead_submission(): void {
 		$body,
 		[
 			'Content-Type: text/plain; charset=UTF-8',
-			'From: ' . DE_AGENT_NAME . ' Website <noreply@daliciaemerson.wpenginepowered.com>',
+			'From: ' . DE_AGENT_NAME . ' Website <noreply@daliciaemerson.com>',
 		]
 	);
 

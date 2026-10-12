@@ -1,7 +1,18 @@
 # Theme rules — Dalicia Emerson (kadence-child)
 
 Theme lives at `/Users/dalicia/kadence-child/`. Deploy via GitHub Actions push to `main`.
-Live at `daliciaemerson.wpengine.com` (temp) → `daliciaemerson.com` (DNS flip pending).
+Live at `https://daliciaemerson.com`. DNS switched and primary domain set in WP Engine on Oct 11, 2026;
+search indexing is on, sitemap at `/sitemap_index.xml`. The staging addresses (`daliciaemerson.wpengine.com`,
+`daliciaemerson.wpenginepowered.com`) are no longer the live address — they 301 to `daliciaemerson.com`.
+
+City pages: 7 (Bentonville, Rogers, Fayetteville, Springdale, Bella Vista, Lowell, Siloam Springs).
+Eureka Springs is intentionally not built.
+
+Remaining launch tasks:
+- Search Console: submit `https://daliciaemerson.com/sitemap_index.xml`
+- GA4: tag `G-WQY10FZ1ZX` is in `functions.php`; confirm the property/data stream uses `daliciaemerson.com`
+- 301 redirects from old MoxiWorks URLs
+- Showcase IDX: confirm the plugin's domain setting is `daliciaemerson.com`
 
 ---
 
