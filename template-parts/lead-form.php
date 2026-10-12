@@ -101,50 +101,6 @@ $nonce_val  = wp_create_nonce( 'de_lead_nonce' );
 	<div id="<?php echo esc_attr( $status_id ); ?>"
 	     class="de-form__status"
 	     role="alert"
-	     aria-live="polite"
-	     style="display:none;">
-	</div>
+	     aria-live="polite"></div>
 
 </form>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-(function () {
-	var form   = document.getElementById( <?php echo wp_json_encode( $form_id ); ?> );
-	var status = document.getElementById( <?php echo wp_json_encode( $status_id ); ?> );
-	if ( ! form || ! status || typeof DE === 'undefined' ) return;
-
-	form.addEventListener( 'submit', function (e) {
-		e.preventDefault();
-		if ( form.querySelector( '[name="website"]' ).value ) return; // honeypot
-
-		var btn = form.querySelector( '[type="submit"]' );
-		btn.disabled = true;
-		btn.textContent = 'Sending…';
-		status.style.display = 'none';
-
-		fetch( DE.ajaxUrl, { method: 'POST', body: new FormData( form ) } )
-			.then( function (r) { return r.json(); } )
-			.then( function (json) {
-				if ( json.success && json.data && json.data.redirect ) {
-					window.location.href = json.data.redirect;
-					return;
-				}
-				status.className  = 'de-form__status ' + ( json.success ? 'de-form__status--success' : 'de-form__status--error' );
-				status.textContent = json.data.message;
-				status.style.display = 'block';
-				if ( json.success ) form.reset();
-			} )
-			.catch( function () {
-				status.className   = 'de-form__status de-form__status--error';
-				status.textContent = 'Something went wrong. Please call or email directly.';
-				status.style.display = 'block';
-			} )
-			.finally( function () {
-				btn.disabled = false;
-				btn.textContent = 'Send Message';
-			} );
-	} );
-}());
-});
-</script>

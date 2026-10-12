@@ -37,7 +37,7 @@ get_header();
 
 			<form
 				id="de-contact-form"
-				class="de-form"
+				class="de-form de-lead-form"
 				method="post"
 				action="#"
 				aria-label="Contact Dalicia Emerson"
@@ -140,7 +140,7 @@ get_header();
 					Your information is never sold or shared. I&rsquo;ll respond within one business day.
 				</p>
 
-				<!-- JS-injected status messages land here -->
+				<!-- Status messages from assets/js/main.js land here -->
 				<div id="de-contact-status" class="de-form__status" role="alert" aria-live="polite"></div>
 
 			</form>
@@ -175,37 +175,5 @@ get_header();
 	</div>
 
 </main>
-
-<script>
-// Lightweight contact form handler — replace with GF/FF script in production
-(function () {
-	var form = document.getElementById('de-contact-form');
-	if (!form) return;
-	form.addEventListener('submit', function (e) {
-		e.preventDefault();
-		if (form.querySelector('[name="website"]').value) return; // honeypot
-		var data = new FormData(form);
-		var status = document.getElementById('de-contact-status');
-		var btn = form.querySelector('[type="submit"]');
-		btn.disabled = true;
-		btn.textContent = 'Sending…';
-		fetch(DE.ajaxUrl, { method: 'POST', body: data })
-			.then(function (r) { return r.json(); })
-			.then(function (json) {
-				status.className = 'de-form__status ' + (json.success ? 'de-form__status--success' : 'de-form__status--error');
-				status.textContent = json.data.message;
-				if (json.success) form.reset();
-			})
-			.catch(function () {
-				status.className = 'de-form__status de-form__status--error';
-				status.textContent = 'Something went wrong. Please call or email directly.';
-			})
-			.finally(function () {
-				btn.disabled = false;
-				btn.textContent = 'Send Message';
-			});
-	});
-}());
-</script>
 
 <?php get_footer(); ?>

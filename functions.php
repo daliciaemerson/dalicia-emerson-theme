@@ -53,7 +53,8 @@ add_action( 'wp_enqueue_scripts', function () {
 			'phone'   => DE_PHONE_DISPLAY,
 			'email'   => DE_EMAIL,
 			'nonce'   => wp_create_nonce( 'de_lead_nonce' ),
-			'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+			'ajaxUrl'     => admin_url( 'admin-ajax.php' ),
+			'thankYouUrl' => home_url( '/thank-you/' ),
 		] );
 	}
 }, 20 );
