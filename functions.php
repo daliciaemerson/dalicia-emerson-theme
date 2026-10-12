@@ -678,8 +678,8 @@ add_action( 'template_redirect', function () {
 		exit;
 	}
 
-	if ( '/service' === $path || '/services' === $path ) {
-		wp_safe_redirect( home_url( '/contact/' ), 301 );
+	if ( in_array( $path, [ '/service', '/services', '/buying-and-selling-tips' ], true ) ) {
+		wp_safe_redirect( home_url( '/contact-dalicia-emerson/' ), 301 );
 		exit;
 	}
 }, 5 );
