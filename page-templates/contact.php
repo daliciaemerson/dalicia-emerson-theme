@@ -136,6 +136,11 @@ get_header();
 					</button>
 				</div>
 
+				<p class="de-form__privacy">
+					We use your details only to respond to your inquiry.
+					See our <a href="<?php echo esc_url( get_privacy_policy_url() ); ?>">Privacy Policy</a>.
+				</p>
+
 				<p class="de-form__disclaimer">
 					Your information is never sold or shared. I&rsquo;ll respond within one business day.
 				</p>

@@ -104,6 +104,11 @@ $nonce_val  = wp_create_nonce( 'de_lead_nonce' );
 		Send Message
 	</button>
 
+	<p class="de-form__privacy">
+		We use your details only to respond to your inquiry.
+		See our <a href="<?php echo esc_url( get_privacy_policy_url() ); ?>">Privacy Policy</a>.
+	</p>
+
 	<div id="<?php echo esc_attr( $status_id ); ?>"
 	     class="de-form__status"
 	     role="alert"
