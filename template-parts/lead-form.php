@@ -10,6 +10,7 @@
  */
 
 $source     = $args['source'] ?? 'generic';
+$interest   = $args['interest'] ?? '';   // optional preset, e.g. 'selling' (same values as the Contact page select)
 
 // Count instances per source so a page can include the same form twice with unique IDs
 $GLOBALS['de_lead_form_count'][ $source ] = ( $GLOBALS['de_lead_form_count'][ $source ] ?? 0 ) + 1;
@@ -32,6 +33,9 @@ $nonce_val  = wp_create_nonce( 'de_lead_nonce' );
 	<input type="hidden" name="action"  value="de_submit_lead">
 	<input type="hidden" name="nonce"   value="<?php echo esc_attr( $nonce_val ); ?>">
 	<input type="hidden" name="source"  value="<?php echo esc_attr( $source ); ?>">
+	<?php if ( $interest ) : ?>
+	<input type="hidden" name="interest" value="<?php echo esc_attr( $interest ); ?>">
+	<?php endif; ?>
 
 	<div class="de-form__group">
 		<label for="<?php echo esc_attr( $form_id ); ?>-name" class="de-form__label">

@@ -656,6 +656,10 @@ $slug = get_post_field( 'post_name', get_the_ID() );
 			$t = get_stylesheet_directory() . '/page-templates/city-page.php';
 			if ( file_exists( $t ) ) return $t;
 		}
+		if ( 'home-valuation-nwa' === $slug ) {
+			$t = get_stylesheet_directory() . '/page-templates/home-valuation.php';
+			if ( file_exists( $t ) ) return $t;
+		}
 	}
 	return $template;
 } );

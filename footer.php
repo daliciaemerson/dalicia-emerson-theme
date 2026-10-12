@@ -109,8 +109,6 @@
       </p>
       <ul class="de-footer__legal">
         <li><a href="<?php echo esc_url( get_privacy_policy_url() ); ?>">Privacy Policy</a></li>
-        <li><a href="/terms-of-use/">Terms of Use</a></li>
-        <li><a href="/accessibility/">Accessibility</a></li>
         <li><a href="https://www.nar.realtor/fair-housing" target="_blank" rel="noopener">Fair Housing</a></li>
       </ul>
       <p class="de-footer__brokerage-credit">
